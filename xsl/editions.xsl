@@ -26,7 +26,7 @@
     </xsl:template>
     
     <xsl:template match="tei:publicationStmt">
-        <publicationStmt xmlns="http://www.tei-c.org/ns/1.0">
+        <publicationStmt>
             <publisher>Österreichisches Zentrum für Digitale Geisteswissenschaft und Kulturerbe</publisher>
             <pubPlace>Wien</pubPlace>
             <date when="2024">2024</date>
@@ -61,7 +61,7 @@
     </xsl:template>
     
     <xsl:template match="tei:teiHeader">
-        <teiHeader xmlns="http://www.tei-c.org/ns/1.0">
+        <teiHeader>
             <xsl:apply-templates select="node()|@*"/>
             <profileDesc>
                 <langUsage>
@@ -76,7 +76,7 @@
     
     <xsl:template match="tei:seriesStmt">
         <xsl:copy>
-            <p xmlns="http://www.tei-c.org/ns/1.0">Maschinenlesbares Transkript von Wienerisches Diarium.</p>
+            <p>Maschinenlesbares Transkript von Wienerisches Diarium.</p>
         </xsl:copy>
     </xsl:template>
     
@@ -87,7 +87,7 @@
             <title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@type='main']"/></title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
-            <funder xmlns="http://www.tei-c.org/ns/1.0">
+            <funder>
                 <name>FWF Der Wissenschaftsfond.</name>
                 <address>
                     <street>Georg-Coch-Platz 2</street>
@@ -99,7 +99,7 @@
                 </address>
             </funder>
         </xsl:copy>
-        <editionStmt xmlns="http://www.tei-c.org/ns/1.0">
+        <editionStmt>
             <edition>Wiennerisches Diarium: Digitale Edition</edition>
             <respStmt>
                 <resp>Herausgegeben von</resp>
@@ -129,17 +129,14 @@
     </xsl:template>
     
     <xsl:template match="tei:body/tei:div">
-        <div xmlns="http://www.tei-c.org/ns/1.0">
+        <div>
             <xsl:for-each-group select="." group-starting-with="tei:pb">
                 <xsl:apply-templates/>
             </xsl:for-each-group>
         </div>
     </xsl:template>
-    <xsl:variable name="ab" select="//tei:ab"/>
     <xsl:template match="tei:ab">
-        <xsl:variable name="pos" select="index-of($ab/@facs, @facs)"/>
-        <cb xmlns="http://www.tei-c.org/ns/1.0" n="{$pos}"/>
-        <p xmlns="http://www.tei-c.org/ns/1.0"><xsl:apply-templates/></p>
+        <p><xsl:apply-templates/></p>
     </xsl:template>
     <xsl:template match="tei:lb">
         <xsl:copy>
