@@ -13,17 +13,18 @@ jobs:
     - name: Install Saxon, Ant and Fundament
       run: |
         apt-get update && apt-get install openjdk-11-jre-headless ant -y --no-install-recommend
-        ./scripts/sh/dl_saxon.sh
+        ./shellscripts/dl_saxon.sh
     - name: Install Ant-Contrib
       run: |
         wget https://repo1.maven.org/maven2/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar
         mv ant-contrib-1.0b3.jar /usr/share/ant/lib
     - name: Fetch data
       run: |
-        ./scripts/sh/fetch_data.sh
+        ./shellscripts/fetch_data.sh
+        ./shellscripts/fetch_data_legacy.sh
     - name: Build
       run: |
-        ant -f scripts/ant/build.xml
+        ant
     - name: Commit data
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
