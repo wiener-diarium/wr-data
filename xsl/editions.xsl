@@ -135,23 +135,15 @@
         </xsl:copy>
     </xsl:template> -->
     
-    <xsl:template match="tei:lb">
+    <!-- <xsl:template match="tei:lb">
         <xsl:if test="following-sibling::*[1] instance of text()">
             <xsl:copy>
                 <xsl:apply-templates select="node()|@*"/>
             </xsl:copy>
         </xsl:if>
-    </xsl:template>
-    <xsl:template match="tei:ab">
-        <xsl:variable name="text" select="for $i in child::* return if($i instance of text()) then('true') else ()"/>
-        <xsl:if test="contains($text, 'true')">
-            <xsl:copy>
-                <xsl:apply-templates select="node()|@*"/>
-            </xsl:copy>
-        </xsl:if>
-    </xsl:template>
+    </xsl:template> -->
     <xsl:template match="tei:ab[@type='main-title']">
-        <xsl:variable name="text" select="./text()"/>
+        <xsl:variable name="text" select="string-join(./text(), ' ')"/>
         <xsl:choose>
             <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
                 <xsl:copy>
