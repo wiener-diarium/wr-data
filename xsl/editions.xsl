@@ -14,6 +14,9 @@
         <xsl:result-document href="{$file}.xml" method="xml">
             <xsl:text disable-output-escaping='yes'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</xsl:text>
             <xsl:copy>
+                <xsl:attribute name="xml:id">
+                    <xsl:value-of select="concat('edoc_wd_', $file)"/>
+                </xsl:attribute>
                 <xsl:apply-templates select="node()|@*"/>
             </xsl:copy>
         </xsl:result-document>
