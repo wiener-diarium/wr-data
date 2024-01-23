@@ -93,28 +93,8 @@
             <title level="s" type="sub">Digitale Edition</title>
             <title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@type='main']"/></title>
             <title level="a" type="sub">
-                <xsl:variable name="count-date" select="//tei:ab[@type='count-date']/text()"/>
-                <xsl:choose>
-                    <xsl:when test="contains($count-date[1], 'Num')">
-                        <xsl:value-of select="string-join($count-date, ' ')"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:variable name="index" select="index-of($count-date, 'Num')"/>
-                        <xsl:for-each select="$count-date">
-                            <xsl:if test="position() = last()">
-                                <xsl:value-of select="."/>
-                            </xsl:if>
-                            <xsl:if test="position() != last() and position() != 1">
-                                <xsl:text> </xsl:text>
-                                <xsl:value-of select="."/>
-                            </xsl:if>
-                            <xsl:if test="position() = 1">
-                                <xsl:text> </xsl:text>
-                                <xsl:value-of select="."/>
-                            </xsl:if>
-                    </xsl:otherwise>
-                </xsl:choose>
-                
+                <xsl:variable name="count-date" select="//tei:ab[@type='count-date']"/>
+                <xsl:value-of select="string-join($count-date[2], ' ')"/>
             </title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
