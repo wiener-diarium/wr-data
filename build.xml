@@ -9,9 +9,9 @@
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <!-- <delete>
+    <delete>
         <fileset dir="${editions}" includes="*.xml"/>
-    </delete> -->
+    </delete>
     <delete>
         <fileset dir="${facs}" includes="*.xml"/>
     </delete>
