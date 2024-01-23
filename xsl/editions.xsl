@@ -119,7 +119,7 @@
     
     <xsl:template match="tei:principal"/>
     
-    <xsl:template match="tei:graphic">
+    <!-- <xsl:template match="tei:graphic">
         <xsl:variable name="base" select="replace(tokenize(base-uri(/), '/')[last()], '.xml', '_image_name.xml')"/>
         <xsl:variable name="items" select="doc(concat('../data/facs/', $base))"/>
         <xsl:variable name="pos" select="number(tokenize(parent::tei:surface/@xml:id, '_')[last()])"/>
@@ -129,22 +129,45 @@
                 <xsl:value-of select="$items//item[$pos]"/>
             </xsl:attribute>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template> -->
     
-    <xsl:template match="tei:body/tei:div">
-        <div>
-            <xsl:for-each-group select="." group-starting-with="tei:pb">
-                <xsl:apply-templates/>
-            </xsl:for-each-group>
-        </div>
+    <xsl:template match="tei:lb">
+        <xsl:if test="following-sibling::*[1] instance of text()">
+            <xsl:copy>
+                <xsl:apply-templates select="node()|@*"/>
+            </xsl:copy>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="tei:ab">
-        <p><xsl:apply-templates/></p>
+        <xsl:variable name="text" select="for $i in child::* return if($i instance of text()) then('true') else ()"/>
+        <xsl:if test="contains($text, 'true')">
+            <xsl:copy>
+                <xsl:apply-templates select="node()|@*"/>
+            </xsl:copy>
+        </xsl:if>
     </xsl:template>
-    <xsl:template match="tei:lb">
-        <xsl:copy>
-            <xsl:apply-templates select="node()|@*"/>
-        </xsl:copy>
+    <xsl:template match="tei:ab[@type='main-title']">
+        <xsl:variable name="text" select="./text()"/>
+        <xsl:choose>
+            <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
+                <xsl:copy>
+                    <xsl:apply-templates select="node()|@*"/>
+                </xsl:copy>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:choose>
+                        <xsl:when test="count(child::tei:lb) = 1">
+                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/>Wienerisches DIARIUM
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/>Wienerisches
+                            <lb facs="{./tei:lb[2]/@facs}" n="{./tei:lb[2]/@n}"/>DIARIUM
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:copy>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>
