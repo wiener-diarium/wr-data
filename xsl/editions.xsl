@@ -14,9 +14,6 @@
         <xsl:result-document href="{$file}.xml" method="xml">
             <xsl:text disable-output-escaping='yes'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</xsl:text>
             <xsl:copy>
-                <xsl:attribute name="xml:id">
-                    <xsl:value-of select="concat('edoc_wd_', $file)"/>
-                </xsl:attribute>
                 <xsl:apply-templates select="node()|@*"/>
             </xsl:copy>
         </xsl:result-document>
@@ -26,6 +23,13 @@
         <xsl:copy>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="tei:TEI">
+        <xsl:variable name="file" select="substring-after(//tei:titleStmt/tei:title[@type]/text(), 'Wiener Zeitung ')"/>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="{concat('edoc_wd_', $file)}">
+            <xsl:apply-templates select="node()|@*"/>
+        </TEI>
     </xsl:template>
     
     <xsl:template match="tei:publicationStmt">
