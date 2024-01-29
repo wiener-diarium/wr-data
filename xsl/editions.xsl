@@ -4,6 +4,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions"
     exclude-result-prefixes="#all"
     version="2.0">
     
@@ -32,10 +33,58 @@
         </TEI>
     </xsl:template>
     
-    <xsl:template match="tei:publicationStmt">
+    <xsl:template match="tei:teiHeader">
+        <teiHeader>
+            <xsl:apply-templates select="node()|@*"/>
+            <profileDesc>
+                <langUsage>
+                    <language ident="de">Deutsch</language>
+                </langUsage>
+            </profileDesc>
+            <revisionDesc status="draft">
+                <change who="delsner" when="2024-01-22">Transformierung der Daten des Transkribus TEI-Export mit "editions.xsl".</change>
+            </revisionDesc>
+        </teiHeader>
+    </xsl:template>
+    
+    <xsl:template match="tei:seriesStmt">
+        <xsl:copy>
+            <p>Maschinenlesbares Transkript von Wienerisches Diarium.</p>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="tei:titleStmt">
+        <xsl:copy>
+            <title level="s" type="main">Wienerisches Diarium</title>
+            <title level="s" type="sub">Digitale Edition</title>
+            <!--<title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@type='main']"/></title>-->
+            <title level="a" type="sub">
+                <xsl:variable name="count-date" select="//tei:ab[@type='count-date']"/>
+                <xsl:variable name="date-date" as="xs:date" select="xs:date(substring-after(//tei:titleStmt/tei:title[@type]/text(), 'Wiener Zeitung '))"/>
+                <xsl:variable name="date" select="fn:format-date($date-date, '[F] [D]. [MNn] [Y]', 'de', (), ())"/>
+                <xsl:variable name="num" select="if(fn:contains($count-date[1]/text()[last()], 'Num')) then($count-date[1]/text()[last()]) else($count-date[1]/text()[1])"/>
+                <xsl:value-of select="concat(fn:replace($num, '\n\s+', ''), ' ', $date)"/>
+            </title>
+            <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
+            <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
+            <funder>Austrian Academy of Sciences, go!digital 2.0</funder>
+        </xsl:copy>
+        <editionStmt>
+            <edition>Wienerisches Diarium: Digitale Edition</edition>
+            <respStmt>
+                <resp>Herausgegeben von</resp>
+                <name sameAs="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</name>
+                <name sameAs="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</name>
+            </respStmt>
+            <respStmt>
+                <resp>TEI Schema, ODD/RNG</resp>
+                <name xml:id="delsner" ref="https://orcid.org/0000-0002-0636-4476">Elsner, Daniel</name>
+                <name xml:id="cfhaak" ref="https://orcid.org/0009-0006-7740-542X">Haak, Carl Friedrich</name>                
+            </respStmt>
+        </editionStmt>
         <publicationStmt>
-            <publisher>Österreichisches Zentrum für Digitale Geisteswissenschaft und Kulturerbe</publisher>
-            <pubPlace>Wien</pubPlace>
+            <publisher>Austrian Centre for Digital Humanities, Austrian Academy of Sciences</publisher>
+            <pubPlace>Vienna, Austria</pubPlace>
             <date when="2024">2024</date>
             <availability>
                 <licence target="https://creativecommons.org/licenses/by/4.0">
@@ -67,63 +116,36 @@
         </publicationStmt>
     </xsl:template>
     
-    <xsl:template match="tei:teiHeader">
-        <teiHeader>
+    <xsl:template match="tei:text">
+        <xsl:variable name="titlePage" select="./tei:body/tei:div[1]"/>
+        <xsl:copy>
+            <front>
+                <titlePage>
+                    <xsl:copy-of select="$titlePage/tei:pb"/>
+                    <docTitle>
+                        <titlePart>
+                            <xsl:call-template name="num">
+                                <xsl:with-param name="context" select="$titlePage"/>
+                            </xsl:call-template>
+                        </titlePart>
+                        <titlePart>
+                            <xsl:call-template name="main-title">
+                                <xsl:with-param name="context" select="$titlePage"/>
+                            </xsl:call-template>
+                        </titlePart>
+                        <titlePart>
+                            <xsl:call-template name="imprint">
+                                <xsl:with-param name="context" select="$titlePage"/>
+                            </xsl:call-template>
+                        </titlePart>
+                    </docTitle>
+                </titlePage>
+            </front>
             <xsl:apply-templates select="node()|@*"/>
-            <profileDesc>
-                <langUsage>
-                    <language ident="de">Deutsch</language>
-                </langUsage>
-            </profileDesc>
-            <revisionDesc status="draft">
-                <change who="delsner" when="2024-01-22">Transformierung der Daten des Transkribus TEI-Export mit "editions.xsl".</change>
-            </revisionDesc>
-        </teiHeader>
-    </xsl:template>
-    
-    <xsl:template match="tei:seriesStmt">
-        <xsl:copy>
-            <p>Maschinenlesbares Transkript von Wienerisches Diarium.</p>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:titleStmt">
-        <xsl:copy>
-            <title level="s" type="main">Wiennerisches Diarium</title>
-            <title level="s" type="sub">Digitale Edition</title>
-            <title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@type='main']"/></title>
-            <title level="a" type="sub">
-                <xsl:variable name="count-date" select="//tei:ab[@type='count-date']"/>
-                <xsl:value-of select="string-join($count-date[2], ' ')"/>
-            </title>
-            <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
-            <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
-            <funder>
-                <name>FWF Der Wissenschaftsfond.</name>
-                <address>
-                    <street>Georg-Coch-Platz 2</street>
-                    <postCode>1010 Wien</postCode>
-                    <placeName>
-                        <country>Österreich</country>
-                        <settlement>Wien</settlement>
-                    </placeName>
-                </address>
-            </funder>
-        </xsl:copy>
-        <editionStmt>
-            <edition>Wiennerisches Diarium: Digitale Edition</edition>
-            <respStmt>
-                <resp>Herausgegeben von</resp>
-                <name sameAs="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</name>
-                <name sameAs="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</name>
-            </respStmt>
-            <respStmt>
-                <resp>TEI Schema, ODD/RNG</resp>
-                <name xml:id="delsner" ref="https://orcid.org/0000-0002-0636-4476">Elsner, Daniel</name>
-                <name xml:id="cfhaak" ref="https://orcid.org/0009-0006-7740-542X">Haak, Carl Friedrich</name>                
-            </respStmt>
-        </editionStmt>
-    </xsl:template>
+    <xsl:template match="tei:body/tei:div[1]"/>
     
     <xsl:template match="tei:principal"/>
     
@@ -146,23 +168,35 @@
             </xsl:copy>
         </xsl:if>
     </xsl:template> -->
-
-    <xsl:template match="tei:ab[@type='count-date']" name="count-date">
-        <xsl:copy>
+    
+    <xsl:template name="imprint">
+        <xsl:param name="context"/>
+        <xsl:for-each select="$context/tei:ab[@type='imprint']">
             <xsl:apply-templates select="node()|@*"/>
-        </xsl:copy>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template name="num">
+        <xsl:param name="context"/>
+        <xsl:for-each select="$context/tei:ab[@type='count-date'][1]">
+            <xsl:attribute name="facs" select="@facs"/>
+            <xsl:attribute name="type" select="@type"/>
+            <xsl:variable name="num" select="if(fn:contains(.[1]/text()[last()], 'Num')) then(.[1]/text()[last()]) else(.[1]/text()[1])"/>
+            <xsl:variable name="date" select="if(fn:count(.[1]/text()) = 5) then(concat(.[1]/text()[4], .[1]/text()[3])) else(.[1]/text()[3])"/>
+            <xsl:variable name="year" select="if(fn:contains(.[1]/text()[2], '17')) then(.[1]/text()[2]) else(.[1]/text()[last()])"/>
+            <xsl:value-of select="fn:concat(fn:replace($num, '\n\s+', ''), ' ', fn:replace($date, '\n\s+', ' '), ' ', fn:replace($year, '\n\s+', ''))"/>
+        </xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="tei:ab[@type='main-title']">
-        <xsl:variable name="text" select="string-join(./text(), ' ')"/>
-        <xsl:choose>
-            <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
-                <xsl:copy>
+    <xsl:template name="main-title">
+        <xsl:param name="context"/>
+        <xsl:for-each select="$context/tei:ab[@type='main-title']">
+            <xsl:variable name="text" select="string-join(./text(), ' ')"/>
+            <xsl:choose>
+                <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
                     <xsl:apply-templates select="node()|@*"/>
-                </xsl:copy>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:copy>
+                </xsl:when>
+                <xsl:otherwise>
                     <xsl:choose>
                         <xsl:when test="count(child::tei:lb) = 1">
                             <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/>Wienerisches DIARIUM
@@ -172,9 +206,10 @@
                             <lb facs="{./tei:lb[2]/@facs}" n="{./tei:lb[2]/@n}"/>DIARIUM
                         </xsl:otherwise>
                     </xsl:choose>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:for-each>
+        
     </xsl:template>
     
 </xsl:stylesheet>
