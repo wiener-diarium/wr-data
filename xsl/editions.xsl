@@ -4,7 +4,6 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions"
     exclude-result-prefixes="#all"
     version="2.0">
     
@@ -61,9 +60,9 @@
             <title level="a" type="sub">
                 <xsl:variable name="count-date" select="//tei:ab[@type='count-date']"/>
                 <xsl:variable name="date-date" as="xs:date" select="xs:date(substring-after(//tei:titleStmt/tei:title[@type]/text(), 'Wiener Zeitung '))"/>
-                <xsl:variable name="date" select="fn:format-date($date-date, '[F] [D]. [MNn] [Y]', 'de', (), ())"/>
-                <xsl:variable name="num" select="if(fn:contains($count-date[1]/text()[last()], 'Num')) then($count-date[1]/text()[last()]) else($count-date[1]/text()[1])"/>
-                <xsl:value-of select="concat(fn:replace($num, '\n\s+', ''), ' ', $date)"/>
+                <xsl:variable name="date" select="format-date($date-date, '[F] [D]. [MNn] [Y]', 'de', (), ())"/>
+                <xsl:variable name="num" select="if(contains($count-date[1]/text()[last()], 'Num')) then($count-date[1]/text()[last()]) else($count-date[1]/text()[1])"/>
+                <xsl:value-of select="concat(replace($num, '\n\s+', ''), ' ', $date)"/>
             </title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
@@ -128,7 +127,7 @@
                                 <xsl:with-param name="context" select="$titlePage"/>
                             </xsl:call-template>
                         </titlePart>
-                        <titlePart>
+                        <titlePart type="main-title">
                             <xsl:call-template name="main-title">
                                 <xsl:with-param name="context" select="$titlePage"/>
                             </xsl:call-template>
@@ -145,7 +144,16 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:body/tei:div[1]"/>
+    <xsl:template match="tei:div[1][parent::tei:body]"/>
+     
+    <xsl:template match="tei:div[position() > 1][parent::tei:body]">
+        <xsl:copy>
+            <xsl:attribute name="type" select="'article'"/>
+            <xsl:attribute name="n" select="(position() div 2) - 1"/>
+            <xsl:attribute name="xml:id" select="concat('a', (position() div 2) - 1)"/>
+            <xsl:apply-templates select="node()|@*"/> 
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template match="tei:principal"/>
     
@@ -161,13 +169,13 @@
         </xsl:copy>
     </xsl:template> -->
     
-    <!-- <xsl:template match="tei:lb">
-        <xsl:if test="following-sibling::*[1] instance of text()">
-            <xsl:copy>
-                <xsl:apply-templates select="node()|@*"/>
-            </xsl:copy>
-        </xsl:if>
-    </xsl:template> -->
+     <xsl:template match="tei:lb">
+         <xsl:if test="./following-sibling::node()[1]/self::text()[normalize-space()]">
+             <xsl:copy>
+                 <xsl:apply-templates select="node()|@*"/>
+             </xsl:copy>
+         </xsl:if>
+    </xsl:template> 
     
     <xsl:template name="imprint">
         <xsl:param name="context"/>
@@ -181,10 +189,10 @@
         <xsl:for-each select="$context/tei:ab[@type='count-date'][1]">
             <xsl:attribute name="facs" select="@facs"/>
             <xsl:attribute name="type" select="@type"/>
-            <xsl:variable name="num" select="if(fn:contains(.[1]/text()[last()], 'Num')) then(.[1]/text()[last()]) else(.[1]/text()[1])"/>
-            <xsl:variable name="date" select="if(fn:count(.[1]/text()) = 5) then(concat(.[1]/text()[4], .[1]/text()[3])) else(.[1]/text()[3])"/>
-            <xsl:variable name="year" select="if(fn:contains(.[1]/text()[2], '17')) then(.[1]/text()[2]) else(.[1]/text()[last()])"/>
-            <xsl:value-of select="fn:concat(fn:replace($num, '\n\s+', ''), ' ', fn:replace($date, '\n\s+', ' '), ' ', fn:replace($year, '\n\s+', ''))"/>
+            <xsl:variable name="num" select="if(contains(.[1]/text()[last()], 'Num')) then(.[1]/text()[last()]) else(.[1]/text()[1])"/>
+            <xsl:variable name="date" select="if(count(.[1]/text()) = 5) then(concat(.[1]/text()[4], .[1]/text()[3])) else(.[1]/text()[3])"/>
+            <xsl:variable name="year" select="if(contains(.[1]/text()[2], '17')) then(.[1]/text()[2]) else(.[1]/text()[last()])"/>
+            <xsl:value-of select="concat(replace($num, '\n\s+', ''), ' ', replace($date, '\n\s+', ' '), ' ', replace($year, '\n\s+', ''))"/>
         </xsl:for-each>
     </xsl:template>
 
