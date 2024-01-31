@@ -125,7 +125,9 @@
                             <xsl:call-template name="main-title"/>
                         </titlePart>
                         <titlePart>
-                            <xsl:call-template name="imprint"/>
+                            <xsl:call-template name="imprint">
+                                <xsl:with-param name="context" select="$titlePage"/>
+                            </xsl:call-template>
                         </titlePart>
                     </docTitle>
                 </titlePage>
@@ -146,6 +148,10 @@
     </xsl:template>
     
     <xsl:template match="tei:principal"/>
+    <xsl:template match="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]"/>
+    <xsl:template match="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]"/>
+    <xsl:template match="//tei:ab[@type='count-date' and contains(@facs, 'facs_1_')]"/>
+    <xsl:template match="//tei:ab[@type='figure' and contains(@facs, 'facs_1_')]"/>
     
     <!-- <xsl:template match="tei:graphic">
         <xsl:variable name="base" select="replace(tokenize(base-uri(/), '/')[last()], '.xml', '_image_name.xml')"/>
@@ -168,7 +174,8 @@
     </xsl:template> 
     
     <xsl:template name="imprint">
-        <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
+        <xsl:param name="context"/>
+        <xsl:for-each select="$context/tei:ab[@type='imprint']">
             <xsl:apply-templates select="node()|@*"/>
         </xsl:for-each>
     </xsl:template>
@@ -176,9 +183,7 @@
     <xsl:template name="num">
         <xsl:param name="context"/>
         <xsl:for-each select="$context/tei:ab[@type='count-date-normalized']">
-            <xsl:attribute name="facs">
-                <xsl:value-of select="$context/tei:ab[@type='count-date'][1]/@facs"/>
-            </xsl:attribute>
+            <xsl:attribute name="facs" select=""/>
             <xsl:apply-templates select="node()|@*"/>
             <!-- <xsl:attribute name="facs" select="@facs"/>
             <xsl:attribute name="type" select="@type"/>
@@ -190,7 +195,7 @@
     </xsl:template>
 
     <xsl:template name="main-title">
-        <xsl:for-each select="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]">
+        <xsl:for-each select="//tei:ab[@type='main-title']">
             <xsl:variable name="text" select="string-join(./text(), ' ')"/>
             <xsl:choose>
                 <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
