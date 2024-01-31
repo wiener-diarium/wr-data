@@ -9,7 +9,7 @@
     
     <xsl:output encoding="UTF-8" media-type="text/xml" method="xml" indent="yes" omit-xml-declaration="yes"/>
     
-    <xsl:template match="/">
+    <!-- <xsl:template match="/">
         <xsl:variable name="file" select="substring-after(//tei:titleStmt/tei:title[@type]/text(), 'Wiener Zeitung ')"/>
         <xsl:result-document href="{$file}.xml" method="xml">
             <xsl:text disable-output-escaping='yes'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</xsl:text>
@@ -17,7 +17,7 @@
                 <xsl:apply-templates select="node()|@*"/>
             </xsl:copy>
         </xsl:result-document>
-    </xsl:template>
+    </xsl:template> -->
     
     <xsl:template match="node()|@*">
         <xsl:copy>
@@ -26,8 +26,8 @@
     </xsl:template>
 
     <xsl:template match="tei:TEI">
-        <xsl:variable name="file" select="substring-after(//tei:titleStmt/tei:title[@type]/text(), 'Wiener Zeitung ')"/>
-        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="{concat('edoc_wd_', $file)}">
+        <xsl:variable name="file" select="substring-after(//tei:titleStmt/tei:title[not(@level)]/text(), 'Wiener Zeitung ')"/>
+        <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="wr_{$file}.xml">
             <xsl:apply-templates select="node()|@*"/>
         </TEI>
     </xsl:template>
@@ -57,13 +57,7 @@
             <title level="s" type="main">Wienerisches Diarium</title>
             <title level="s" type="sub">Digitale Edition</title>
             <!--<title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@type='main']"/></title>-->
-            <title level="a" type="sub">
-                <xsl:variable name="count-date" select="//tei:ab[@type='count-date']"/>
-                <xsl:variable name="date-date" as="xs:date" select="xs:date(substring-after(//tei:titleStmt/tei:title[@type]/text(), 'Wiener Zeitung '))"/>
-                <xsl:variable name="date" select="format-date($date-date, '[F] [D]. [MNn] [Y]', 'de', (), ())"/>
-                <xsl:variable name="num" select="if(contains($count-date[1]/text()[last()], 'Num')) then($count-date[1]/text()[last()]) else($count-date[1]/text()[1])"/>
-                <xsl:value-of select="concat(replace($num, '\n\s+', ''), ' ', $date)"/>
-            </title>
+            <title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@level='a']"/></title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
             <funder>Austrian Academy of Sciences, go!digital 2.0</funder>
@@ -128,14 +122,10 @@
                             </xsl:call-template>
                         </titlePart>
                         <titlePart type="main-title">
-                            <xsl:call-template name="main-title">
-                                <xsl:with-param name="context" select="$titlePage"/>
-                            </xsl:call-template>
+                            <xsl:call-template name="main-title"/>
                         </titlePart>
                         <titlePart>
-                            <xsl:call-template name="imprint">
-                                <xsl:with-param name="context" select="$titlePage"/>
-                            </xsl:call-template>
+                            <xsl:call-template name="imprint"/>
                         </titlePart>
                     </docTitle>
                 </titlePage>
@@ -178,27 +168,29 @@
     </xsl:template> 
     
     <xsl:template name="imprint">
-        <xsl:param name="context"/>
-        <xsl:for-each select="$context/tei:ab[@type='imprint']">
+        <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
             <xsl:apply-templates select="node()|@*"/>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template name="num">
         <xsl:param name="context"/>
-        <xsl:for-each select="$context/tei:ab[@type='count-date'][1]">
-            <xsl:attribute name="facs" select="@facs"/>
+        <xsl:for-each select="$context/tei:ab[@type='count-date-normalized']">
+            <xsl:attribute name="facs">
+                <xsl:value-of select="$context/tei:ab[@type='count-date'][1]/@facs"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*"/>
+            <!-- <xsl:attribute name="facs" select="@facs"/>
             <xsl:attribute name="type" select="@type"/>
             <xsl:variable name="num" select="if(contains(.[1]/text()[last()], 'Num')) then(.[1]/text()[last()]) else(.[1]/text()[1])"/>
             <xsl:variable name="date" select="if(count(.[1]/text()) = 5) then(concat(.[1]/text()[4], .[1]/text()[3])) else(.[1]/text()[3])"/>
             <xsl:variable name="year" select="if(contains(.[1]/text()[2], '17')) then(.[1]/text()[2]) else(.[1]/text()[last()])"/>
-            <xsl:value-of select="concat(replace($num, '\n\s+', ''), ' ', replace($date, '\n\s+', ' '), ' ', replace($year, '\n\s+', ''))"/>
+            <xsl:value-of select="concat(replace($num, '\n\s+', ''), ' ', replace($date, '\n\s+', ' '), ' ', replace($year, '\n\s+', ''))"/> -->
         </xsl:for-each>
     </xsl:template>
 
     <xsl:template name="main-title">
-        <xsl:param name="context"/>
-        <xsl:for-each select="$context/tei:ab[@type='main-title']">
+        <xsl:for-each select="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]">
             <xsl:variable name="text" select="string-join(./text(), ' ')"/>
             <xsl:choose>
                 <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
@@ -217,7 +209,6 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
-        
     </xsl:template>
     
 </xsl:stylesheet>

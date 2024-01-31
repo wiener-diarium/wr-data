@@ -22,6 +22,12 @@ jobs:
       run: |
         ./shellscripts/fetch_data.sh
         ./shellscripts/fetch_data_legacy.sh
+    - name: install python dependecies
+      run: |
+        pip install -r requirements.txt
+    - name: prepare data
+      run: |
+        python3 ./python/preprocess.py
     - name: Build
       run: |
         ant
