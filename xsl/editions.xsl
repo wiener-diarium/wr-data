@@ -169,7 +169,8 @@
                  <xsl:apply-templates select="node()|@*"/>
              </xsl:copy>
          </xsl:if>
-    </xsl:template> 
+    </xsl:template>
+    <xsl:template match="tei:lb[matches(./preceding-sibling::text()[1]/self::text(), '=$', 'm')]"/>
     
     <xsl:template name="imprint">
         <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
@@ -213,6 +214,25 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template match="//text()[parent::tei:p[ancestor::tei:body]]">
+        <xsl:choose>
+            <xsl:when test="matches(., '=$', 'm')">
+                <xsl:value-of select="replace(., '=', '')"/>
+                <xsl:for-each select="following::tei:lb[1]">
+                    <xsl:copy>
+                        <xsl:attribute name="break">
+                            <xsl:text>no</xsl:text>
+                        </xsl:attribute>
+                        <xsl:apply-templates select="node()|@*"/>
+                    </xsl:copy>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>
