@@ -2,29 +2,15 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title level="s" type="main">Wiennerisches Diarium</title>
+            <title level="s" type="main">Wienerisches Diarium</title>
             <title level="s" type="sub">Digitale Edition</title>
-            <title level="a" type="main">Wiener Zeitung 1756-10-16</title>
-            <title level="a" type="sub">
-               Num. 83. Samstags=anhang 16. October 1.
-               756.
-            </title>
+            <title level="a" type="sub"> [Language: en]Saturday 16. October 1756</title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
-            <funder>
-               <name>FWF Der Wissenschaftsfond.</name>
-               <address>
-                  <street>Georg-Coch-Platz 2</street>
-                  <postCode>1010 Wien</postCode>
-                  <placeName>
-                     <country>Österreich</country>
-                     <settlement>Wien</settlement>
-                  </placeName>
-               </address>
-            </funder>
+            <funder>Austrian Academy of Sciences, go!digital 2.0</funder>
          </titleStmt>
          <editionStmt>
-            <edition>Wiennerisches Diarium: Digitale Edition</edition>
+            <edition>Wienerisches Diarium: Digitale Edition</edition>
             <respStmt>
                <resp>Herausgegeben von</resp>
                <name sameAs="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</name>
@@ -36,6 +22,38 @@
                <name xml:id="cfhaak" ref="https://orcid.org/0009-0006-7740-542X">Haak, Carl Friedrich</name>
             </respStmt>
          </editionStmt>
+         <publicationStmt>
+            <publisher>Austrian Centre for Digital Humanities, Austrian Academy of Sciences</publisher>
+            <pubPlace>Vienna, Austria</pubPlace>
+            <date when="2024">2024</date>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by/4.0">
+                  <p>Sie dürfen: Teilen — das Material in jedwedem Format oder Medium
+                        vervielfältigen und weiterverbreiten</p>
+                  <p>Bearbeiten — das Material remixen, verändern und darauf aufbauen und zwar für
+                        beliebige Zwecke, sogar kommerziell.</p>
+                  <p>Der Lizenzgeber kann diese Freiheiten nicht widerrufen solange Sie sich an die
+                        Lizenzbedingungen halten. Unter folgenden Bedingungen:</p>
+                  <p>Namensnennung — Sie müssen angemessene Urheber- und Rechteangaben machen, einen
+                        Link zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden. Diese
+                        Angaben dürfen in jeder angemessenen Art und Weise gemacht werden, allerdings
+                        nicht so, dass der Eindruck entsteht, der Lizenzgeber unterstütze gerade Sie
+                        oder Ihre Nutzung besonders.</p>
+                  <p>Keine weiteren Einschränkungen — Sie dürfen keine zusätzlichen Klauseln oder
+                        technische Verfahren einsetzen, die anderen rechtlich irgendetwas untersagen,
+                        was die Lizenz erlaubt.</p>
+                  <p>Hinweise:</p>
+                  <p>Sie müssen sich nicht an diese Lizenz halten hinsichtlich solcher Teile des
+                        Materials, die gemeinfrei sind, oder soweit Ihre Nutzungshandlungen durch
+                        Ausnahmen und Schranken des Urheberrechts gedeckt sind.</p>
+                  <p>Es werden keine Garantien gegeben und auch keine Gewähr geleistet. Die Lizenz
+                        verschafft Ihnen möglicherweise nicht alle Erlaubnisse, die Sie für die
+                        jeweilige Nutzung brauchen. Es können beispielsweise andere Rechte wie
+                        Persönlichkeits- undDatenschutzrechte zu beachten sein, die Ihre Nutzung des
+                        Materials entsprechend beschränken.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
          <seriesStmt>
             <p>Maschinenlesbares Transkript von Wienerisches Diarium.</p>
          </seriesStmt>
@@ -5633,26 +5651,21 @@
       </surface>
    </facsimile>
    <text>
-      <body>
-         <div>
+      <front>
+         <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
-            <ab facs="#facs_1_tr_1705755223" type="count-date">
-               <lb facs="#facs_1_tr_1705755223_tl_1" n="N001"/>Num. 83.
-               <lb facs="#facs_1_tr_1705755223_tl_2" n="N002"/>Samstag den 16. October.
-               <lb facs="#facs_1_tr_1705755223_tl_3" n="N003"/>17
-            </ab>
-            <ab facs="#facs_1_tr_1705755229" type="figure">
-               <lb facs="#facs_1_tr_1705755229_tl_1" n="N001"/>
-               <lb facs="#facs_1_tr_1705755229_tl_2" n="N002"/>
-               <lb facs="#facs_1_tr_1705755229_tl_3" n="N003"/>
-               <lb facs="#facs_1_tr_1705755229_tl_4" n="N004"/>
-            </ab>
-            <ab facs="#facs_1_tr_1705755230" type="imprint">
-               <lb facs="#facs_1_tr_1705755230_tl_1" n="N001"/>Gedruckt in der Kaiserl. Königl. privilegirten Zeitungs=buch=
+            <docTitle>
+               <titlePart facs="#facs_1_tr_1705755223" type="count-date"> Samstag den 16. October.  17</titlePart>
+               <titlePart type="main-title"/>
+               <titlePart facs="#facs_1_tr_1705755230" type="imprint">
+                  <lb facs="#facs_1_tr_1705755230_tl_1" n="N001"/>Gedruckt in der Kaiserl. Königl. privilegirten Zeitungs=buch=
                <lb facs="#facs_1_tr_1705755230_tl_2" n="N002"/>druckerey im neuen Michaeler=haus mit von Ghelischen Schriften.
-            </ab>
-         </div>
-         <div>
+            </titlePart>
+            </docTitle>
+         </titlePage>
+      </front>
+      <body>
+         <div type="article" n="1" xml:id="a1">
             <head facs="#facs_1_tr_1705755221">
                <lb facs="#facs_1_tr_1705755221_tl_1" n="N001"/>Boston, in Neu=england, vom
                <lb facs="#facs_1_tr_1705755221_tl_2" n="N002"/>5. Julii.</head>
@@ -5681,7 +5694,7 @@
                <lb facs="#facs_1_tr_1705755217_tl_22" n="N022"/>mit denen Berg=schotten in Albanien an=
                <lb facs="#facs_1_tr_1705755217_tl_23" n="N023"/>gelangt.</p>
          </div>
-         <div>
+         <div type="article" n="2" xml:id="a2">
             <head facs="#facs_1_tr_1705755218">
                <lb facs="#facs_1_tr_1705755218_tl_1" n="N001"/>Londen 14. Sept.</head>
             <p facs="#facs_1_tr_1705755219">
@@ -5701,8 +5714,6 @@
                <lb facs="#facs_1_tr_1705755231_tl_1" n="N001"/>56.
             </ab>
             <ab facs="#facs_1_tr_1705755225" type="figure">
-               <lb facs="#facs_1_tr_1705755225_tl_1" n="N001"/>
-               <lb facs="#facs_1_tr_1705755225_tl_2" n="N002"/>
             </ab>
             <p facs="#facs_1_tr_1705755227">
                <lb facs="#facs_1_tr_1705755227_tl_1" n="N001"/>denen protestantischen Mächten zur Beschir=
@@ -5780,7 +5791,7 @@
                <lb facs="#facs_2_tr_1705755773_tl_12" n="N012"/>der ganzen Engländischen Marine, und der
                <lb facs="#facs_2_tr_1705755773_tl_13" n="N013"/>allerschlechteste Segeler.</p>
          </div>
-         <div>
+         <div type="article" n="3" xml:id="a3">
             <head facs="#facs_2_tr_1705755764">
                <lb facs="#facs_2_tr_1705755764_tl_1" n="N001"/>Meiland 16. Sept.</head>
             <p facs="#facs_2_tr_1705755762">
@@ -5831,7 +5842,7 @@
                <lb facs="#facs_2_tr_1705755771_tl_7" n="N007"/>dres abgefertiget worden, sich fertig zu hal=
                <lb facs="#facs_2_tr_1705755771_tl_8" n="N008"/>ten, aus ihren Quatieren zu ziehen.</p>
          </div>
-         <div>
+         <div type="article" n="4" xml:id="a4">
             <head facs="#facs_2_tr_1705755765">
                <lb facs="#facs_2_tr_1705755765_tl_1" n="N001"/>Neapel 5. Sept.</head>
             <p facs="#facs_2_tr_1705755766">
@@ -5849,7 +5860,7 @@
                <lb facs="#facs_2_tr_1705755766_tl_12" n="N012"/>neuen Schlunde haben sich auch wiederum
                <lb facs="#facs_2_tr_1705755766_tl_13" n="N013"/>geschlossen.</p>
          </div>
-         <div>
+         <div type="article" n="5" xml:id="a5">
             <head facs="#facs_2_tr_1705755767">
                <lb facs="#facs_2_tr_1705755767_tl_1" n="N001"/>Livorno 19. Sept.</head>
             <p facs="#facs_2_tr_1705755772">
@@ -5886,7 +5897,7 @@
                <lb facs="#facs_3_tr_1705755422_tl_17" n="N017"/>schwören, und zu Maltha die Christ=Catho=
                <lb facs="#facs_3_tr_1705755422_tl_18" n="N018"/>lische Religion anzunehmen.</p>
          </div>
-         <div>
+         <div type="article" n="6" xml:id="a6">
             <head facs="#facs_3_tr_1705755420">
                <lb facs="#facs_3_tr_1705755420_tl_1" n="N001"/>Magdeburg 17. Sept.</head>
             <p facs="#facs_3_tr_1705755426">
@@ -5905,7 +5916,7 @@
                <lb facs="#facs_3_tr_1705755426_tl_13" n="N013"/>Wappen, und die Num. des Leipziger=rahts
                <lb facs="#facs_3_tr_1705755426_tl_14" n="N014"/>verloren haben.</p>
          </div>
-         <div>
+         <div type="article" n="7" xml:id="a7">
             <head facs="#facs_3_tr_1705755419">
                <lb facs="#facs_3_tr_1705755419_tl_1" n="N001"/>Hannover 17. Sept.</head>
             <p facs="#facs_3_tr_1705755421">
@@ -5916,7 +5927,7 @@
                <lb facs="#facs_3_tr_1705755421_tl_5" n="N005"/>sen, mithin wird die ganze Armee auf etli=
                <lb facs="#facs_3_tr_1705755421_tl_6" n="N006"/>che 80000. Mann sich belauffen.</p>
          </div>
-         <div>
+         <div type="article" n="8" xml:id="a8">
             <head facs="#facs_3_tr_1705755423">
                <lb facs="#facs_3_tr_1705755423_tl_1" n="N001"/>Dresden 14. Sept.</head>
             <p facs="#facs_3_tr_1705755428">
@@ -5966,7 +5977,7 @@
                <lb facs="#facs_3_tr_1705755424_tl_14" n="N014"/>sche Schiffe mit Munition in grosser Menge
                <lb facs="#facs_3_tr_1705755424_tl_15" n="N015"/>die Elbe paßirt.</p>
          </div>
-         <div>
+         <div type="article" n="9" xml:id="a9">
             <head facs="#facs_3_tr_1705755417">
                <lb facs="#facs_3_tr_1705755417_tl_1" n="N001"/>Amsterdam 24. Sept.</head>
             <p facs="#facs_3_tr_1705755425">
@@ -5991,7 +6002,7 @@
             <p facs="#facs_4_tr_1705756269">
                <lb facs="#facs_4_tr_1705756269_tl_1" n="N001"/>nen nicht geschwind eine Ader geöfnet hät=</p>
          </div>
-         <div>
+         <div type="article" n="10" xml:id="a10">
             <head facs="#facs_4_tr_1705756266">
                <lb facs="#facs_4_tr_1705756266_tl_1" n="N001"/>Hamburg 24. Sept.</head>
             <p facs="#facs_4_tr_1705756261">
@@ -6003,7 +6014,7 @@
                <lb facs="#facs_4_tr_1705756261_tl_6" n="N006"/>gehende Armee ihren Marsch durch Curland
                <lb facs="#facs_4_tr_1705756261_tl_7" n="N007"/>nehmen wird, um in Preussen einzurücken.</p>
          </div>
-         <div>
+         <div type="article" n="11" xml:id="a11">
             <head facs="#facs_4_tr_1705756265">
                <lb facs="#facs_4_tr_1705756265_tl_1" n="N001"/>Altona 24. Sept.</head>
             <p facs="#facs_4_tr_1705756260">
@@ -6036,7 +6047,7 @@
                <lb facs="#facs_4_tr_1705756260_tl_27" n="N027"/>Anzahl Galeeren würden noch besonders in
                <lb facs="#facs_4_tr_1705756260_tl_28" n="N028"/>Bereitschaft gehalten.</p>
          </div>
-         <div>
+         <div type="article" n="12" xml:id="a12">
             <head facs="#facs_4_tr_1705756267">
                <lb facs="#facs_4_tr_1705756267_tl_1" n="N001"/>Dreßden 1. October.</head>
             <p facs="#facs_4_tr_1705756264">
@@ -6088,7 +6099,7 @@
                <lb facs="#facs_4_tr_1705756272_tl_4" n="N004"/>erhalten hätten.
                <lb facs="#facs_4_tr_1705756272_tl_5" n="N005"/>Jn der Gegend von Dippoldswalda an</p>
          </div>
-         <div>
+         <div type="article" n="13" xml:id="a13">
             <head facs="#facs_4_tr_1705756263">
                <lb facs="#facs_4_tr_1705756263_tl_1" n="N001"/>Brüssel 30. Sept.</head>
             <p facs="#facs_4_tr_1705756262">
@@ -6122,7 +6133,7 @@
                <lb facs="#facs_5_tr_1705756388_tl_8" n="N008"/>und den Nachtheil, so deren Auffenthalt al=
                <lb facs="#facs_5_tr_1705756388_tl_9" n="N009"/>da dem Land verursachet.</p>
          </div>
-         <div>
+         <div type="article" n="14" xml:id="a14">
             <head facs="#facs_5_tr_1705756387">
                <lb facs="#facs_5_tr_1705756387_tl_1" n="N001"/>Prag 12. October.</head>
             <p facs="#facs_5_tr_1705756385">
@@ -6146,7 +6157,7 @@
                <lb facs="#facs_5_tr_1705756385_tl_18" n="N018"/>Kaiserl. Königl. Armee nacher Budmn forge=
                <lb facs="#facs_5_tr_1705756385_tl_19" n="N019"/>setzet.</p>
          </div>
-         <div>
+         <div type="article" n="15" xml:id="a15">
             <head facs="#facs_5_tr_1705756380">
                <lb facs="#facs_5_tr_1705756380_tl_1" n="N001"/>Wien den 16. October 1756.</head>
             <p facs="#facs_5_tr_1705756384">
@@ -6208,7 +6219,7 @@
                <lb facs="#facs_5_tr_1705756390_tl_11" n="N011"/>von beyden Kaiserl. Königl. in Böheim ste=
                <lb facs="#facs_5_tr_1705756390_tl_12" n="N012"/>henden Armeen. Kostet à parte 3. kr.</p>
          </div>
-         <div>
+         <div type="article" n="16" xml:id="a16">
             <head facs="#facs_5_tr_1705756382">
                <lb facs="#facs_5_tr_1705756382_tl_1" n="N001"/>Lista deren Verstorbenen zu Wien
                <lb facs="#facs_5_tr_1705756382_tl_2" n="N002"/>in= und vor der Stadt.
@@ -6233,7 +6244,7 @@
                <lb facs="#facs_5_tr_1705756389_tl_15" n="N015"/>Summa 8. Person., darunter 1. Kind.
             </ab>
          </div>
-         <div>
+         <div type="article" n="17" xml:id="a17">
             <pb facs="#facs_6" n="6" xml:id="img_0006"/>
             <head facs="#facs_6_tr_1705756000">
                <lb facs="#facs_6_tr_1705756000_tl_1" n="N001"/>Den 14. October.
@@ -6245,7 +6256,7 @@
                <lb facs="#facs_6_tr_1705756005_tl_4" n="N004"/>Bürst., alt 21. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="18" xml:id="a18">
             <head facs="#facs_6_tr_1705755999">
                <lb facs="#facs_6_tr_1705755999_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705756008" type="list">
@@ -6263,7 +6274,7 @@
                <lb facs="#facs_6_tr_1705756008_tl_12" n="N012"/>J., beyde bey denen FF. Mis.
             </ab>
          </div>
-         <div>
+         <div type="article" n="19" xml:id="a19">
             <head facs="#facs_6_tr_1705756002">
                <lb facs="#facs_6_tr_1705756002_tl_1" n="N001"/>Suma 9. Person., darunter 3. Kinder.
                <lb facs="#facs_6_tr_1705756002_tl_2" n="N002"/>Den 15. October.
@@ -6279,7 +6290,7 @@
                <lb facs="#facs_6_tr_1705756009_tl_8" n="N008"/>August. Krotenauer, im K. K. Hof=spit., alt 86. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="20" xml:id="a20">
             <head facs="#facs_6_tr_1705755996">
                <lb facs="#facs_6_tr_1705755996_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705756007" type="list">
@@ -6302,7 +6313,7 @@
                <lb facs="#facs_6_tr_1705756007_tl_17" n="N017"/>Summa 11 Person., darunter 5. Kinder.
             </ab>
          </div>
-         <div>
+         <div type="article" n="21" xml:id="a21">
             <head facs="#facs_6_tr_1705756004">
                <lb facs="#facs_6_tr_1705756004_tl_1" n="N001"/>RDICT</head>
             <p facs="#facs_6_tr_1705755997">
@@ -6347,7 +6358,7 @@
                <lb facs="#facs_6_tr_1705755995_tl_32" n="N032"/>das Jus plus offer ndi zu exerciren bevorste=
                <lb facs="#facs_6_tr_1705755995_tl_33" n="N033"/>hen solle. Actum Wien den 28 Sept. 1756</p>
          </div>
-         <div>
+         <div type="article" n="22" xml:id="a22">
             <head facs="#facs_6_tr_1705756001">
                <lb facs="#facs_6_tr_1705756001_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_6_tr_1705756003">
@@ -6412,10 +6423,9 @@
                <lb facs="#facs_7_tr_1705756317_tl_15" n="N015"/>lirt, und amortisirt, auch was rechtens ist,
                <lb facs="#facs_7_tr_1705756317_tl_16" n="N016"/>vorgekehret werden solle.</p>
             <ab facs="#facs_7_tr_1705756329" type="seperator-single">
-               <lb facs="#facs_7_tr_1705756329_tl_1" n="N001"/>
             </ab>
          </div>
-         <div>
+         <div type="article" n="23" xml:id="a23">
             <head facs="#facs_7_tr_1705756325">
                <lb facs="#facs_7_tr_1705756325_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_7_tr_1705756319">
@@ -6462,7 +6472,7 @@
                <lb facs="#facs_7_tr_1705756320_tl_2" n="N002"/>lich durch dieses offene Edict zur Nachricht
                <lb facs="#facs_7_tr_1705756320_tl_3" n="N003"/>hiemit erinnern wollen.</p>
          </div>
-         <div>
+         <div type="article" n="24" xml:id="a24">
             <head facs="#facs_7_tr_1705756326">
                <lb facs="#facs_7_tr_1705756326_tl_1" n="N001"/>AVERTISSEMENT.</head>
             <p facs="#facs_7_tr_1705756318">
@@ -6580,7 +6590,6 @@
                <lb facs="#facs_8_tr_1705756190_tl_10" n="N010"/>cum Permissione Superiorum, vermö=
                <lb facs="#facs_8_tr_1705756190_tl_11" n="N011"/>Prænumeration, à 4. Rthlr.</p>
             <ab facs="#facs_8_tr_1705756187" type="seperator-single">
-               <lb facs="#facs_8_tr_1705756187_tl_1" n="N001"/>
             </ab>
             <ab facs="#facs_8_tr_1705756192" type="list">
                <lb facs="#facs_8_tr_1705756192_tl_1" n="N001"/>Diarii ist zu haben:
@@ -6615,7 +6624,7 @@
                <lb facs="#facs_9_tr_1705755535_tl_2" n="N002"/>im neuen Michaeler=haus mit von Ghelischen Schriften.
             </ab>
          </div>
-         <div>
+         <div type="article" n="25" xml:id="a25">
             <head facs="#facs_9_tr_1705755530">
                <lb facs="#facs_9_tr_1705755530_tl_1" n="N001"/>XII. Fortsetzung des publicirten Ur=
                <lb facs="#facs_9_tr_1705755530_tl_2" n="N002"/>theils der Commißion der Schwe=
@@ -6818,7 +6827,7 @@
                <lb facs="#facs_11_tr_1705755625_tl_3" n="N003"/>) 1
             </ab>
          </div>
-         <div>
+         <div type="article" n="26" xml:id="a26">
             <head facs="#facs_11_tr_1705755622">
                <lb facs="#facs_11_tr_1705755622_tl_1" n="N001"/>Ausführliche Relation
                <lb facs="#facs_11_tr_1705755622_tl_2" n="N002"/>Von dem den 1sten October 1.
@@ -7059,7 +7068,7 @@
                <lb facs="#facs_16_tr_1705756606_tl_2" n="N002"/>Stabs= und anderen Ober=officieren.
             </ab>
          </div>
-         <div>
+         <div type="article" n="27" xml:id="a27">
             <head facs="#facs_16_tr_1705756602">
                <lb facs="#facs_16_tr_1705756602_tl_1" n="N001"/>General=Stab.
                <lb facs="#facs_16_tr_1705756602_tl_2" n="N002"/>Vom
@@ -7067,7 +7076,7 @@
                <lb facs="#facs_16_tr_1705756602_tl_4" n="N004"/>Feld=marschall=leutenant Gra
                <lb facs="#facs_16_tr_1705756602_tl_5" n="N005"/>von Radicati.</head>
          </div>
-         <div>
+         <div type="article" n="28" xml:id="a28">
             <head facs="#facs_16_tr_1705756611">
                <lb facs="#facs_16_tr_1705756611_tl_1" n="N001"/>Bleßirte.</head>
             <p facs="#facs_16_tr_1705756610">
@@ -7076,7 +7085,7 @@
                <lb facs="#facs_16_tr_1705756610_tl_3" n="N003"/>gefangen. Obrister, und General=
                <lb facs="#facs_16_tr_1705756610_tl_4" n="N004"/>adjutant: Baron Hager.</p>
          </div>
-         <div>
+         <div type="article" n="29" xml:id="a29">
             <head facs="#facs_16_tr_1705756607">
                <lb facs="#facs_16_tr_1705756607_tl_1" n="N001"/>Von der Infanterie.
                <lb facs="#facs_16_tr_1705756607_tl_2" n="N002"/>Vom Kais. Lothrin. Regim.
@@ -7087,7 +7096,7 @@
                <lb facs="#facs_16_tr_1705756604_tl_3" n="N003"/>Graf Huyn. Grenadier=unter=
                <lb facs="#facs_16_tr_1705756604_tl_4" n="N004"/>leutenant: Anton von Harasowsky.</p>
          </div>
-         <div>
+         <div type="article" n="30" xml:id="a30">
             <head facs="#facs_16_tr_1705756597">
                <lb facs="#facs_16_tr_1705756597_tl_1" n="N001"/>Unter=leuten. Johann Marschalk.
                <lb facs="#facs_16_tr_1705756597_tl_2" n="N002"/>96
@@ -7098,7 +7107,7 @@
                <lb facs="#facs_16_tr_1705756597_tl_7" n="N007"/>Fähnig
                <lb facs="#facs_16_tr_1705756597_tl_8" n="N008"/>bleßirte.</head>
          </div>
-         <div>
+         <div type="article" n="31" xml:id="a31">
             <head facs="#facs_16_tr_1705756612">
                <lb facs="#facs_16_tr_1705756612_tl_1" n="N001"/>Bleßirt.</head>
             <p facs="#facs_16_tr_1705756600">
@@ -7113,7 +7122,7 @@
                <lb facs="#facs_16_tr_1705756600_tl_9" n="N009"/>Baron von Reitzenstein. Johann
                <lb facs="#facs_16_tr_1705756600_tl_10" n="N010"/>von Osezky. Ober=leutenant:</p>
          </div>
-         <div>
+         <div type="article" n="32" xml:id="a32">
             <head facs="#facs_16_tr_1705756605">
                <lb facs="#facs_16_tr_1705756605_tl_1" n="N001"/>Jgnatz Röwel. Grenadier=unter=
                <lb facs="#facs_16_tr_1705756605_tl_2" n="N002"/>leutenant: Friederich von Alten=
@@ -7134,7 +7143,7 @@
                <lb facs="#facs_16_tr_1705756609_tl_7" n="N007"/>Gaun von Löwengang.
                <lb facs="#facs_16_tr_1705756609_tl_8" n="N008"/>Heinrich der 30ste Graf Reuß.</p>
          </div>
-         <div>
+         <div type="article" n="33" xml:id="a33">
             <head facs="#facs_16_tr_1705756608">
                <lb facs="#facs_16_tr_1705756608_tl_1" n="N001"/>Bleßirte.</head>
             <p facs="#facs_16_tr_1705756599">
@@ -7165,12 +7174,12 @@
                <lb facs="#facs_17_tr_1705755864_tl_1" n="N001"/>richs: Philipp von Oliba. Chri=
                <lb facs="#facs_17_tr_1705755864_tl_2" n="N002"/>stoph Baron von Knorz.</p>
          </div>
-         <div>
+         <div type="article" n="34" xml:id="a34">
             <head facs="#facs_17_tr_1705755851">
                <lb facs="#facs_17_tr_1705755851_tl_1" n="N001"/>Vom Regiment Broune.
                <lb facs="#facs_17_tr_1705755851_tl_2" n="N002"/>Bleßirt.</head>
          </div>
-         <div>
+         <div type="article" n="35" xml:id="a35">
             <head facs="#facs_17_tr_1705755865">
                <lb facs="#facs_17_tr_1705755865_tl_1" n="N001"/>Grenadier Haupt=mann: Felix
                <lb facs="#facs_17_tr_1705755865_tl_2" n="N002"/>Baron Strasser. Unter=leutenant:
@@ -7178,7 +7187,7 @@
                <lb facs="#facs_17_tr_1705755865_tl_4" n="N004"/>Vom Regim. Kollowrat.
                <lb facs="#facs_17_tr_1705755865_tl_5" n="N005"/>Todte.</head>
          </div>
-         <div>
+         <div type="article" n="36" xml:id="a36">
             <head facs="#facs_17_tr_1705755859">
                <lb facs="#facs_17_tr_1705755859_tl_1" n="N001"/>Obrist=wacht=meister: Anton
                <lb facs="#facs_17_tr_1705755859_tl_2" n="N002"/>von Mahlern. Grenadier=ober=
@@ -7193,21 +7202,21 @@
                <lb facs="#facs_17_tr_1705755860_tl_6" n="N006"/>Vom Regiment Kheul.
                <lb facs="#facs_17_tr_1705755860_tl_7" n="N007"/>Bleßirt.</p>
          </div>
-         <div>
+         <div type="article" n="37" xml:id="a37">
             <head facs="#facs_17_tr_1705755858">
                <lb facs="#facs_17_tr_1705755858_tl_1" n="N001"/>Aggregirter Obrister: Philipp
                <lb facs="#facs_17_tr_1705755858_tl_2" n="N002"/>Graf von Broun.
                <lb facs="#facs_17_tr_1705755858_tl_3" n="N003"/>Vom Regiment Marschall.
                <lb facs="#facs_17_tr_1705755858_tl_4" n="N004"/>Bleßirt.</head>
          </div>
-         <div>
+         <div type="article" n="38" xml:id="a38">
             <head facs="#facs_17_tr_1705755856">
                <lb facs="#facs_17_tr_1705755856_tl_1" n="N001"/>Grenadier=haupt=mann: Al=
                <lb facs="#facs_17_tr_1705755856_tl_2" n="N002"/>bert Marquis de Cappy.
                <lb facs="#facs_17_tr_1705755856_tl_3" n="N003"/>Vom Regiment Harsch.
                <lb facs="#facs_17_tr_1705755856_tl_4" n="N004"/>Bleßirte.</head>
          </div>
-         <div>
+         <div type="article" n="39" xml:id="a39">
             <head facs="#facs_17_tr_1705755861">
                <lb facs="#facs_17_tr_1705755861_tl_1" n="N001"/>Vom Regiment Colloredo.
                <lb facs="#facs_17_tr_1705755861_tl_2" n="N002"/>Todt.
@@ -7234,12 +7243,12 @@
                <lb facs="#facs_17_tr_1705755854_tl_15" n="N015"/>ton Baron Reboucher.
                <lb facs="#facs_17_tr_1705755854_tl_16" n="N016"/>Vom Regiment Baaden=</p>
          </div>
-         <div>
+         <div type="article" n="40" xml:id="a40">
             <head facs="#facs_17_tr_1705755866">
                <lb facs="#facs_17_tr_1705755866_tl_1" n="N001"/>durlach.
                <lb facs="#facs_17_tr_1705755866_tl_2" n="N002"/>Bleßirte.</head>
          </div>
-         <div>
+         <div type="article" n="41" xml:id="a41">
             <head facs="#facs_17_tr_1705755852">
                <lb facs="#facs_17_tr_1705755852_tl_1" n="N001"/>Grenadier=haupt=mann: Caje=
                <lb facs="#facs_17_tr_1705755852_tl_2" n="N002"/>tan de la Roche. Ober=leutenant:
@@ -7259,7 +7268,7 @@
                <lb facs="#facs_17_tr_1705755855_tl_8" n="N008"/>Ja cob
                <lb facs="#facs_17_tr_1705755855_tl_9" n="N009"/>Peter Ferger.</p>
          </div>
-         <div>
+         <div type="article" n="42" xml:id="a42">
             <head facs="#facs_17_tr_1705755853">
                <lb facs="#facs_17_tr_1705755853_tl_1" n="N001"/>Vom Regiment Joseph
                <lb facs="#facs_17_tr_1705755853_tl_2" n="N002"/>Esterhäzy.
@@ -7270,7 +7279,7 @@
                <lb facs="#facs_17_tr_1705755863_tl_3" n="N003"/>Bles=
                <lb facs="#facs_17_tr_1705755863_tl_4" n="N004"/>Michocky.</p>
          </div>
-         <div>
+         <div type="article" n="43" xml:id="a43">
             <pb facs="#facs_18" n="18" xml:id="img_0018"/>
             <head facs="#facs_18_tr_1705755911">
                <lb facs="#facs_18_tr_1705755911_tl_1" n="N001"/>Bleßinte.</head>
@@ -7283,13 +7292,13 @@
                <lb facs="#facs_18_tr_1705755918_tl_6" n="N006"/>chael Roth. Unter=leutenant: Jos.
                <lb facs="#facs_18_tr_1705755918_tl_7" n="N007"/>Terney. Fähnrich: Gabriel Pongratz.</p>
          </div>
-         <div>
+         <div type="article" n="44" xml:id="a44">
             <head facs="#facs_18_tr_1705755914">
                <lb facs="#facs_18_tr_1705755914_tl_1" n="N001"/>Von der Cavallerie.
                <lb facs="#facs_18_tr_1705755914_tl_2" n="N002"/>Vom Reg. Erz=herzog Joseph.
                <lb facs="#facs_18_tr_1705755914_tl_3" n="N003"/>Bleßirte.</head>
          </div>
-         <div>
+         <div type="article" n="45" xml:id="a45">
             <head facs="#facs_18_tr_1705755921">
                <lb facs="#facs_18_tr_1705755921_tl_1" n="N001"/>Todte.
                <lb facs="#facs_18_tr_1705755921_tl_2" n="N002"/>Ritt=meistere: Nagy. Targa. Leu=
@@ -7306,7 +7315,7 @@
                <lb facs="#facs_18_tr_1705755913_tl_8" n="N008"/>ckel. Jvanez. Cornet: Quarient.
                <lb facs="#facs_18_tr_1705755913_tl_9" n="N009"/>Vom Regiment Serbelloni.</p>
          </div>
-         <div>
+         <div type="article" n="46" xml:id="a46">
             <head facs="#facs_18_tr_1705755915">
                <lb facs="#facs_18_tr_1705755915_tl_1" n="N001"/>Carabinier=unter=leut. Schörf.
                <lb facs="#facs_18_tr_1705755915_tl_2" n="N002"/>Vom Regiment Bretlach.
@@ -7316,11 +7325,11 @@
                <lb facs="#facs_18_tr_1705755915_tl_6" n="N006"/>Bleßirte.
                <lb facs="#facs_18_tr_1705755915_tl_7" n="N007"/>Carabinier=ritt=meister: Schulz.</head>
          </div>
-         <div>
+         <div type="article" n="47" xml:id="a47">
             <head facs="#facs_18_tr_1705755917">
                <lb facs="#facs_18_tr_1705755917_tl_1" n="N001"/>Bleßirt.</head>
          </div>
-         <div>
+         <div type="article" n="48" xml:id="a48">
             <head facs="#facs_18_tr_1705755920">
                <lb facs="#facs_18_tr_1705755920_tl_1" n="N001"/>Vom Regiment Traut=
                <lb facs="#facs_18_tr_1705755920_tl_2" n="N002"/>mannsdorf.
@@ -7351,7 +7360,7 @@
                <lb facs="#facs_19_tr_1705756013_tl_2" n="N002"/>756
             </ab>
          </div>
-         <div>
+         <div type="article" n="49" xml:id="a49">
             <head facs="#facs_19_tr_1705756016">
                <lb facs="#facs_19_tr_1705756016_tl_1" n="N001"/>Haupt=quartier der unter Commando des Herren
                <lb facs="#facs_19_tr_1705756016_tl_2" n="N002"/>Feld=marschallens Grafens von Broun in Böheim stehenden
@@ -7399,7 +7408,7 @@
             <p facs="#facs_20_tr_1705756780">
                <lb facs="#facs_20_tr_1705756780_tl_1" n="N001"/>Eute ist von dem Feind nichts Veränderliches einzube=
                <lb facs="#facs_20_tr_1705756780_tl_2" n="N002"/>richten; dahingegen wurde diesseits der Herr General=
-               <lb facs="#facs_20_tr_1705756780_tl_3" n="N003"/>
+               
                <lb facs="#facs_20_tr_1705756780_tl_4" n="N004"/>Graf Rudolph Palfy mit 250. Hussaren,
                <lb facs="#facs_20_tr_1705756780_tl_5" n="N005"/>Feld=wacht=meister
                <lb facs="#facs_20_tr_1705756780_tl_6" n="N006"/>und 1000. Sclavoniern ruckwärts des Feindes in die Gegend

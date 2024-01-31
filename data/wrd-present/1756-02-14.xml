@@ -2,28 +2,15 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title level="s" type="main">Wiennerisches Diarium</title>
+            <title level="s" type="main">Wienerisches Diarium</title>
             <title level="s" type="sub">Digitale Edition</title>
-            <title level="a" type="main">Wiener Zeitung 1756-02-14</title>
-            <title level="a" type="sub">
-               Num. 13. Samstags=anhang 14. Februarii, 1756.
-            </title>
+            <title level="a" type="sub"> [Language: en]Saturday 14. February 1756</title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
-            <funder>
-               <name>FWF Der Wissenschaftsfond.</name>
-               <address>
-                  <street>Georg-Coch-Platz 2</street>
-                  <postCode>1010 Wien</postCode>
-                  <placeName>
-                     <country>Österreich</country>
-                     <settlement>Wien</settlement>
-                  </placeName>
-               </address>
-            </funder>
+            <funder>Austrian Academy of Sciences, go!digital 2.0</funder>
          </titleStmt>
          <editionStmt>
-            <edition>Wiennerisches Diarium: Digitale Edition</edition>
+            <edition>Wienerisches Diarium: Digitale Edition</edition>
             <respStmt>
                <resp>Herausgegeben von</resp>
                <name sameAs="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</name>
@@ -35,6 +22,38 @@
                <name xml:id="cfhaak" ref="https://orcid.org/0009-0006-7740-542X">Haak, Carl Friedrich</name>
             </respStmt>
          </editionStmt>
+         <publicationStmt>
+            <publisher>Austrian Centre for Digital Humanities, Austrian Academy of Sciences</publisher>
+            <pubPlace>Vienna, Austria</pubPlace>
+            <date when="2024">2024</date>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by/4.0">
+                  <p>Sie dürfen: Teilen — das Material in jedwedem Format oder Medium
+                        vervielfältigen und weiterverbreiten</p>
+                  <p>Bearbeiten — das Material remixen, verändern und darauf aufbauen und zwar für
+                        beliebige Zwecke, sogar kommerziell.</p>
+                  <p>Der Lizenzgeber kann diese Freiheiten nicht widerrufen solange Sie sich an die
+                        Lizenzbedingungen halten. Unter folgenden Bedingungen:</p>
+                  <p>Namensnennung — Sie müssen angemessene Urheber- und Rechteangaben machen, einen
+                        Link zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden. Diese
+                        Angaben dürfen in jeder angemessenen Art und Weise gemacht werden, allerdings
+                        nicht so, dass der Eindruck entsteht, der Lizenzgeber unterstütze gerade Sie
+                        oder Ihre Nutzung besonders.</p>
+                  <p>Keine weiteren Einschränkungen — Sie dürfen keine zusätzlichen Klauseln oder
+                        technische Verfahren einsetzen, die anderen rechtlich irgendetwas untersagen,
+                        was die Lizenz erlaubt.</p>
+                  <p>Hinweise:</p>
+                  <p>Sie müssen sich nicht an diese Lizenz halten hinsichtlich solcher Teile des
+                        Materials, die gemeinfrei sind, oder soweit Ihre Nutzungshandlungen durch
+                        Ausnahmen und Schranken des Urheberrechts gedeckt sind.</p>
+                  <p>Es werden keine Garantien gegeben und auch keine Gewähr geleistet. Die Lizenz
+                        verschafft Ihnen möglicherweise nicht alle Erlaubnisse, die Sie für die
+                        jeweilige Nutzung brauchen. Es können beispielsweise andere Rechte wie
+                        Persönlichkeits- undDatenschutzrechte zu beachten sein, die Ihre Nutzung des
+                        Materials entsprechend beschränken.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
          <seriesStmt>
             <p>Maschinenlesbares Transkript von Wienerisches Diarium.</p>
          </seriesStmt>
@@ -3681,28 +3700,25 @@
       </surface>
    </facsimile>
    <text>
-      <body>
-         <div>
+      <front>
+         <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
-            <ab facs="#facs_1_tr_1705755248" type="count-date">
-               <lb facs="#facs_1_tr_1705755248_tl_1" n="N001"/>Num. 13.
-               <lb facs="#facs_1_tr_1705755248_tl_2" n="N002"/>Samstag den 14. Februarii.
-               <lb facs="#facs_1_tr_1705755248_tl_3" n="N003"/>56.
-            </ab>
-            <ab facs="#facs_1_tr_1705755251" type="figure">
-               <lb facs="#facs_1_tr_1705755251_tl_1" n="N001"/>
-               <lb facs="#facs_1_tr_1705755251_tl_2" n="N002"/>
-            </ab>
-            <ab facs="#facs_1_tr_1705755258" type="imprint">
-               <lb facs="#facs_1_tr_1705755258_tl_1" n="N001"/>Gedruckt in der Kaiserl. Königl. privilegirten Zeitungs=buch=
+            <docTitle>
+               <titlePart facs="#facs_1_tr_1705755248" type="count-date"> Samstag den 14. Februarii.  56.</titlePart>
+               <titlePart type="main-title"/>
+               <titlePart facs="#facs_1_tr_1705755258" type="imprint">
+                  <lb facs="#facs_1_tr_1705755258_tl_1" n="N001"/>Gedruckt in der Kaiserl. Königl. privilegirten Zeitungs=buch=
                <lb facs="#facs_1_tr_1705755258_tl_2" n="N002"/>druckerey im neuen Michaeler=haus mit von Ghelischen Schriften.
-            </ab>
-         </div>
-         <div>
+            </titlePart>
+            </docTitle>
+         </titlePage>
+      </front>
+      <body>
+         <div type="article" n="1" xml:id="a1">
             <head facs="#facs_1_tr_1705755261">
                <lb facs="#facs_1_tr_1705755261_tl_1" n="N001"/>Aus Asien.</head>
          </div>
-         <div>
+         <div type="article" n="2" xml:id="a2">
             <head facs="#facs_1_tr_1705755256">
                <lb facs="#facs_1_tr_1705755256_tl_1" n="N001"/>Aleppo 24. Nov. 1755.</head>
             <p facs="#facs_1_tr_1705755246">
@@ -3747,14 +3763,13 @@
             <p facs="#facs_1_tr_1705755253">
                <lb facs="#facs_1_tr_1705755253_tl_1" n="N001"/>cher wird zerstreuen werde.</p>
          </div>
-         <div>
+         <div type="article" n="3" xml:id="a3">
             <head facs="#facs_1_tr_1705755249">
                <lb facs="#facs_1_tr_1705755249_tl_1" n="N001"/>Livorno 20. Jan.</head>
             <ab facs="#facs_1_tr_1705755247" type="figure">
-               <lb facs="#facs_1_tr_1705755247_tl_1" n="N001"/>
             </ab>
          </div>
-         <div>
+         <div type="article" n="4" xml:id="a4">
             <head facs="#facs_1_tr_1705755257">
                <lb facs="#facs_1_tr_1705755257_tl_1" n="N001"/>des Karum=kan, als welche täglich schwä=
                <lb facs="#facs_1_tr_1705755257_tl_2" n="N002"/>Aus Jtalien.</head>
@@ -3787,7 +3802,7 @@
                <lb facs="#facs_1_tr_1705755245_tl_26" n="N026"/>hat auf einmal eine Stille in der Kapperey
                <lb facs="#facs_1_tr_1705755245_tl_27" n="N027"/>dieser See=räuber verursachet.</p>
          </div>
-         <div>
+         <div type="article" n="5" xml:id="a5">
             <head facs="#facs_1_tr_1705755255">
                <lb facs="#facs_1_tr_1705755255_tl_1" n="N001"/>Aus Groß=Brittannien.
                <lb facs="#facs_1_tr_1705755255_tl_2" n="N002"/>Londen 20. Jan.</head>
@@ -3836,7 +3851,7 @@
                <lb facs="#facs_2_tr_1705755506_tl_36" n="N036"/>länder in America Repressalien zu gebrau=
                <lb facs="#facs_2_tr_1705755506_tl_37" n="N037"/>chen</p>
          </div>
-         <div>
+         <div type="article" n="6" xml:id="a6">
             <head facs="#facs_2_tr_1705755505">
                <lb facs="#facs_2_tr_1705755505_tl_1" n="N001"/>Londen 23. Jan.</head>
             <p facs="#facs_2_tr_1705755503">
@@ -3857,7 +3872,7 @@
                <lb facs="#facs_2_tr_1705755508_tl_2" n="N002"/>sorgenden namhaften Schaden deren Trup
                <lb facs="#facs_2_tr_1705755508_tl_3" n="N003"/>pen nicht vorgerucket werden kan.</p>
          </div>
-         <div>
+         <div type="article" n="7" xml:id="a7">
             <head facs="#facs_2_tr_1705755507">
                <lb facs="#facs_2_tr_1705755507_tl_1" n="N001"/>Aus Frankreich
                <lb facs="#facs_2_tr_1705755507_tl_2" n="N002"/>Paris 23. Januarii.</head>
@@ -3918,7 +3933,7 @@
                <lb facs="#facs_3_tr_1705755876_tl_6" n="N006"/>1745. in der Bataille bey Fontenoy, umge=
                <lb facs="#facs_3_tr_1705755876_tl_7" n="N007"/>kommen.</p>
          </div>
-         <div>
+         <div type="article" n="8" xml:id="a8">
             <head facs="#facs_3_tr_1705755880">
                <lb facs="#facs_3_tr_1705755880_tl_1" n="N001"/>Versailles 28. Januarii.</head>
             <p facs="#facs_3_tr_1705755877">
@@ -4029,7 +4044,7 @@
                <lb facs="#facs_4_tr_1705755434_tl_7" n="N007"/>gethan hätten, und wolten darüber den Ent=
                <lb facs="#facs_4_tr_1705755434_tl_8" n="N008"/>schluß des Französischen Hofes erwarten. rc.</p>
          </div>
-         <div>
+         <div type="article" n="9" xml:id="a9">
             <head facs="#facs_4_tr_1705755438">
                <lb facs="#facs_4_tr_1705755438_tl_1" n="N001"/>Aus Niederland.
                <lb facs="#facs_4_tr_1705755438_tl_2" n="N002"/>Haag 27. Januarii.</head>
@@ -4049,7 +4064,7 @@
                <lb facs="#facs_4_tr_1705755437_tl_13" n="N013"/>der lezten Versammlung nach dem Fuß des
                <lb facs="#facs_4_tr_1705755437_tl_14" n="N014"/>vorigen Jahrs eingerichtet worden.</p>
          </div>
-         <div>
+         <div type="article" n="10" xml:id="a10">
             <head facs="#facs_4_tr_1705755439">
                <lb facs="#facs_4_tr_1705755439_tl_1" n="N001"/>Utrecht 28. Jan.</head>
             <p facs="#facs_4_tr_1705755435">
@@ -4082,7 +4097,7 @@
                <lb facs="#facs_4_tr_1705755443_tl_1" n="N001"/>Projét de Requisition, rc. so also abgefas=
                <lb facs="#facs_4_tr_1705755443_tl_2" n="N002"/>set.</p>
          </div>
-         <div>
+         <div type="article" n="11" xml:id="a11">
             <head facs="#facs_4_tr_1705755444">
                <lb facs="#facs_4_tr_1705755444_tl_1" n="N001"/>Mein Herr!</head>
             <p facs="#facs_4_tr_1705755433">
@@ -4112,7 +4127,7 @@
                <lb facs="#facs_4_tr_1705755433_tl_24" n="N024"/>Königreiche schuldig seynd, gerecht und un=
                <lb facs="#facs_4_tr_1705755433_tl_25" n="N025"/>vermeidlich gemacht haben.</p>
          </div>
-         <div>
+         <div type="article" n="12" xml:id="a12">
             <head facs="#facs_4_tr_1705755441">
                <lb facs="#facs_4_tr_1705755441_tl_1" n="N001"/>Aus Teutschland.
                <lb facs="#facs_4_tr_1705755441_tl_2" n="N002"/>Neisse 10. Jan.</head>
@@ -4125,7 +4140,7 @@
                <lb facs="#facs_4_tr_1705755432_tl_6" n="N006"/>im 57sten Jahr seines Alters das Zeitliche
                <lb facs="#facs_4_tr_1705755432_tl_7" n="N007"/>mit dem Ewigen verwechselt.</p>
          </div>
-         <div>
+         <div type="article" n="13" xml:id="a13">
             <head facs="#facs_4_tr_1705755440">
                <lb facs="#facs_4_tr_1705755440_tl_1" n="N001"/>Berlin 24. Jan.</head>
             <p facs="#facs_4_tr_1705755436">
@@ -4174,7 +4189,7 @@
                <lb facs="#facs_5_tr_1705756186_tl_27" n="N027"/>fällt das Geburts=fest des Königs ein, da
                <lb facs="#facs_5_tr_1705756186_tl_28" n="N028"/>er das 45ste Jahr Dero Alters antrittet.</p>
          </div>
-         <div>
+         <div type="article" n="14" xml:id="a14">
             <head facs="#facs_5_tr_1705756189">
                <lb facs="#facs_5_tr_1705756189_tl_1" n="N001"/>Coblenz 27. Jan.</head>
             <p facs="#facs_5_tr_1705756187">
@@ -4211,12 +4226,12 @@
                <lb facs="#facs_5_tr_1705756184_tl_8" n="N008"/>mehr regierenden Churfürstl. Gnaden bestim=
                <lb facs="#facs_5_tr_1705756184_tl_9" n="N009"/>met.</p>
          </div>
-         <div>
+         <div type="article" n="15" xml:id="a15">
             <head facs="#facs_5_tr_1705756188">
                <lb facs="#facs_5_tr_1705756188_tl_1" n="N001"/>Wien den 14. Februarii 1756.</head>
             <p facs="#facs_5_tr_1705756192">
                <lb facs="#facs_5_tr_1705756192_tl_1" n="N001"/>MJttwoch den 11. Februarii, haben
-               <lb facs="#facs_5_tr_1705756192_tl_2" n="N002"/>
+               
                <lb facs="#facs_5_tr_1705756192_tl_3" n="N003"/>Beede Kaiserl. Majest. dem ordinari
                <lb facs="#facs_5_tr_1705756192_tl_4" n="N004"/>GOttes=dienst in der Kammer=kapellen ab=
                <lb facs="#facs_5_tr_1705756192_tl_5" n="N005"/>gewartet.</p>
@@ -4253,7 +4268,7 @@
                <lb facs="#facs_5_tr_1705756191_tl_9" n="N009"/>forderliche mündlich angezeiget, und Ver=
                <lb facs="#facs_5_tr_1705756191_tl_10" n="N010"/>ordnet werden wird.</p>
          </div>
-         <div>
+         <div type="article" n="16" xml:id="a16">
             <head facs="#facs_5_tr_1705756190">
                <lb facs="#facs_5_tr_1705756190_tl_1" n="N001"/>Lista deren Verstorbenen zu Wien
                <lb facs="#facs_5_tr_1705756190_tl_2" n="N002"/>in= und vor der Stadt.
@@ -4274,7 +4289,7 @@
                <lb facs="#facs_6_tr_1705756396_tl_3" n="N003"/>alt 70. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="17" xml:id="a17">
             <head facs="#facs_6_tr_1705756382">
                <lb facs="#facs_6_tr_1705756382_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705756393" type="list">
@@ -4297,7 +4312,7 @@
                <lb facs="#facs_6_tr_1705756393_tl_17" n="N017"/>Summa 9. Person., darunter 3. Kinder.
             </ab>
          </div>
-         <div>
+         <div type="article" n="18" xml:id="a18">
             <head facs="#facs_6_tr_1705756389">
                <lb facs="#facs_6_tr_1705756389_tl_1" n="N001"/>Den 12. Februarii.
                <lb facs="#facs_6_tr_1705756389_tl_2" n="N002"/>Jn der Stadt.</head>
@@ -4311,7 +4326,7 @@
                <lb facs="#facs_6_tr_1705756380_tl_7" n="N007"/>Schwandneris. H. in der Karntnerstr., alt 45. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="19" xml:id="a19">
             <head facs="#facs_6_tr_1705756388">
                <lb facs="#facs_6_tr_1705756388_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705756387" type="list">
@@ -4325,7 +4340,7 @@
                <lb facs="#facs_6_tr_1705756387_tl_8" n="N008"/>L. bey Maria=hülf, alt 37. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="20" xml:id="a20">
             <head facs="#facs_6_tr_1705756397">
                <lb facs="#facs_6_tr_1705756397_tl_1" n="N001"/>Summa 7. Person., darunter 2 Kinder.
                <lb facs="#facs_6_tr_1705756397_tl_2" n="N002"/>Den 13. Februarii.
@@ -4342,7 +4357,7 @@
                <lb facs="#facs_6_tr_1705756385_tl_9" n="N009"/>Doar=markt, alt 20. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="21" xml:id="a21">
             <head facs="#facs_6_tr_1705756395">
                <lb facs="#facs_6_tr_1705756395_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705756381" type="list">
@@ -4364,7 +4379,7 @@
                <lb facs="#facs_6_tr_1705756390_tl_10" n="N010"/>ckayis. H. auf der Wied., alt 8. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="22" xml:id="a22">
             <head facs="#facs_6_tr_1705756399">
                <lb facs="#facs_6_tr_1705756399_tl_1" n="N001"/>Summa 11. Person. darunter 3. Kinder.</head>
             <p facs="#facs_6_tr_1705756379">
@@ -4435,11 +4450,10 @@
                <lb facs="#facs_7_tr_1705756112_tl_21" n="N021"/>NB. Wie auch Passatutti, die grosse Kö=
                <lb facs="#facs_7_tr_1705756112_tl_22" n="N022"/>nigin von Brittanien, das Stuck um 18. kr.</p>
          </div>
-         <div>
+         <div type="article" n="23" xml:id="a23">
             <head facs="#facs_7_tr_1705756114">
                <lb facs="#facs_7_tr_1705756114_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_7_tr_1705756109">
-               <lb facs="#facs_7_tr_1705756109_tl_1" n="N001"/>
                <lb facs="#facs_7_tr_1705756109_tl_2" n="N002"/>Von der Röm. Kaiserl. Königl. Majestät
                <lb facs="#facs_7_tr_1705756109_tl_3" n="N003"/>Ni. Oe. Regierung in Justitz=sachen wegen
                <lb facs="#facs_7_tr_1705756109_tl_4" n="N004"/>NN. allen und jeden, welche an weil. Jo=
@@ -4483,7 +4497,7 @@
                <lb facs="#facs_7_tr_1705756111_tl_17" n="N017"/>Wornach sich ein jeder zu richten, und zu
                <lb facs="#facs_7_tr_1705756111_tl_18" n="N018"/>achten hat.</p>
          </div>
-         <div>
+         <div type="article" n="24" xml:id="a24">
             <head facs="#facs_7_tr_1705756108">
                <lb facs="#facs_7_tr_1705756108_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_7_tr_1705756107">
@@ -4515,7 +4529,7 @@
                <lb facs="#facs_7_tr_1705756107_tl_26" n="N026"/>tum Schloß Judenau den 2ten Monats=tag
                <lb facs="#facs_7_tr_1705756107_tl_27" n="N027"/>Januarii 1756.</p>
          </div>
-         <div>
+         <div type="article" n="25" xml:id="a25">
             <head facs="#facs_7_tr_1705756110">
                <lb facs="#facs_7_tr_1705756110_tl_1" n="N001"/>EPIC1</head>
             <p facs="#facs_7_tr_1705756118">
@@ -4575,11 +4589,11 @@
                <lb facs="#facs_8_tr_1705755348_tl_47" n="N047"/>ten wissen werden. Wien den 17. Jenner
                <lb facs="#facs_8_tr_1705755348_tl_48" n="N048"/>1756.</p>
          </div>
-         <div>
+         <div type="article" n="26" xml:id="a26">
             <head facs="#facs_8_tr_1705755347">
                <lb facs="#facs_8_tr_1705755347_tl_1" n="N001"/>EDICT.</head>
          </div>
-         <div>
+         <div type="article" n="27" xml:id="a27">
             <head facs="#facs_8_tr_1705755350">
                <lb facs="#facs_8_tr_1705755350_tl_1" n="N001"/>Von des Kaiserl. Königl. Jud. Del. Mi-</head>
             <p facs="#facs_8_tr_1705755346">
@@ -4644,7 +4658,7 @@
                <lb facs="#facs_9_tr_1705756021_tl_2" n="N002"/>im neuen Michaeler=haus mit von Ghelischen Schriften.
             </ab>
          </div>
-         <div>
+         <div type="article" n="28" xml:id="a28">
             <head facs="#facs_9_tr_1705756016">
                <lb facs="#facs_9_tr_1705756016_tl_1" n="N001"/>Aus Frankreich.
                <lb facs="#facs_9_tr_1705756016_tl_2" n="N002"/>Dünkirchen 24. Jan.</head>
@@ -4663,7 +4677,7 @@
                <lb facs="#facs_9_tr_1705756014_tl_12" n="N012"/>Cette nach Holland seglend, nicht weit von
                <lb facs="#facs_9_tr_1705756014_tl_13" n="N013"/>Blankenberg gestrandet.</p>
          </div>
-         <div>
+         <div type="article" n="29" xml:id="a29">
             <head facs="#facs_9_tr_1705756012">
                <lb facs="#facs_9_tr_1705756012_tl_1" n="N001"/>Aus Niederland.
                <lb facs="#facs_9_tr_1705756012_tl_2" n="N002"/>Amsterdam 28. Jan.</head>
@@ -4682,7 +4696,7 @@
                <lb facs="#facs_9_tr_1705756025_tl_12" n="N012"/>dnn.
             </ab>
          </div>
-         <div>
+         <div type="article" n="30" xml:id="a30">
             <head facs="#facs_9_tr_1705756020">
                <lb facs="#facs_9_tr_1705756020_tl_1" n="N001"/>Aus Schweden.
                <lb facs="#facs_9_tr_1705756020_tl_2" n="N002"/>Soccenlen 22. Jgrn.</head>
@@ -4706,11 +4720,11 @@
                <lb facs="#facs_9_tr_1705756010_tl_6" n="N006"/>ständig, daß man sich seit vielen Jahren sei=
                <lb facs="#facs_9_tr_1705756010_tl_7" n="N007"/>nes gleichen nicht zu entsinnen weiß.</p>
          </div>
-         <div>
+         <div type="article" n="31" xml:id="a31">
             <head facs="#facs_9_tr_1705756022">
                <lb facs="#facs_9_tr_1705756022_tl_1" n="N001"/>Aus Dännemark.</head>
          </div>
-         <div>
+         <div type="article" n="32" xml:id="a32">
             <head facs="#facs_9_tr_1705756017">
                <lb facs="#facs_9_tr_1705756017_tl_1" n="N001"/>Coppenhagen 24. Jan.</head>
             <p facs="#facs_9_tr_1705756011">
@@ -4735,7 +4749,7 @@
                <lb facs="#facs_9_tr_1705756011_tl_19" n="N019"/>Kriegs=übungen bey unseren Truppen zu re=
                <lb facs="#facs_9_tr_1705756011_tl_20" n="N020"/>guliren.</p>
          </div>
-         <div>
+         <div type="article" n="33" xml:id="a33">
             <head facs="#facs_9_tr_1705756015">
                <lb facs="#facs_9_tr_1705756015_tl_1" n="N001"/>Aus Teutschland.
                <lb facs="#facs_9_tr_1705756015_tl_2" n="N002"/>Berlin 31. Jan.</head>
@@ -4774,7 +4788,7 @@
                <lb facs="#facs_10_tr_1705755977_tl_16" n="N016"/>frühe, hat sich der König nach Potzdamm
                <lb facs="#facs_10_tr_1705755977_tl_17" n="N017"/>zuruck erhoben.</p>
          </div>
-         <div>
+         <div type="article" n="34" xml:id="a34">
             <head facs="#facs_10_tr_1705755979">
                <lb facs="#facs_10_tr_1705755979_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_10_tr_1705755978">
@@ -4864,8 +4878,6 @@
                <lb facs="#facs_10_tr_1705755987_tl_1" n="N001"/>gung deutlich gezeiget wird, 8vo Leipzig 1755.
                <lb facs="#facs_10_tr_1705755987_tl_2" n="N002"/>17. kr.</p>
             <ab facs="#facs_10_tr_1705755991" type="figure">
-               <lb facs="#facs_10_tr_1705755991_tl_1" n="N001"/>
-               <lb facs="#facs_10_tr_1705755991_tl_2" n="N002"/>
             </ab>
          </div>
       </body>

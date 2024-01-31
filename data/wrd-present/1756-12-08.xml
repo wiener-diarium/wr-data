@@ -2,28 +2,15 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title level="s" type="main">Wiennerisches Diarium</title>
+            <title level="s" type="main">Wienerisches Diarium</title>
             <title level="s" type="sub">Digitale Edition</title>
-            <title level="a" type="main">Wiener Zeitung 1756-12-08</title>
-            <title level="a" type="sub">
-               Num. 98. Mittwochs=anhang 8. December 1756.
-            </title>
+            <title level="a" type="sub">Num. 98. [Language: en]Wednesday 8. December 1756</title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
-            <funder>
-               <name>FWF Der Wissenschaftsfond.</name>
-               <address>
-                  <street>Georg-Coch-Platz 2</street>
-                  <postCode>1010 Wien</postCode>
-                  <placeName>
-                     <country>Österreich</country>
-                     <settlement>Wien</settlement>
-                  </placeName>
-               </address>
-            </funder>
+            <funder>Austrian Academy of Sciences, go!digital 2.0</funder>
          </titleStmt>
          <editionStmt>
-            <edition>Wiennerisches Diarium: Digitale Edition</edition>
+            <edition>Wienerisches Diarium: Digitale Edition</edition>
             <respStmt>
                <resp>Herausgegeben von</resp>
                <name sameAs="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</name>
@@ -35,6 +22,38 @@
                <name xml:id="cfhaak" ref="https://orcid.org/0009-0006-7740-542X">Haak, Carl Friedrich</name>
             </respStmt>
          </editionStmt>
+         <publicationStmt>
+            <publisher>Austrian Centre for Digital Humanities, Austrian Academy of Sciences</publisher>
+            <pubPlace>Vienna, Austria</pubPlace>
+            <date when="2024">2024</date>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by/4.0">
+                  <p>Sie dürfen: Teilen — das Material in jedwedem Format oder Medium
+                        vervielfältigen und weiterverbreiten</p>
+                  <p>Bearbeiten — das Material remixen, verändern und darauf aufbauen und zwar für
+                        beliebige Zwecke, sogar kommerziell.</p>
+                  <p>Der Lizenzgeber kann diese Freiheiten nicht widerrufen solange Sie sich an die
+                        Lizenzbedingungen halten. Unter folgenden Bedingungen:</p>
+                  <p>Namensnennung — Sie müssen angemessene Urheber- und Rechteangaben machen, einen
+                        Link zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden. Diese
+                        Angaben dürfen in jeder angemessenen Art und Weise gemacht werden, allerdings
+                        nicht so, dass der Eindruck entsteht, der Lizenzgeber unterstütze gerade Sie
+                        oder Ihre Nutzung besonders.</p>
+                  <p>Keine weiteren Einschränkungen — Sie dürfen keine zusätzlichen Klauseln oder
+                        technische Verfahren einsetzen, die anderen rechtlich irgendetwas untersagen,
+                        was die Lizenz erlaubt.</p>
+                  <p>Hinweise:</p>
+                  <p>Sie müssen sich nicht an diese Lizenz halten hinsichtlich solcher Teile des
+                        Materials, die gemeinfrei sind, oder soweit Ihre Nutzungshandlungen durch
+                        Ausnahmen und Schranken des Urheberrechts gedeckt sind.</p>
+                  <p>Es werden keine Garantien gegeben und auch keine Gewähr geleistet. Die Lizenz
+                        verschafft Ihnen möglicherweise nicht alle Erlaubnisse, die Sie für die
+                        jeweilige Nutzung brauchen. Es können beispielsweise andere Rechte wie
+                        Persönlichkeits- undDatenschutzrechte zu beachten sein, die Ihre Nutzung des
+                        Materials entsprechend beschränken.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
          <seriesStmt>
             <p>Maschinenlesbares Transkript von Wienerisches Diarium.</p>
          </seriesStmt>
@@ -3630,31 +3649,24 @@
       </surface>
    </facsimile>
    <text>
-      <body>
-         <div>
+      <front>
+         <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
-            <ab facs="#facs_1_tr_1705756739" type="count-date">
-               <lb facs="#facs_1_tr_1705756739_tl_1" n="N001"/>1756.
-               <lb facs="#facs_1_tr_1705756739_tl_2" n="N002"/>Mittwoch den 8. December.
-               <lb facs="#facs_1_tr_1705756739_tl_3" n="N003"/>Num. 98.
-            </ab>
-            <ab facs="#facs_1_tr_1705756741" type="figure">
-               <lb facs="#facs_1_tr_1705756741_tl_1" n="N001"/>
-               <lb facs="#facs_1_tr_1705756741_tl_2" n="N002"/>
-            </ab>
-            <ab>
-               <lb facs="#facs_1_tr_1705756745_tl_1" n="N001"/>Wienerisches
+            <docTitle>
+               <titlePart facs="#facs_1_tr_1705756739" type="count-date">Num. 98. Mittwoch den 8. December.  1756.</titlePart>
+               <titlePart type="main-title">
+                  <lb facs="#facs_1_tr_1705756745_tl_1" n="N001"/>Wienerisches
                             <lb facs="#facs_1_tr_1705756745_tl_2" n="N002"/>DIARIUM
-                        </ab>
-            <ab facs="#facs_1_tr_1705756744" type="figure">
-               <lb facs="#facs_1_tr_1705756744_tl_1" n="N001"/>
-            </ab>
-            <ab facs="#facs_1_tr_1705756746" type="imprint">
-               <lb facs="#facs_1_tr_1705756746_tl_1" n="N001"/>Gedruckt in der Kaiserl. Königl. privilegirten Zeitungs=buch=
+                        </titlePart>
+               <titlePart facs="#facs_1_tr_1705756746" type="imprint">
+                  <lb facs="#facs_1_tr_1705756746_tl_1" n="N001"/>Gedruckt in der Kaiserl. Königl. privilegirten Zeitungs=buch=
                <lb facs="#facs_1_tr_1705756746_tl_2" n="N002"/>druckerey im neuen Michaeler=haus mit von Ghelischen Schriften.
-            </ab>
-         </div>
-         <div>
+            </titlePart>
+            </docTitle>
+         </titlePage>
+      </front>
+      <body>
+         <div type="article" n="1" xml:id="a1">
             <head facs="#facs_1_tr_1705756736">
                <lb facs="#facs_1_tr_1705756736_tl_1" n="N001"/>Londen 19. Nov.</head>
             <p facs="#facs_1_tr_1705756733">
@@ -3710,7 +3722,7 @@
                <lb facs="#facs_1_tr_1705756740_tl_14" n="N014"/>von diesen Trupen werden ihnen auch bald
                <lb facs="#facs_1_tr_1705756740_tl_15" n="N015"/>nachfolgen.</p>
          </div>
-         <div>
+         <div type="article" n="2" xml:id="a2">
             <head facs="#facs_1_tr_1705756734">
                <lb facs="#facs_1_tr_1705756734_tl_1" n="N001"/>Paris 18 November.</head>
             <p facs="#facs_1_tr_1705756737">
@@ -3724,7 +3736,7 @@
                <lb facs="#facs_1_tr_1705756737_tl_8" n="N008"/>ben, und auch nur 14. Tage, um das König=
                <lb facs="#facs_1_tr_1705756737_tl_9" n="N009"/>reich zu verlassen.</p>
          </div>
-         <div>
+         <div type="article" n="3" xml:id="a3">
             <head facs="#facs_1_tr_1705756735">
                <lb facs="#facs_1_tr_1705756735_tl_1" n="N001"/>Paris 20. Novemb.</head>
             <p facs="#facs_1_tr_1705756738">
@@ -3783,7 +3795,7 @@
                <lb facs="#facs_2_tr_1705756180_tl_39" n="N039"/>pagne in einem Alter von 58. Jahren ge=
                <lb facs="#facs_2_tr_1705756180_tl_40" n="N040"/>storben.</p>
          </div>
-         <div>
+         <div type="article" n="4" xml:id="a4">
             <head facs="#facs_2_tr_1705756182">
                <lb facs="#facs_2_tr_1705756182_tl_1" n="N001"/>Bologna 5. November.</head>
             <p facs="#facs_2_tr_1705756183">
@@ -3807,7 +3819,7 @@
                <lb facs="#facs_2_tr_1705756185_tl_8" n="N008"/>ment der Garde ist, im Mailändischen Staat
                <lb facs="#facs_2_tr_1705756185_tl_9" n="N009"/>angelanget seyn.</p>
          </div>
-         <div>
+         <div type="article" n="5" xml:id="a5">
             <head facs="#facs_2_tr_1705756184">
                <lb facs="#facs_2_tr_1705756184_tl_1" n="N001"/>Dublin 4. November.</head>
             <p facs="#facs_2_tr_1705756187">
@@ -3823,7 +3835,7 @@
                <lb facs="#facs_2_tr_1705756187_tl_10" n="N010"/>daß es kaum am hellesten Tage heller hätte
                <lb facs="#facs_2_tr_1705756187_tl_11" n="N011"/>seyn können.</p>
          </div>
-         <div>
+         <div type="article" n="6" xml:id="a6">
             <head facs="#facs_2_tr_1705756186">
                <lb facs="#facs_2_tr_1705756186_tl_1" n="N001"/>Mietau 10. Nov.</head>
             <p facs="#facs_2_tr_1705756181">
@@ -3860,7 +3872,7 @@
                <lb facs="#facs_3_tr_1705755452_tl_4" n="N004"/>wegen des Marsches der Armee etwas Zuver=
                <lb facs="#facs_3_tr_1705755452_tl_5" n="N005"/>läßiges hören wird.</p>
          </div>
-         <div>
+         <div type="article" n="7" xml:id="a7">
             <head facs="#facs_3_tr_1705755456">
                <lb facs="#facs_3_tr_1705755456_tl_1" n="N001"/>Regenspurg 10. Nov.</head>
             <p facs="#facs_3_tr_1705755454">
@@ -3870,7 +3882,7 @@
                <lb facs="#facs_3_tr_1705755454_tl_4" n="N004"/>denburgische Gesandte, Baron von Gemmin=
                <lb facs="#facs_3_tr_1705755454_tl_5" n="N005"/>gen hier angelanget.</p>
          </div>
-         <div>
+         <div type="article" n="8" xml:id="a8">
             <head facs="#facs_3_tr_1705755453">
                <lb facs="#facs_3_tr_1705755453_tl_1" n="N001"/>Memel 13. November.</head>
             <p facs="#facs_3_tr_1705755449">
@@ -3879,7 +3891,7 @@
                <lb facs="#facs_3_tr_1705755449_tl_3" n="N003"/>die ganze Armee sich zu versammlen, fort=
                <lb facs="#facs_3_tr_1705755449_tl_4" n="N004"/>fahre.</p>
          </div>
-         <div>
+         <div type="article" n="9" xml:id="a9">
             <head facs="#facs_3_tr_1705755455">
                <lb facs="#facs_3_tr_1705755455_tl_1" n="N001"/>Dresden 18. Novemb.</head>
             <p facs="#facs_3_tr_1705755451">
@@ -3969,7 +3981,7 @@
                <lb facs="#facs_4_tr_1705756918_tl_1" n="N001"/>Majestät die Königin, derselben einige Zim=
                <lb facs="#facs_4_tr_1705756918_tl_2" n="N002"/>mer eingeraumet.</p>
          </div>
-         <div>
+         <div type="article" n="10" xml:id="a10">
             <head facs="#facs_4_tr_1705756915">
                <lb facs="#facs_4_tr_1705756915_tl_1" n="N001"/>Leipzig 19. November.</head>
             <p facs="#facs_4_tr_1705756916">
@@ -3995,7 +4007,7 @@
                <lb facs="#facs_4_tr_1705756916_tl_20" n="N020"/>Acht geben und sich darnach in Zukunft rich=
                <lb facs="#facs_4_tr_1705756916_tl_21" n="N021"/>ten sollen.</p>
          </div>
-         <div>
+         <div type="article" n="11" xml:id="a11">
             <head facs="#facs_4_tr_1705756917">
                <lb facs="#facs_4_tr_1705756917_tl_1" n="N001"/>2. November.
                <lb facs="#facs_4_tr_1705756917_tl_2" n="N002"/>Prag 2.</head>
@@ -4012,7 +4024,7 @@
                <lb facs="#facs_4_tr_1705756922_tl_10" n="N010"/>um lauffende Gebürg im Winter genugsame
                <lb facs="#facs_4_tr_1705756922_tl_11" n="N011"/>Versicherung zu geben scheinet.</p>
          </div>
-         <div>
+         <div type="article" n="12" xml:id="a12">
             <head facs="#facs_4_tr_1705756919">
                <lb facs="#facs_4_tr_1705756919_tl_1" n="N001"/>Warschau 11. Novemb.</head>
             <p facs="#facs_4_tr_1705756920">
@@ -4053,7 +4065,7 @@
                <lb facs="#facs_4_tr_1705756931_tl_7" n="N007"/>Endigung es sich zeigen wird, wann der
                <lb facs="#facs_4_tr_1705756931_tl_8" n="N008"/>Reichs=tag ausgeschrieben werden soll.</p>
          </div>
-         <div>
+         <div type="article" n="13" xml:id="a13">
             <head facs="#facs_4_tr_1705756924">
                <lb facs="#facs_4_tr_1705756924_tl_1" n="N001"/>Wien den 8. December 1756.</head>
             <p facs="#facs_4_tr_1705756921">
@@ -4132,7 +4144,7 @@
                <lb facs="#facs_5_tr_1705756428_tl_1" n="N001"/>der Kaiserl. Kön. Haupt=stadt Prag ge=
                <lb facs="#facs_5_tr_1705756428_tl_2" n="N002"/>schehen.</p>
          </div>
-         <div>
+         <div type="article" n="14" xml:id="a14">
             <head facs="#facs_5_tr_1705756423">
                <lb facs="#facs_5_tr_1705756423_tl_1" n="N001"/>Lista deren Verstorbenen zu Wien
                <lb facs="#facs_5_tr_1705756423_tl_2" n="N002"/>in= und vor der Stadt.
@@ -4157,7 +4169,7 @@
                <lb facs="#facs_5_tr_1705756426_tl_10" n="N010"/>Franciscan., alt 45. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="15" xml:id="a15">
             <head facs="#facs_5_tr_1705756420">
                <lb facs="#facs_5_tr_1705756420_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_5_tr_1705756429" type="list">
@@ -4175,7 +4187,7 @@
                <lb facs="#facs_5_tr_1705756429_tl_12" n="N012"/>nen 3. Lil. zu Mätzleinstorf, alt 60. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="16" xml:id="a16">
             <head facs="#facs_5_tr_1705756422">
                <lb facs="#facs_5_tr_1705756422_tl_1" n="N001"/>Summa 12. Person., darunter 4. Kinder.
                <lb facs="#facs_5_tr_1705756422_tl_2" n="N002"/>Den 5. Decemb.
@@ -4192,7 +4204,7 @@
                <lb facs="#facs_5_tr_1705756425_tl_9" n="N009"/>im Palsis. H. in der Himmel=pfort=gas., alt 6. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="17" xml:id="a17">
             <head facs="#facs_5_tr_1705756421">
                <lb facs="#facs_5_tr_1705756421_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_5_tr_1705756427" type="list">
@@ -4226,7 +4238,7 @@
                <lb facs="#facs_6_tr_1705755769_tl_2" n="N002"/>alt 60. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="18" xml:id="a18">
             <head facs="#facs_6_tr_1705755757">
                <lb facs="#facs_6_tr_1705755757_tl_1" n="N001"/>Summa 13. Person., darunter 9. Kinder.
                <lb facs="#facs_6_tr_1705755757_tl_2" n="N002"/>Den 6. Decemb.
@@ -4238,7 +4250,7 @@
                <lb facs="#facs_6_tr_1705755763_tl_4" n="N004"/>dem gold. Pfauen in der Kärntntrstr., alt 10. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="19" xml:id="a19">
             <head facs="#facs_6_tr_1705755756">
                <lb facs="#facs_6_tr_1705755756_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705755767" type="list">
@@ -4257,7 +4269,7 @@
                <lb facs="#facs_6_tr_1705755767_tl_13" n="N013"/>Summa 8. Person., darunter 6. Kinder.
             </ab>
          </div>
-         <div>
+         <div type="article" n="20" xml:id="a20">
             <head facs="#facs_6_tr_1705755760">
                <lb facs="#facs_6_tr_1705755760_tl_1" n="N001"/>Den 7. Decemb.
                <lb facs="#facs_6_tr_1705755760_tl_2" n="N002"/>Jn der Stadt.</head>
@@ -4277,7 +4289,7 @@
                <lb facs="#facs_6_tr_1705755762_tl_13" n="N013"/>wirtis. H. auf der Fischer=stieg., alt 7. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="21" xml:id="a21">
             <head facs="#facs_6_tr_1705755759">
                <lb facs="#facs_6_tr_1705755759_tl_1" n="N001"/>Vor der Stadt.</head>
             <ab facs="#facs_6_tr_1705755764" type="list">
@@ -4299,11 +4311,11 @@
                <lb facs="#facs_6_tr_1705755764_tl_16" n="N016"/>im Liechtenth., alt 56. J.
             </ab>
          </div>
-         <div>
+         <div type="article" n="22" xml:id="a22">
             <head facs="#facs_6_tr_1705755768">
                <lb facs="#facs_6_tr_1705755768_tl_1" n="N001"/>Summa 14 Person., darunter 7. Kinder.</head>
          </div>
-         <div>
+         <div type="article" n="23" xml:id="a23">
             <head facs="#facs_6_tr_1705755761">
                <lb facs="#facs_6_tr_1705755761_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_6_tr_1705755758">
@@ -4358,7 +4370,7 @@
                <lb facs="#facs_6_tr_1705755766_tl_1" n="N001"/>Justiz=sachen Secretarius und Commissions=
                <lb facs="#facs_6_tr_1705755766_tl_2" n="N002"/>Actuarius.</p>
          </div>
-         <div>
+         <div type="article" n="24" xml:id="a24">
             <pb facs="#facs_7" n="7" xml:id="img_0007"/>
             <head facs="#facs_7_tr_1705756676">
                <lb facs="#facs_7_tr_1705756676_tl_1" n="N001"/>EDICT.</head>
@@ -4403,7 +4415,7 @@
                <lb facs="#facs_7_tr_1705756675_tl_38" n="N038"/>jus offerendi zu exerciren bevorstehen solle.
                <lb facs="#facs_7_tr_1705756675_tl_39" n="N039"/>Actum Wien, den 20. Nov. 1756.</p>
          </div>
-         <div>
+         <div type="article" n="25" xml:id="a25">
             <head facs="#facs_7_tr_1705756678">
                <lb facs="#facs_7_tr_1705756678_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_7_tr_1705756674">
@@ -4484,7 +4496,7 @@
                <lb facs="#facs_8_tr_1705755344_tl_11" n="N011"/>derlichen Documenten anmelden, und ihr
                <lb facs="#facs_8_tr_1705755344_tl_12" n="N012"/>Repartitions=quentum abholen sollen.</p>
          </div>
-         <div>
+         <div type="article" n="26" xml:id="a26">
             <head facs="#facs_8_tr_1705755341">
                <lb facs="#facs_8_tr_1705755341_tl_1" n="N001"/>EDICT.</head>
             <p facs="#facs_8_tr_1705755343">
@@ -4590,7 +4602,7 @@
                <lb facs="#facs_9_tr_1705755482_tl_2" n="N002"/>im neuen Michaeler=haus imit von Ghelischen Schriften.
             </ab>
          </div>
-         <div>
+         <div type="article" n="27" xml:id="a27">
             <head facs="#facs_9_tr_1705755476">
                <lb facs="#facs_9_tr_1705755476_tl_1" n="N001"/>Londen 18. Novemb.</head>
             <p facs="#facs_9_tr_1705755477">
