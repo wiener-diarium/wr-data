@@ -171,7 +171,25 @@
          </xsl:if>
     </xsl:template>
 
-    <xsl:template match="tei:lb[matches(./preceding::text()[1]/self::text(), '=$', 'm')]|tei:lb[1][matches(parent::tei:p/preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
+    <xsl:template match="tei:lb[matches(./preceding::text()[1]/self::text(), '=$', 'm')]">
+        <xsl:copy>
+            <xsl:attribute name="break">
+                <xsl:text>no</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="tei:lb[1][matches(parent::tei:p/preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
+        <xsl:copy>
+            <xsl:attribute name="break">
+                <xsl:text>no</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="tei:lb[1][matches(parent::tei:ab/preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
         <xsl:copy>
             <xsl:attribute name="break">
                 <xsl:text>no</xsl:text>
@@ -228,17 +246,46 @@
         <xsl:choose>
             <xsl:when test="matches(., '=$', 'm')">
                 <xsl:value-of select="replace(., '=', '')"/>
-                <!-- <xsl:for-each select="following::tei:lb[1]">
-                    <xsl:copy>
-                        <xsl:attribute name="break">
-                            <xsl:text>no</xsl:text>
-                        </xsl:attribute>
-                        <xsl:apply-templates select="node()|@*"/>
-                    </xsl:copy>
-                </xsl:for-each> -->
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template match="//text()[parent::tei:ab[ancestor::tei:body]]">
+        <xsl:choose>
+            <xsl:when test="matches(., '=$', 'm')">
+                <xsl:value-of select="replace(., '=', '')"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template match="tei:p">
+        <xsl:choose>
+            <xsl:when test=".[matches(preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
+                <xsl:copy>
+                    <xsl:attribute name="prev">
+                        <xsl:text>true</xsl:text>
+                    </xsl:attribute>
+                    <xsl:apply-templates select="node()|@*"/>
+                </xsl:copy>
+            </xsl:when>
+            <xsl:when test=".[matches(preceding-sibling::tei:ab[1]/text()[last()]/self::text(), '=$', 'm')]">
+                <xsl:copy>
+                    <xsl:attribute name="prev">
+                        <xsl:text>true</xsl:text>
+                    </xsl:attribute>
+                    <xsl:apply-templates select="node()|@*"/>
+                </xsl:copy>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy>
+                    <xsl:apply-templates select="node()|@*"/>
+                </xsl:copy>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
