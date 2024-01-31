@@ -125,9 +125,7 @@
                             <xsl:call-template name="main-title"/>
                         </titlePart>
                         <titlePart>
-                            <xsl:call-template name="imprint">
-                                <xsl:with-param name="context" select="$titlePage"/>
-                            </xsl:call-template>
+                            <xsl:call-template name="imprint"/>
                         </titlePart>
                     </docTitle>
                 </titlePage>
@@ -174,8 +172,7 @@
     </xsl:template> 
     
     <xsl:template name="imprint">
-        <xsl:param name="context"/>
-        <xsl:for-each select="$context/tei:ab[@type='imprint']">
+        <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
             <xsl:apply-templates select="node()|@*"/>
         </xsl:for-each>
     </xsl:template>
@@ -183,7 +180,9 @@
     <xsl:template name="num">
         <xsl:param name="context"/>
         <xsl:for-each select="$context/tei:ab[@type='count-date-normalized']">
-            <xsl:attribute name="facs" select=""/>
+            <xsl:attribute name="facs">
+                <xsl:value-of select="$context/tei:ab[@type='count-date'][1]/@facs"/>
+            </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
             <!-- <xsl:attribute name="facs" select="@facs"/>
             <xsl:attribute name="type" select="@type"/>
@@ -195,7 +194,7 @@
     </xsl:template>
 
     <xsl:template name="main-title">
-        <xsl:for-each select="//tei:ab[@type='main-title']">
+        <xsl:for-each select="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]">
             <xsl:variable name="text" select="string-join(./text(), ' ')"/>
             <xsl:choose>
                 <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
