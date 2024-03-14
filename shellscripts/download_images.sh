@@ -3,7 +3,7 @@
 #transkribus valid login
 #export .secret variables
 
-colId=209792
+colId=209213
 
 SRC=`dirname "$0"`/../../../TranskribusPyClient/src
 

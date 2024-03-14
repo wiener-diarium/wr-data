@@ -35,10 +35,47 @@
     <xsl:template match="tei:teiHeader">
         <teiHeader>
             <xsl:apply-templates select="node()|@*"/>
+            <encodingDesc>
+                <projectDesc>
+                    <p xml:id="p1">Dreißigjähriger Krieg – Wienerisches Diarium digital. https://digitarium.acdh.oeaw.ac.at</p>
+                    <p xml:id="p2">Created using Transkribus – model ID ???</p>
+                </projectDesc>
+                <tagsDecl>
+                    <rendition xml:id="f">Full width text, aligned left</rendition>
+                    <rendition xml:id="fc">Full width text, centered</rendition>
+                    <rendition xml:id="fh">Full width text, with hanging indent</rendition>
+                    <rendition xml:id="fr">Full width text, aligned right</rendition>
+                    <rendition xml:id="l">Text aligned left in a full width region</rendition>
+                    <rendition xml:id="r">Text aligned right in a full width region</rendition>
+                    <rendition xml:id="ll">Text aligned left (or justified) in a left column</rendition>
+                    <rendition xml:id="lc">Text centered in a left column</rendition>
+                    <rendition xml:id="lr">Text aligned right in a left column</rendition>
+                    <rendition xml:id="lh">Text aligned left (or justified) in a left column with the first line hanging</rendition>
+                    <rendition xml:id="rl">Text aligned left (or justified) in a right column</rendition>
+                    <rendition xml:id="rc">Text centered in a right column</rendition>
+                    <rendition xml:id="rr">Text aligned right in a right column</rendition>
+                    <rendition xml:id="rh">Text aligned left (or justified) in a right column with the first line hanging</rendition>
+                    <rendition xml:id="c">Text within the middle of a three column region, aligned left</rendition>
+                    <rendition xml:id="cl">Text within the middle of a three column region, aligned left</rendition>
+                    <rendition xml:id="cc">Text centered in a middle or centered column</rendition>
+                    <rendition xml:id="cr">Text aligned right in a middle or centered column</rendition>
+                    <rendition xml:id="ch">Text aligned left (or justified) in a middle or centered column with the first line hanging</rendition>
+                </tagsDecl>
+                <listPrefixDef>
+                    <prefixDef ident="anno" matchPattern=".*(\d{3})(\d)(\d{2})(\d{2})-(\d+)\..*" replacementPattern="https://diarium-images.acdh-dev.oeaw.ac.at/$10/$1$2/$3/$1$2$3$4/$1$2$3$4-$5">
+                        <p xml:id="p3">Ggf. nachbearbeitete ANNO-Bilder auf Diarium-IIIF</p>
+                    </prefixDef>
+                </listPrefixDef>
+            </encodingDesc>
             <profileDesc>
                 <langUsage>
                     <language ident="de">Deutsch</language>
                 </langUsage>
+                <textClass>
+                    <keywords scheme="https://d-nb.info/gnd/">
+                        <term ref="https://d-nb.info/gnd/4067510-5/about/lds.rdf">Zeitung</term>
+                    </keywords>
+                </textClass>
             </profileDesc>
             <revisionDesc status="draft">
                 <change who="delsner" when="2024-01-22">Transformierung der Daten des Transkribus TEI-Export mit "editions.xsl".</change>
@@ -60,10 +97,10 @@
             <title level="a" type="main"><xsl:value-of select="//tei:titleStmt/tei:title[@level='a']"/></title>
             <editor xml:id="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</editor>
             <editor xml:id="cresch" ref="https://d-nb.info/gnd/132312794">Resch, Claudia</editor>
-            <funder>Austrian Academy of Sciences, go!digital 2.0</funder>
+            <funder>Austrian Centre for Digital Humanities, Austrian Academy of Sciences</funder>
         </xsl:copy>
         <editionStmt>
-            <edition>Wienerisches Diarium: Digitale Edition</edition>
+            <edition>Dreißigjähriger Krieg: Digitale Edition</edition>
             <respStmt>
                 <resp>Herausgegeben von</resp>
                 <name sameAs="nrastinger" ref="https://orcid.org/0000-0002-3235-5063">Rastinger, Nina</name>
@@ -108,10 +145,50 @@
             </availability>
         </publicationStmt>
     </xsl:template>
-    
+
+    <xsl:template match="tei:sourceDesc">
+        <xsl:variable name="date" select="substring-after(./tei:bibl/tei:note, 'Wiener Zeitung ')"/>
+        <xsl:copy>
+            <biblStruct>
+                <monogr>
+                    <idno>
+                        <xsl:attribute name="type">
+                            <xsl:text>Transkribus</xsl:text>
+                        </xsl:attribute>
+                        <xsl:value-of select="./tei:bibl/tei:idno[@type='Transkribus']"/>
+                    </idno>
+                    <idno>
+                        <xsl:attribute name="type">
+                            <xsl:text>ONB</xsl:text>
+                        </xsl:attribute>
+                        <xsl:value-of select="./tei:bibl/tei:idno[@type='external']"/>
+                    </idno>
+                    <title>                     
+                        <xsl:text>Wiener Zeitung</xsl:text> - <date type="published" when="{$date}"><xsl:value-of select="$date"/></date>
+                    </title>
+                    <imprint>
+                        <publisher>Johann Peter van Ghelen</publisher>
+                    </imprint>
+                </monogr>
+                <series>
+                    <title>Wienerisches Diarium – <date when="{tokenize($date, '-')[1]}">Jahrgang <xsl:value-of select="tokenize($date, '-')[1]"/></date></title>
+                </series>
+                <series>
+                    <title>Wiener Zeitung</title>
+                </series>
+            </biblStruct>
+        </xsl:copy>
+    </xsl:template>
+
     <xsl:template match="tei:text">
         <xsl:variable name="titlePage" select="./tei:body/tei:div[1]"/>
         <xsl:copy>
+            <xsl:attribute name="cert">
+                <xsl:value-of select="number(sum(//tei:word_conf/@conf)) div number(count(//tei:word_conf[@conf]))"/>
+            </xsl:attribute>
+            <xsl:attribute name="resp">
+                <xsl:text>#m42</xsl:text>
+            </xsl:attribute>
             <front>
                 <titlePage>
                     <xsl:copy-of select="$titlePage/tei:pb"/>
@@ -124,10 +201,11 @@
                         <titlePart type="main-title">
                             <xsl:call-template name="main-title"/>
                         </titlePart>
-                        <titlePart>
-                            <xsl:call-template name="imprint"/>
-                        </titlePart>
                     </docTitle>
+                    <milestone type="separator" rend="horizontal" unit="section" rendition="#f"/>
+                    <imprimatur>
+                        <xsl:call-template name="imprint"/>
+                    </imprimatur>
                 </titlePage>
             </front>
             <xsl:apply-templates select="node()|@*"/>
@@ -136,7 +214,7 @@
     
     <xsl:template match="tei:div[1][parent::tei:body]"/>
      
-    <xsl:template match="tei:div[position() > 1][parent::tei:body]">
+    <xsl:template match="tei:div[position() gt 1][parent::tei:body]">
         <xsl:copy>
             <xsl:attribute name="type" select="'article'"/>
             <xsl:attribute name="n" select="(position() div 2) - 1"/>
@@ -163,15 +241,13 @@
         </xsl:copy>
     </xsl:template> -->
     
-     <xsl:template match="tei:lb">
-         <xsl:if test="./following-sibling::node()[1]/self::text()[normalize-space()]">
-             <xsl:copy>
-                 <xsl:apply-templates select="node()|@*"/>
-             </xsl:copy>
-         </xsl:if>
+     <xsl:template match="tei:lb[following-sibling::node()[1]/self::tei:line_conf[normalize-space()]]">
+        <xsl:copy>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="tei:lb[matches(./preceding::text()[1]/self::text(), '=$', 'm')]">
+    <!-- <xsl:template match="tei:lb[matches(./preceding::tei:line_conf[1]/self::text(), '=$', 'm')]">
         <xsl:copy>
             <xsl:attribute name="break">
                 <xsl:text>no</xsl:text>
@@ -196,11 +272,20 @@
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
-    </xsl:template>
+    </xsl:template> -->
     
     <xsl:template name="imprint">
         <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
-            <xsl:apply-templates select="node()|@*"/>
+            <xsl:attribute name="facs">
+                <xsl:value-of select="@facs"/>
+            </xsl:attribute>
+            <xsl:attribute name="rendition">
+                <xsl:text>#f</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="xml:id">
+                <xsl:text>tit1</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
         </xsl:for-each>
     </xsl:template>
     
@@ -210,7 +295,16 @@
             <xsl:attribute name="facs">
                 <xsl:value-of select="$context/tei:ab[@type='count-date'][1]/@facs"/>
             </xsl:attribute>
-            <xsl:apply-templates select="node()|@*"/>
+            <xsl:attribute name="type">
+                <xsl:text>num</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="rendition">
+                <xsl:text>#rr</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="xml:id">
+                <xsl:text>imp1</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
             <!-- <xsl:attribute name="facs" select="@facs"/>
             <xsl:attribute name="type" select="@type"/>
             <xsl:variable name="num" select="if(contains(.[1]/text()[last()], 'Num')) then(.[1]/text()[last()]) else(.[1]/text()[1])"/>
@@ -222,7 +316,10 @@
 
     <xsl:template name="main-title">
         <xsl:for-each select="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]">
-            <xsl:variable name="text" select="string-join(./text(), ' ')"/>
+            <xsl:variable name="text" select="string-join(.//text(), ' ')"/>
+            <xsl:attribute name="rendition">
+                <xsl:text>#f</xsl:text>
+            </xsl:attribute>
             <xsl:choose>
                 <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
                     <xsl:apply-templates select="node()|@*"/>
@@ -242,7 +339,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="//text()[parent::tei:p[ancestor::tei:body]]">
+    <xsl:template match="text()[parent::tei:p[ancestor::tei:body]]">
         <xsl:choose>
             <xsl:when test="matches(., '=$', 'm')">
                 <xsl:value-of select="replace(., '=', '')"/>
@@ -253,7 +350,7 @@
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template match="//text()[parent::tei:ab[ancestor::tei:body]]">
+    <xsl:template match="text()[parent::tei:ab[ancestor::tei:body]]">
         <xsl:choose>
             <xsl:when test="matches(., '=$', 'm')">
                 <xsl:value-of select="replace(., '=', '')"/>
@@ -262,32 +359,82 @@
                 <xsl:value-of select="."/>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+
+    <xsl:template match="tei:head">
+        <xsl:variable name="facs" select="substring-after(@facs, '#')"/>
+        <xsl:variable name="zone" select="//id(data($facs))"/>
+        <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
+        <xsl:variable name="x" select="number($points)"/>
+        <xsl:copy>
+            <xsl:choose>
+                <xsl:when test="$x gt 750">
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#rc</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#lc</xsl:text>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
     </xsl:template>
 
     <xsl:template match="tei:p">
-        <xsl:choose>
-            <xsl:when test=".[matches(preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
-                <xsl:copy>
+        <xsl:variable name="facs" select="substring-after(@facs, '#')"/>
+        <xsl:variable name="zone" select="//id(data($facs))"/>
+        <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
+        <xsl:variable name="x" select="number($points)"/>
+        <xsl:copy>
+            <xsl:choose>
+                <xsl:when test="$x gt 750">
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#rc</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#lc</xsl:text>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+                <xsl:when test=".[matches(preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
                     <xsl:attribute name="prev">
                         <xsl:text>true</xsl:text>
                     </xsl:attribute>
-                    <xsl:apply-templates select="node()|@*"/>
-                </xsl:copy>
-            </xsl:when>
-            <xsl:when test=".[matches(preceding-sibling::tei:ab[1]/text()[last()]/self::text(), '=$', 'm')]">
-                <xsl:copy>
+                </xsl:when>
+                <xsl:when test=".[matches(preceding-sibling::tei:ab[1]/text()[last()]/self::text(), '=$', 'm')]">
                     <xsl:attribute name="prev">
                         <xsl:text>true</xsl:text>
                     </xsl:attribute>
-                    <xsl:apply-templates select="node()|@*"/>
-                </xsl:copy>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:copy>
-                    <xsl:apply-templates select="node()|@*"/>
-                </xsl:copy>
-            </xsl:otherwise>
-        </xsl:choose>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="tei:ab[@type='list']">
+        <list facs="{@facs}">
+            <xsl:apply-templates select="node()|@*"/>
+        </list>
+    </xsl:template>
+
+    <xsl:template match="tei:line_conf[parent::tei:ab[@type='list']]">
+        <item cert="{@conf}" resp="#m42">
+            <xsl:apply-templates/>
+        </item>
+    </xsl:template>
+
+    <xsl:template match="tei:line_conf[parent::tei:p or parent::tei:head or parent::tei:ab[@type='catch-word' or @type='count-date' or @type='imprint' or @type='count-date' or @type='figure' or @type='main-title']]">
+        <xsl:apply-templates/>
+    </xsl:template>
+
+    <xsl:template match="tei:word_conf">
+        <w cert="{@conf}" resp="#m42"><xsl:apply-templates/></w>
     </xsl:template>
     
 </xsl:stylesheet>

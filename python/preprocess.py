@@ -7,8 +7,8 @@ from acdh_tei_pyutils.tei import TeiReader
 from tqdm import tqdm
 
 
-files = glob.glob("./data/pre-process/*.xml")
-out_dir = "./data/pre-process2"
+files = glob.glob("./data/pre-process/1*.xml")
+out_dir = "./data/pre-process"
 os.makedirs(out_dir, exist_ok=True)
 
 day_names_german = {
@@ -48,6 +48,8 @@ for x in tqdm(files, total=len(files)):
     doc_date_str = datetime.datetime(
         int(date_str[0]), int(date_str[1]), int(date_str[2])
     )
+    if doc_date_str < datetime.datetime(1756, 1, 1):
+        continue
     formated_date = doc_date_str.strftime("%A den %d. %B %Y")
     for english_day, german_day in day_names_german.items():
         formated_date = formated_date.replace(english_day, german_day)
@@ -59,16 +61,19 @@ for x in tqdm(files, total=len(files)):
     ab_str = ""
     if isinstance(ab, list) and len(ab) >= 1:
         try:
-            ab_str = " ".join(ab[1].xpath("./text()")).replace("\n", "").strip()
+            ab_str = " ".join(ab[1].xpath(".//text()")).replace("\n", "").strip()
         except IndexError:
-            ab_str = " ".join(ab[0].xpath("./text()")).replace("\n", "").strip()
+            ab_str = " ".join(ab[0].xpath(".//text()")).replace("\n", "").strip()
         re_num = re.search("Num\\.?\s+\d+\\.?", ab_str)
         try:
             num = re_num.group()
         except AttributeError:
-            num_dig = re.search("^[0-9]+\\.?", ab_str).group()
-            num_str = re.search("Num\\.?", ab_str).group()
-            num = f"{num_str} {num_dig}"
+            try:
+                num_dig = re.search("^[0-9]+\\.?", ab_str).group()
+                num_str = re.search("Num\\.?", ab_str).group()
+                num = f"{num_str} {num_dig}"
+            except AttributeError:
+                continue
     title = ET.Element("title")
     title.attrib["level"] = "a"
     title.attrib["type"] = "main"
@@ -81,6 +86,3 @@ for x in tqdm(files, total=len(files)):
     div1 = doc.any_xpath("//tei:body/tei:div")[0]
     div1.append(ab)
     doc.tree_to_file(f"{out_dir}/{file_name}")
-
-files = glob.glob("./data/wrd-legacy/*.xml")
-out_dir = "./data/wrd-legacy"
