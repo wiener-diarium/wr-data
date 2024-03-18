@@ -202,10 +202,10 @@
                             <xsl:call-template name="main-title"/>
                         </titlePart>
                     </docTitle>
-                    <milestone type="separator" rend="horizontal" unit="section" rendition="#f"/>
                     <imprimatur>
                         <xsl:call-template name="imprint"/>
                     </imprimatur>
+                    <milestone type="separator" rend="horizontal" unit="section" rendition="#f"/>
                 </titlePage>
             </front>
             <xsl:apply-templates select="node()|@*"/>
@@ -241,38 +241,30 @@
         </xsl:copy>
     </xsl:template> -->
     
-     <xsl:template match="tei:lb[following-sibling::node()[1]/self::tei:line_conf[normalize-space()]]">
+     <xsl:template match="tei:lb">
         <xsl:copy>
-            <xsl:apply-templates select="node()|@*"/>
+            <xsl:choose>
+                <xsl:when test="matches(string-join(./preceding::tei:*[1]//text(), ' '), '=$', 'm')">
+                    <xsl:attribute name="break">
+                        <xsl:text>no</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:when test="position() = 1 and matches(string-join(parent::tei:p/preceding::tei:*[1]/tei:line_conf[last()]//text(), ' '), '=$', 'm')">
+                    <xsl:attribute name="break">
+                        <xsl:text>no</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:when test="position() = 1 and matches(string-join(parent::tei:ab/preceding::tei:*[1]/tei:line_conf[last()]//text(), ' '), '=$', 'm')">
+                    <xsl:attribute name="break">
+                        <xsl:text>no</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+            </xsl:choose>
+            <xsl:if test="following-sibling::node()[1]/self::tei:line_conf[normalize-space()]">
+                <xsl:apply-templates select="node()|@*"/>
+            </xsl:if>
         </xsl:copy>
     </xsl:template>
-
-    <!-- <xsl:template match="tei:lb[matches(./preceding::tei:line_conf[1]/self::text(), '=$', 'm')]">
-        <xsl:copy>
-            <xsl:attribute name="break">
-                <xsl:text>no</xsl:text>
-            </xsl:attribute>
-            <xsl:apply-templates select="node()|@*"/>
-        </xsl:copy>
-    </xsl:template>
-
-    <xsl:template match="tei:lb[1][matches(parent::tei:p/preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
-        <xsl:copy>
-            <xsl:attribute name="break">
-                <xsl:text>no</xsl:text>
-            </xsl:attribute>
-            <xsl:apply-templates select="node()|@*"/>
-        </xsl:copy>
-    </xsl:template>
-
-    <xsl:template match="tei:lb[1][matches(parent::tei:ab/preceding-sibling::tei:p[1]/text()[last()]/self::text(), '=$', 'm')]">
-        <xsl:copy>
-            <xsl:attribute name="break">
-                <xsl:text>no</xsl:text>
-            </xsl:attribute>
-            <xsl:apply-templates select="node()|@*"/>
-        </xsl:copy>
-    </xsl:template> -->
     
     <xsl:template name="imprint">
         <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
@@ -288,6 +280,24 @@
             <xsl:apply-templates/>
         </xsl:for-each>
     </xsl:template>
+
+    <xsl:template match="tei:ab[@type='imprint' and not(contains(@facs, 'facs_1_'))]">
+        <xsl:copy>
+            <xsl:attribute name="rendition">
+                <xsl:text>#f</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+    </xsl:template>
+
+    <xsl:template match="tei:ab[@type='count-date' and not(contains(@facs, 'facs_1_'))]">
+        <xsl:copy>
+            <xsl:attribute name="rendition">
+                <xsl:text>#f</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
+    </xsl:template>
     
     <xsl:template name="num">
         <xsl:param name="context"/>
@@ -299,18 +309,12 @@
                 <xsl:text>num</xsl:text>
             </xsl:attribute>
             <xsl:attribute name="rendition">
-                <xsl:text>#rr</xsl:text>
+                <xsl:text>#f</xsl:text>
             </xsl:attribute>
             <xsl:attribute name="xml:id">
                 <xsl:text>imp1</xsl:text>
             </xsl:attribute>
             <xsl:apply-templates/>
-            <!-- <xsl:attribute name="facs" select="@facs"/>
-            <xsl:attribute name="type" select="@type"/>
-            <xsl:variable name="num" select="if(contains(.[1]/text()[last()], 'Num')) then(.[1]/text()[last()]) else(.[1]/text()[1])"/>
-            <xsl:variable name="date" select="if(count(.[1]/text()) = 5) then(concat(.[1]/text()[4], .[1]/text()[3])) else(.[1]/text()[3])"/>
-            <xsl:variable name="year" select="if(contains(.[1]/text()[2], '17')) then(.[1]/text()[2]) else(.[1]/text()[last()])"/>
-            <xsl:value-of select="concat(replace($num, '\n\s+', ''), ' ', replace($date, '\n\s+', ' '), ' ', replace($year, '\n\s+', ''))"/> -->
         </xsl:for-each>
     </xsl:template>
 
@@ -339,18 +343,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="text()[parent::tei:p[ancestor::tei:body]]">
-        <xsl:choose>
-            <xsl:when test="matches(., '=$', 'm')">
-                <xsl:value-of select="replace(., '=', '')"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="."/>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template match="text()[parent::tei:ab[ancestor::tei:body]]">
+    <xsl:template match="text()[parent::tei:word_conf[ancestor::tei:body]]">
         <xsl:choose>
             <xsl:when test="matches(., '=$', 'm')">
                 <xsl:value-of select="replace(., '=', '')"/>
@@ -389,6 +382,20 @@
         <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
         <xsl:variable name="x" select="number($points)"/>
         <xsl:copy>
+            <xsl:if test="contains(preceding-sibling::tei:p[1]/tei:line_conf[last()]/tei:word_conf[last()]/text(), '.')">
+                <xsl:attribute name="prev">
+                    <xsl:text>true</xsl:text>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="contains(preceding-sibling::tei:*[1]/tei:line_conf[last()]/tei:word_conf[last()]/text(), '.')">
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="prev">
+                        <xsl:text>true</xsl:text>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:choose>
                 <xsl:when test="$x gt 750">
                     <xsl:attribute name="rendition">
@@ -418,7 +425,23 @@
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='list']">
+        <xsl:variable name="facs" select="substring-after(@facs, '#')"/>
+        <xsl:variable name="zone" select="//id(data($facs))"/>
+        <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
+        <xsl:variable name="x" select="number($points)"/>
         <list facs="{@facs}">
+            <xsl:choose>
+                <xsl:when test="$x gt 750">
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#rc</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#lc</xsl:text>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates select="node()|@*"/>
         </list>
     </xsl:template>
@@ -435,6 +458,12 @@
 
     <xsl:template match="tei:word_conf">
         <w cert="{@conf}" resp="#m42"><xsl:apply-templates/></w>
+    </xsl:template>
+
+    <xsl:template match="tei:ab[@type='catch-word']">
+        <fw xml:id="fw{position()}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
+            <xsl:apply-templates/>
+        </fw>
     </xsl:template>
     
 </xsl:stylesheet>
