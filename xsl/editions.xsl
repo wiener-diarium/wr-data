@@ -460,7 +460,7 @@
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='catch-word']">
-        <fw xml:id="fw{tokenize(@facs, '_')[2]}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
+        <fw xml:id="fw{tokenize(@facs, '_')[2]}_{position()}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
             <xsl:apply-templates/>
         </fw>
     </xsl:template>
