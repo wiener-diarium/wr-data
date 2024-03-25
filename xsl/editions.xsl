@@ -176,7 +176,7 @@
                         <xsl:text>Wiener Zeitung</xsl:text> - <date type="published" when="{$date}"><xsl:value-of select="$date"/></date>
                     </title>
                     <imprint>
-                        <publisher>Johann Peter van Ghelen</publisher>
+                        <publisher>Ghelen'sche Erben</publisher>
                     </imprint>
                 </monogr>
                 <series>
@@ -202,19 +202,19 @@
                 <titlePage>
                     <xsl:copy-of select="$titlePage/tei:pb"/>
                     <docTitle>
-                        <titlePart xml:id="concat('t', local:makeId(.))">
+                        <titlePart xml:id="{concat('t', local:makeId(.))}">
                             <xsl:call-template name="num">
                                 <xsl:with-param name="context" select="$titlePage"/>
                             </xsl:call-template>
                         </titlePart>
-                        <titlePart type="main-title" xml:id="concat('t', local:makeId(.))">
+                        <titlePart type="main-title" xml:id="{concat('t', local:makeId(.))}">
                             <xsl:call-template name="main-title"/>
                         </titlePart>
                     </docTitle>
-                    <imprimatur xml:id="concat('imp', local:makeId(.))">
+                    <imprimatur xml:id="{concat('imp', local:makeId(.))}">
                         <xsl:call-template name="imprint"/>
                     </imprimatur>
-                    <milestone xml:id="concat('ms', local:makeId(.))" type="separator" rend="horizontal" unit="section" rendition="#f"/>
+                    <milestone xml:id="{concat('ms', local:makeId(.))}" type="separator" rend="horizontal" unit="section" rendition="#f"/>
                 </titlePage>
             </front>
             <xsl:apply-templates select="node()|@*"/>
