@@ -203,7 +203,7 @@
                             <xsl:call-template name="main-title"/>
                         </titlePart>
                     </docTitle>
-                    <imprimatur xml:id="{concat('imp', position(), '_', generate-id())}">
+                    <imprimatur xml:id="imp{position()}_{generate-id()}">
                         <xsl:call-template name="imprint"/>
                     </imprimatur>
                 </titlePage>
@@ -309,7 +309,7 @@
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='figure' and not(contains(@facs, 'facs_1_'))]">
-        <milestone xml:id="concat('ms', position(),  '_', generate-id())" type="separator" rend="horizontal" unit="section" rendition="#f"/>
+        <milestone xml:id="ms{position()}_{generate-id()}" type="separator" rend="horizontal" unit="section" rendition="#f"/>
     </xsl:template>
     
     <xsl:template name="num">
