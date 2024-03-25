@@ -65,7 +65,7 @@
                   <title>Wiener Zeitung - <date type="published" when="1759-03-17">1759-03-17</date>
                   </title>
                   <imprint>
-                     <publisher>Johann Peter van Ghelen</publisher>
+                     <publisher>Ghelen'sche Erben</publisher>
                   </imprint>
                </monogr>
                <series>
@@ -4225,12 +4225,9 @@
          <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
             <docTitle>
-               <titlePart xml:id="concat('t', local:makeId(.))"
-                          facs=""
-                          type="num"
-                          rendition="#f">Num. 22. Samstags=anhang 17. Marti 1759.</titlePart>
+               <titlePart xml:id="t__9047" facs="" type="num" rendition="#f">Num. 22. Samstags=anhang 17. Marti 1759.</titlePart>
                <titlePart type="main-title"
-                          xml:id="concat('t', local:makeId(.))"
+                          xml:id="t__9047"
                           rendition="#f"
                           facs="#facs_1_tr_1706686384">
                   <lb xml:id="lb__1"/>
@@ -4239,9 +4236,7 @@
                   <w xml:id="w__3" cert="0.99" resp="#m42">DIARIUM</w>
                </titlePart>
             </docTitle>
-            <imprimatur xml:id="concat('imp', local:makeId(.))"
-                        facs="#facs_1_tr_1706686388"
-                        rendition="#f">
+            <imprimatur xml:id="imp__9047" facs="#facs_1_tr_1706686388" rendition="#f">
                <lb xml:id="lb__1"/>
                <w xml:id="w__3" cert="1.00" resp="#m42">
                   <line_conf conf="0.97"/>Gedruckt</w>
@@ -4264,7 +4259,7 @@
                <w xml:id="w__18" cert="0.95" resp="#m42">Ghelischen</w>
                <w xml:id="w__19" cert="1.00" resp="#m42">Schriften.</w>
             </imprimatur>
-            <milestone xml:id="concat('ms', local:makeId(.))"
+            <milestone xml:id="ms__9047"
                        type="separator"
                        rend="horizontal"
                        unit="section"

@@ -65,7 +65,7 @@
                   <title>Wiener Zeitung - <date type="published" when="1763-09-03">1763-09-03</date>
                   </title>
                   <imprint>
-                     <publisher>Johann Peter van Ghelen</publisher>
+                     <publisher>Ghelen'sche Erben</publisher>
                   </imprint>
                </monogr>
                <series>
@@ -2104,14 +2104,11 @@
          <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
             <docTitle>
-               <titlePart xml:id="concat('t', local:makeId(.))"
-                          facs=""
-                          type="num"
-                          rendition="#f"/>
-               <titlePart type="main-title" xml:id="concat('t', local:makeId(.))"/>
+               <titlePart xml:id="t__3082" facs="" type="num" rendition="#f"/>
+               <titlePart type="main-title" xml:id="t__3082"/>
             </docTitle>
-            <imprimatur xml:id="concat('imp', local:makeId(.))"/>
-            <milestone xml:id="concat('ms', local:makeId(.))"
+            <imprimatur xml:id="imp__3082"/>
+            <milestone xml:id="ms__3082"
                        type="separator"
                        rend="horizontal"
                        unit="section"

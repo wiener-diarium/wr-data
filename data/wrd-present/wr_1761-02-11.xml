@@ -65,7 +65,7 @@
                   <title>Wiener Zeitung - <date type="published" when="1761-02-11">1761-02-11</date>
                   </title>
                   <imprint>
-                     <publisher>Johann Peter van Ghelen</publisher>
+                     <publisher>Ghelen'sche Erben</publisher>
                   </imprint>
                </monogr>
                <series>
@@ -3589,17 +3589,12 @@
          <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
             <docTitle>
-               <titlePart xml:id="concat('t', local:makeId(.))"
-                          facs=""
-                          type="num"
-                          rendition="#f">Num. 12 Mittwoch den 11. Februarii 1761.</titlePart>
-               <titlePart type="main-title"
-                          xml:id="concat('t', local:makeId(.))"
-                          rendition="#f">
+               <titlePart xml:id="t__6642" facs="" type="num" rendition="#f">Num. 12 Mittwoch den 11. Februarii 1761.</titlePart>
+               <titlePart type="main-title" xml:id="t__6642" rendition="#f">
                   <lb facs="#facs_1_region_1698950488798_690_tl_1" n="N001"/>Wienerisches DIARIUM
                         </titlePart>
             </docTitle>
-            <imprimatur xml:id="concat('imp', local:makeId(.))"
+            <imprimatur xml:id="imp__6642"
                         facs="#facs_1_region_1698950493581_693"
                         rendition="#f">
                <lb xml:id="lb__1"/>
@@ -3624,7 +3619,7 @@
                <w xml:id="w__18" cert="0.96" resp="#m42">Ghelischen</w>
                <w xml:id="w__19" cert="0.95" resp="#m42">Schriften</w>
             </imprimatur>
-            <milestone xml:id="concat('ms', local:makeId(.))"
+            <milestone xml:id="ms__6642"
                        type="separator"
                        rend="horizontal"
                        unit="section"
