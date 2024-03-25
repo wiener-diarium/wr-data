@@ -4385,7 +4385,7 @@
                <w cert="1.00" resp="#m42">Raht</w>
                <w cert="0.98" resp="#m42">aufgenommen,</w>
             </p>
-            <fw xml:id="fw6"
+            <fw xml:id="fw1"
                 facs="#facs_1_tr_1706612419"
                 rend="#f"
                 type="catch"
@@ -4511,7 +4511,7 @@
                <w cert="1.00" resp="#m42">Staats=rahts</w>
                <w cert="0.99" resp="#m42">veranlasset.</w>
             </p>
-            <p prev="true" rendition="#lc" facs="#facs_2_tr_1706580133">
+            <p rendition="#lc" facs="#facs_2_tr_1706580133">
                <lb facs="#facs_2_tr_1706580133_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Man</w>
                <w cert="0.98" resp="#m42">fährt</w>
@@ -5021,7 +5021,7 @@
                <w cert="1.00" resp="#m42">und</w>
                <w cert="1.00" resp="#m42">der</w>
             </p>
-            <fw xml:id="fw6"
+            <fw xml:id="fw2"
                 facs="#facs_2_tr_1706580135"
                 rend="#f"
                 type="catch"
@@ -5651,7 +5651,7 @@
                <w cert="0.99" resp="#m42">Cheval</w>
                <w cert="1.00" resp="#m42">kom</w>
             </p>
-            <fw xml:id="fw6"
+            <fw xml:id="fw3"
                 facs="#facs_3_tr_1706567014"
                 rend="#f"
                 type="catch"
@@ -6266,7 +6266,7 @@
                <w cert="1.00" resp="#m42">Frauen=kloster=kirche</w>
                <w cert="1.00" resp="#m42">zum</w>
             </p>
-            <fw xml:id="fw6"
+            <fw xml:id="fw4"
                 facs="#facs_4_tr_1706592638"
                 rend="#f"
                 type="catch"
@@ -6289,7 +6289,7 @@
                <w cert="1.00" resp="#m42">zweyten</w>
                <w cert="1.00" resp="#m42">Primitz.</w>
             </p>
-            <p prev="true" rendition="#lc" facs="#facs_5_tr_1706610652">
+            <p rendition="#lc" facs="#facs_5_tr_1706610652">
                <lb facs="#facs_5_tr_1706610652_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Montags</w>
                <w cert="1.00" resp="#m42">den</w>
@@ -6455,7 +6455,7 @@
                <w cert="1.00" resp="#m42">zu</w>
                <w cert="1.00" resp="#m42">begehen.</w>
             </p>
-            <p prev="true" rendition="#lc" facs="#facs_5_tr_1706610655">
+            <p rendition="#lc" facs="#facs_5_tr_1706610655">
                <lb facs="#facs_5_tr_1706610655_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Eben</w>
                <w cert="1.00" resp="#m42">am</w>
@@ -6524,7 +6524,7 @@
                <lb facs="#facs_5_tr_1706610655_tl_10" n="N010"/>
                <w cert="1.00" resp="#m42">werden.</w>
             </p>
-            <p prev="true" rendition="#lc" facs="#facs_5_tr_1706610651">
+            <p rendition="#lc" facs="#facs_5_tr_1706610651">
                <lb facs="#facs_5_tr_1706610651_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Den</w>
                <w cert="0.93" resp="#m42">5.</w>
@@ -6636,7 +6636,7 @@
                <w cert="0.97" resp="#m42">abgeführet</w>
                <w cert="0.98" resp="#m42">worden.</w>
             </p>
-            <p prev="true" rendition="#rc" facs="#facs_5_tr_1706610662">
+            <p rendition="#rc" facs="#facs_5_tr_1706610662">
                <lb facs="#facs_5_tr_1706610662_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Den</w>
                <w cert="1.00" resp="#m42">19ten</w>
@@ -7532,17 +7532,19 @@
                <w cert="0.99" resp="#m42">4.</w>
                <w cert="0.98" resp="#m42">Kind.</w>
             </head>
-            <ab facs="#facs_6_tr_1706590177" type="seperator-single">
+            <list facs="#facs_6_tr_1706590177"
+                  rendition="#lc"
+                  type="seperator-single">
                <lb facs="#facs_6_tr_1706590177_tl_1" n="N001"/>
-               <line_conf conf="0.97">
+               <item cert="0.97" resp="#m42">
                   <w cert="1.00" resp="#m42">Von</w>
                   <w cert="1.00" resp="#m42">einem</w>
                   <w cert="1.00" resp="#m42">Löbl.</w>
                   <w cert="0.86" resp="#m42">N.</w>
                   <w cert="0.98" resp="#m42">Oe.</w>
                   <w cert="0.97" resp="#m42">Landschaftsober</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#lc" facs="#facs_6_tr_1706590170">
                <lb break="no" facs="#facs_6_tr_1706590170_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Von</w>
@@ -7693,9 +7695,11 @@
                <w cert="1.00" resp="#m42">abgereichet</w>
                <w cert="1.00" resp="#m42">wurde.</w>
             </p>
-            <ab facs="#facs_6_tr_1706590182" type="seperator-single">
+            <list facs="#facs_6_tr_1706590182"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_6_tr_1706590182_tl_1" n="N001"/>
-               <line_conf conf="0.75">
+               <item cert="0.75" resp="#m42">
                   <w cert="0.70" resp="#m42">Auf</w>
                   <w cert="0.79" resp="#m42">ben</w>
                   <w cert="0.59" resp="#m42">8.</w>
@@ -7706,8 +7710,8 @@
                   <w cert="0.92" resp="#m42">Uhr</w>
                   <w cert="0.94" resp="#m42">werden</w>
                   <w cert="0.31" resp="#m42">es</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_6_tr_1706590169">
                <lb break="no" facs="#facs_6_tr_1706590169_tl_1" n="N001"/>
                <w cert="0.70" resp="#m42">Auf</w>
@@ -7780,9 +7784,11 @@
                <lb break="no" facs="#facs_6_tr_1706590169_tl_9" n="N009"/>
                <w cert="0.98" resp="#m42">geladen.</w>
             </p>
-            <ab facs="#facs_6_tr_1706590181" type="seperator-single">
+            <list facs="#facs_6_tr_1706590181"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_6_tr_1706590181_tl_1" n="N001"/>
-               <line_conf conf="0.99">
+               <item cert="0.99" resp="#m42">
                   <w cert="1.00" resp="#m42">Den</w>
                   <w cert="1.00" resp="#m42">17.</w>
                   <w cert="1.00" resp="#m42">Januarii</w>
@@ -7790,8 +7796,8 @@
                   <w cert="1.00" resp="#m42">folgende</w>
                   <w cert="1.00" resp="#m42">Täge</w>
                   <w cert="1.00" resp="#m42">werden</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_6_tr_1706590176">
                <lb facs="#facs_6_tr_1706590176_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Den</w>
@@ -7862,9 +7868,11 @@
                <w cert="1.00" resp="#m42">verkauffet</w>
                <w cert="0.99" resp="#m42">werden.</w>
             </p>
-            <ab facs="#facs_6_tr_1706590183" type="seperator-single">
+            <list facs="#facs_6_tr_1706590183"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_6_tr_1706590183_tl_1" n="N001"/>
-               <line_conf conf="0.87">
+               <item cert="0.87" resp="#m42">
                   <w cert="1.00" resp="#m42">Den</w>
                   <w cert="0.69" resp="#m42">17rten</w>
                   <w cert="1.00" resp="#m42">und</w>
@@ -7872,8 +7880,8 @@
                   <w cert="0.81" resp="#m42">Täge</w>
                   <w cert="1.00" resp="#m42">dies</w>
                   <w cert="0.86" resp="#m42">Monats</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_6_tr_1706590174">
                <lb break="no" facs="#facs_6_tr_1706590174_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Den</w>
@@ -7951,9 +7959,11 @@
                <w cert="0.97" resp="#m42">verkäufet</w>
                <w cert="1.00" resp="#m42">werden.</w>
             </p>
-            <ab facs="#facs_6_tr_1706590175" type="seperator-single">
+            <list facs="#facs_6_tr_1706590175"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_6_tr_1706590175_tl_1" n="N001"/>
-               <line_conf conf="0.98">
+               <item cert="0.98" resp="#m42">
                   <w cert="1.00" resp="#m42">Von</w>
                   <w cert="1.00" resp="#m42">N.</w>
                   <w cert="1.00" resp="#m42">Richter</w>
@@ -7961,9 +7971,9 @@
                   <w cert="1.00" resp="#m42">Raht</w>
                   <w cert="1.00" resp="#m42">der</w>
                   <w cert="0.98" resp="#m42">Landes=fürstl.</w>
-               </line_conf>
-            </ab>
-            <p prev="true" rendition="#rc" facs="#facs_6_tr_1706590173">
+               </item>
+            </list>
+            <p rendition="#rc" facs="#facs_6_tr_1706590173">
                <lb facs="#facs_6_tr_1706590173_tl_1" n="N001"/>
                <w cert="0.58" resp="#m42">War</w>
                <w cert="0.60" resp="#m42">N</w>
@@ -8099,9 +8109,11 @@
                <w cert="1.00" resp="#m42">anzumelden</w>
                <w cert="0.98" resp="#m42">ist</w>
             </p>
-            <ab facs="#facs_6_tr_1706590178" type="seperator-single">
+            <list facs="#facs_6_tr_1706590178"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_6_tr_1706590178_tl_1" n="N001"/>
-               <line_conf conf="0.97">
+               <item cert="0.97" resp="#m42">
                   <w cert="1.00" resp="#m42">Von</w>
                   <w cert="1.00" resp="#m42">dem</w>
                   <w cert="0.96" resp="#m42">Kais.</w>
@@ -8109,8 +8121,8 @@
                   <w cert="0.97" resp="#m42">Stadt</w>
                   <w cert="1.00" resp="#m42">und</w>
                   <w cert="0.97" resp="#m42">Landgericht:</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_6_tr_1706590172">
                <lb facs="#facs_6_tr_1706590172_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Von</w>
@@ -8323,15 +8335,17 @@
                <w cert="1.00" resp="#m42">malen</w>
                <w cert="0.96" resp="#m42">anerinnert.</w>
             </p>
-            <ab facs="#facs_7_tr_1706586627" type="seperator-single">
+            <list facs="#facs_7_tr_1706586627"
+                  rendition="#lc"
+                  type="seperator-single">
                <lb facs="#facs_7_tr_1706586627_tl_1" n="N001"/>
-               <line_conf conf="0.99">
+               <item cert="0.99" resp="#m42">
                   <w cert="1.00" resp="#m42">Wir</w>
                   <w cert="1.00" resp="#m42">Burgermeister=amts=verwalter</w>
                   <w cert="1.00" resp="#m42">und</w>
                   <w cert="1.00" resp="#m42">Raht</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#lc" facs="#facs_7_tr_1706586625">
                <lb facs="#facs_7_tr_1706586625_tl_1" n="N001"/>
                <w cert="0.80" resp="#m42">Wän</w>
@@ -8618,7 +8632,7 @@
                <w cert="0.99" resp="#m42">Dec.</w>
                <w cert="1.00" resp="#m42">1762.</w>
             </p>
-            <p prev="true" rendition="#rc" facs="#facs_7_tr_1706586623">
+            <p rendition="#rc" facs="#facs_7_tr_1706586623">
                <lb facs="#facs_7_tr_1706586623_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Von</w>
                <w cert="1.00" resp="#m42">des</w>
@@ -9019,9 +9033,11 @@
                <lb break="no" facs="#facs_7_tr_1706586623_tl_54" n="N054"/>
                <w cert="0.93" resp="#m42">ten:</w>
             </p>
-            <ab facs="#facs_7_tr_1706586628" type="seperator-single">
+            <list facs="#facs_7_tr_1706586628"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_7_tr_1706586628_tl_1" n="N001"/>
-               <line_conf conf="0.97">
+               <item cert="0.97" resp="#m42">
                   <w cert="1.00" resp="#m42">Von</w>
                   <w cert="1.00" resp="#m42">des</w>
                   <w cert="0.90" resp="#m42">durch</w>
@@ -9031,8 +9047,8 @@
                   <w cert="0.87" resp="#m42">Oe.</w>
                   <w cert="1.00" resp="#m42">drey</w>
                   <w cert="1.00" resp="#m42">obern</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <pb facs="#facs_8" n="8" xml:id="img_0008"/>
             <p prev="true" rendition="#lc" facs="#facs_8_tr_1706590774">
                <lb facs="#facs_8_tr_1706590774_tl_1" n="N001"/>
@@ -9093,7 +9109,7 @@
                <w cert="0.94" resp="#m42">werden</w>
                <w cert="0.95" resp="#m42">solle.</w>
             </p>
-            <p prev="true" rendition="#lc" facs="#facs_8_tr_1706590771">
+            <p rendition="#lc" facs="#facs_8_tr_1706590771">
                <lb facs="#facs_8_tr_1706590771_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Von</w>
                <w cert="1.00" resp="#m42">der</w>
@@ -9795,16 +9811,18 @@
                <w cert="1.00" resp="#m42">sen</w>
                <w cert="1.00" resp="#m42">wird.</w>
             </p>
-            <ab facs="#facs_8_tr_1706590777" type="seperator-single">
+            <list facs="#facs_8_tr_1706590777"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_8_tr_1706590777_tl_1" n="N001"/>
-               <line_conf conf="0.94">
+               <item cert="0.94" resp="#m42">
                   <w cert="0.90" resp="#m42">Von</w>
                   <w cert="0.94" resp="#m42">N.</w>
                   <w cert="0.97" resp="#m42">Burger=weister,</w>
                   <w cert="0.90" resp="#m42">Stadt=Lichter</w>
                   <w cert="1.00" resp="#m42">und</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_8_tr_1706590773">
                <lb facs="#facs_8_tr_1706590773_tl_1" n="N001"/>
                <w cert="0.90" resp="#m42">Von</w>
@@ -9924,7 +9942,7 @@
                <w cert="1.00" resp="#m42">melden</w>
                <w cert="1.00" resp="#m42">haben.</w>
             </p>
-            <fw xml:id="fw56"
+            <fw xml:id="fw8"
                 facs="#facs_8_tr_1706590776"
                 rend="#f"
                 type="catch"
@@ -9964,26 +9982,28 @@
                <lb facs="#facs_9_tr_1706573691_tl_3" n="N003"/>
                <w cert="0.99" resp="#m42">Schriften.</w>
             </ab>
-            <ab facs="#facs_9_tr_1706573692" type="seperator-single">
+            <list facs="#facs_9_tr_1706573692"
+                  rendition="#lc"
+                  type="seperator-single">
                <lb facs="#facs_9_tr_1706573692_tl_1" n="N001"/>
-               <line_conf conf="0.38">
+               <item cert="0.38" resp="#m42">
                   <w cert="0.34" resp="#m42">Me</w>
                   <w cert="0.19" resp="#m42">aden</w>
                   <w cert="0.15" resp="#m42">Fin</w>
                   <w cert="0.17" resp="#m42">u.</w>
                   <w cert="0.39" resp="#m42">elen.</w>
-               </line_conf>
+               </item>
                <lb facs="#facs_9_tr_1706573692_tl_2" n="N002"/>
-               <line_conf conf="0.97">
+               <item cert="0.97" resp="#m42">
                   <w cert="0.99" resp="#m42">Aus</w>
                   <w cert="1.00" resp="#m42">Thüringen</w>
                   <w cert="0.97" resp="#m42">vom</w>
                   <w cert="0.98" resp="#m42">29.</w>
                   <w cert="0.96" resp="#m42">Dec.</w>
                   <w cert="0.93" resp="#m42">1762.</w>
-               </line_conf>
-            </ab>
-            <p prev="true" rendition="#lc" facs="#facs_9_tr_1706573685">
+               </item>
+            </list>
+            <p rendition="#lc" facs="#facs_9_tr_1706573685">
                <lb facs="#facs_9_tr_1706573685_tl_1" n="N001"/>
                <w cert="0.95" resp="#m42">Heßische</w>
                <w cert="1.00" resp="#m42">Briefe</w>
@@ -10319,16 +10339,18 @@
                <w cert="0.83" resp="#m42">astmiret</w>
                <w cert="0.90" resp="#m42">wird.</w>
             </p>
-            <ab facs="#facs_9_tr_1706573686" type="seperator-single">
+            <list facs="#facs_9_tr_1706573686"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_9_tr_1706573686_tl_1" n="N001"/>
-               <line_conf conf="0.95">
+               <item cert="0.95" resp="#m42">
                   <w cert="0.86" resp="#m42">Wir</w>
                   <w cert="0.92" resp="#m42">Burgerineister=amts</w>
                   <w cert="0.97" resp="#m42">verwalter</w>
                   <w cert="1.00" resp="#m42">und</w>
                   <w cert="1.00" resp="#m42">Raht</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_9_tr_1706573684">
                <lb facs="#facs_9_tr_1706573684_tl_1" n="N001"/>
                <w cert="0.86" resp="#m42">Wir</w>
@@ -10550,16 +10572,18 @@
                <w cert="1.00" resp="#m42">1762.</w>
             </p>
             <pb facs="#facs_10" n="10" xml:id="img_0010"/>
-            <ab facs="#facs_10_tr_1706577021" type="seperator-single">
+            <list facs="#facs_10_tr_1706577021"
+                  rendition="#lc"
+                  type="seperator-single">
                <lb facs="#facs_10_tr_1706577021_tl_1" n="N001"/>
-               <line_conf conf="0.60">
+               <item cert="0.60" resp="#m42">
                   <w cert="0.45" resp="#m42">uldoesbel</w>
                   <w cert="0.94" resp="#m42">.</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
          </div>
          <div type="article" n="23" xml:id="a23">
-            <head rendition="#lc" facs="#facs_10_tr_1706577009">
+            <head rendition="#rc" facs="#facs_10_tr_1706577009">
                <lb facs="#facs_10_tr_1706577009_tl_1" n="N001"/>
                <w cert="0.45" resp="#m42">uldoesbel</w>
                <w cert="0.94" resp="#m42">.</w>
@@ -10926,9 +10950,11 @@
                <w cert="1.00" resp="#m42">und</w>
                <w cert="0.95" resp="#m42">Meinung.</w>
             </p>
-            <ab facs="#facs_10_tr_1706577017" type="seperator-single">
+            <list facs="#facs_10_tr_1706577017"
+                  rendition="#lc"
+                  type="seperator-single">
                <lb facs="#facs_10_tr_1706577017_tl_1" n="N001"/>
-               <line_conf conf="0.97">
+               <item cert="0.97" resp="#m42">
                   <w cert="1.00" resp="#m42">Von</w>
                   <w cert="1.00" resp="#m42">dem</w>
                   <w cert="0.98" resp="#m42">Kaiserl.</w>
@@ -10936,8 +10962,8 @@
                   <w cert="1.00" resp="#m42">Grund</w>
                   <w cert="0.95" resp="#m42">buchs</w>
                   <w cert="0.85" resp="#m42">Ju-</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#lc" facs="#facs_10_tr_1706577008">
                <lb facs="#facs_10_tr_1706577008_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Von</w>
@@ -11130,16 +11156,18 @@
                <w cert="1.00" resp="#m42">werden</w>
                <w cert="1.00" resp="#m42">solle.</w>
             </p>
-            <ab facs="#facs_10_tr_1706577018" type="seperator-single">
+            <list facs="#facs_10_tr_1706577018"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_10_tr_1706577018_tl_1" n="N001"/>
-               <line_conf conf="0.98">
+               <item cert="0.98" resp="#m42">
                   <w cert="1.00" resp="#m42">Von</w>
                   <w cert="1.00" resp="#m42">dem</w>
                   <w cert="0.96" resp="#m42">Hochgeäfl.</w>
                   <w cert="0.96" resp="#m42">Bathyanischen</w>
                   <w cert="1.00" resp="#m42">Judicio</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_10_tr_1706577015">
                <lb facs="#facs_10_tr_1706577015_tl_1" n="N001"/>
                <w cert="1.00" resp="#m42">Von</w>
@@ -11316,9 +11344,11 @@
                <w cert="1.00" resp="#m42">Decemb.</w>
                <w cert="1.00" resp="#m42">1762.</w>
             </p>
-            <ab facs="#facs_10_tr_1706577016" type="seperator-single">
+            <list facs="#facs_10_tr_1706577016"
+                  rendition="#rc"
+                  type="seperator-single">
                <lb facs="#facs_10_tr_1706577016_tl_1" n="N001"/>
-               <line_conf conf="0.86">
+               <item cert="0.86" resp="#m42">
                   <w cert="0.83" resp="#m42">Von</w>
                   <w cert="0.91" resp="#m42">N.</w>
                   <w cert="0.96" resp="#m42">Fichter</w>
@@ -11327,8 +11357,8 @@
                   <w cert="0.95" resp="#m42">der</w>
                   <w cert="0.85" resp="#m42">Siadt</w>
                   <w cert="0.78" resp="#m42">Want</w>
-               </line_conf>
-            </ab>
+               </item>
+            </list>
             <p prev="true" rendition="#rc" facs="#facs_10_tr_1706577011">
                <lb break="no" facs="#facs_10_tr_1706577011_tl_1" n="N001"/>
                <w cert="0.83" resp="#m42">Von</w>
@@ -12196,7 +12226,7 @@
                   <w cert="0.84" resp="#m42">kr.</w>
                </item>
             </list>
-            <fw xml:id="fw12"
+            <fw xml:id="fw11"
                 facs="#facs_11_tr_1706597932"
                 rend="#f"
                 type="catch"
@@ -12982,7 +13012,7 @@
          </div>
          <div type="article" n="25" xml:id="a25">
             <pb facs="#facs_13" n="13" xml:id="img_0013"/>
-            <head rendition="#lc" facs="#facs_13_tr_1706600306">
+            <head rendition="#rc" facs="#facs_13_tr_1706600306">
                <lb facs="#facs_13_tr_1706600306_tl_1" n="N001"/>
                <w cert="0.95" resp="#m42">AVERTISSEMENT.</w>
             </head>
