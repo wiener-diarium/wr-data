@@ -65,7 +65,7 @@
                   <title>Wiener Zeitung - <date type="published" when="1761-03-07">1761-03-07</date>
                   </title>
                   <imprint>
-                     <publisher>Johann Peter van Ghelen</publisher>
+                     <publisher>Ghelen'sche Erben</publisher>
                   </imprint>
                </monogr>
                <series>
@@ -3530,19 +3530,15 @@
          <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
             <docTitle>
-               <titlePart xml:id="concat('t', local:makeId(.))"
+               <titlePart xml:id="t__6461"
                           facs="#facs_1_tr_1706669909"
                           type="num"
                           rendition="#f">Num. 19. Samstags=anhang 7. Martii. 1761.</titlePart>
-               <titlePart type="main-title"
-                          xml:id="concat('t', local:makeId(.))"
-                          rendition="#f">
+               <titlePart type="main-title" xml:id="t__6461" rendition="#f">
                   <lb facs="#facs_1_tr_1706669911_tl_1" n="N001"/>Wienerisches DIARIUM
                         </titlePart>
             </docTitle>
-            <imprimatur xml:id="concat('imp', local:makeId(.))"
-                        facs="#facs_1_tr_1706669912"
-                        rendition="#f">
+            <imprimatur xml:id="imp__6461" facs="#facs_1_tr_1706669912" rendition="#f">
                <lb xml:id="lb__1" facs="#facs_1_tr_1706669912_tl_1" n="N001"/>
                <w xml:id="w__1" cert="0.97" resp="#m42">Gedruckt</w>
                <w xml:id="w__2" cert="1.00" resp="#m42">in</w>
@@ -3566,7 +3562,7 @@
                <w xml:id="w__7" cert="0.99" resp="#m42">Ghelischen</w>
                <w xml:id="w__8" cert="1.00" resp="#m42">Schriften</w>
             </imprimatur>
-            <milestone xml:id="concat('ms', local:makeId(.))"
+            <milestone xml:id="ms__6461"
                        type="separator"
                        rend="horizontal"
                        unit="section"

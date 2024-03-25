@@ -65,7 +65,7 @@
                   <title>Wiener Zeitung - <date type="published" when="1756-07-31">1756-07-31</date>
                   </title>
                   <imprint>
-                     <publisher>Johann Peter van Ghelen</publisher>
+                     <publisher>Ghelen'sche Erben</publisher>
                   </imprint>
                </monogr>
                <series>
@@ -3785,20 +3785,16 @@
          <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
             <docTitle>
-               <titlePart xml:id="concat('t', local:makeId(.))"
+               <titlePart xml:id="t__6861"
                           facs="#facs_1_tr_1705756527"
                           type="num"
                           rendition="#f">56. Num. 61. Samstags=anhang 31. Julii. 17</titlePart>
-               <titlePart type="main-title"
-                          xml:id="concat('t', local:makeId(.))"
-                          rendition="#f">
+               <titlePart type="main-title" xml:id="t__6861" rendition="#f">
                   <lb facs="#facs_1_tr_1705756529_tl_1" n="N001"/>Wienerisches
                             <lb facs="#facs_1_tr_1705756529_tl_2" n="N002"/>DIARIUM
                         </titlePart>
             </docTitle>
-            <imprimatur xml:id="concat('imp', local:makeId(.))"
-                        facs="#facs_1_tr_1705756528"
-                        rendition="#f">
+            <imprimatur xml:id="imp__6861" facs="#facs_1_tr_1705756528" rendition="#f">
                <lb xml:id="lb__1" facs="#facs_1_tr_1705756528_tl_1" n="N001"/>
                <w xml:id="w__1" cert="0.97" resp="#m42">Gedruckt</w>
                <w xml:id="w__2" cert="1.00" resp="#m42">in</w>
@@ -3817,7 +3813,7 @@
                <w xml:id="w__7" cert="0.95" resp="#m42">Ghelischen</w>
                <w xml:id="w__8" cert="0.99" resp="#m42">Schriften.</w>
             </imprimatur>
-            <milestone xml:id="concat('ms', local:makeId(.))"
+            <milestone xml:id="ms__6861"
                        type="separator"
                        rend="horizontal"
                        unit="section"

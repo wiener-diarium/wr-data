@@ -65,7 +65,7 @@
                   <title>Wiener Zeitung - <date type="published" when="1761-06-17">1761-06-17</date>
                   </title>
                   <imprint>
-                     <publisher>Johann Peter van Ghelen</publisher>
+                     <publisher>Ghelen'sche Erben</publisher>
                   </imprint>
                </monogr>
                <series>
@@ -4649,12 +4649,12 @@
          <titlePage>
             <pb facs="#facs_1" n="1" xml:id="img_0001"/>
             <docTitle>
-               <titlePart xml:id="concat('t', local:makeId(.))"
+               <titlePart xml:id="t__8650"
                           facs="#facs_1_tr_1706673503"
                           type="num"
                           rendition="#f">Junii 1761. Num. 48. Mittwochs=anhang 17.</titlePart>
                <titlePart type="main-title"
-                          xml:id="concat('t', local:makeId(.))"
+                          xml:id="t__8650"
                           rendition="#f"
                           facs="#facs_1_tr_1706673502">
                   <lb xml:id="lb__1" facs="#facs_1_tr_1706673502_tl_1" n="N001"/>
@@ -4663,9 +4663,7 @@
                   <w xml:id="w__1" cert="0.96" resp="#m42">DIARIUM.</w>
                </titlePart>
             </docTitle>
-            <imprimatur xml:id="concat('imp', local:makeId(.))"
-                        facs="#facs_1_tr_1706673505"
-                        rendition="#f">
+            <imprimatur xml:id="imp__8650" facs="#facs_1_tr_1706673505" rendition="#f">
                <lb xml:id="lb__1" facs="#facs_1_tr_1706673505_tl_1" n="N001"/>
                <w xml:id="w__1" cert="1.00" resp="#m42">Gedruckt</w>
                <w xml:id="w__2" cert="1.00" resp="#m42">in</w>
@@ -4689,7 +4687,7 @@
                <w xml:id="w__7" cert="0.97" resp="#m42">Ghelischen</w>
                <w xml:id="w__8" cert="1.00" resp="#m42">Schriften</w>
             </imprimatur>
-            <milestone xml:id="concat('ms', local:makeId(.))"
+            <milestone xml:id="ms__8650"
                        type="separator"
                        rend="horizontal"
                        unit="section"
