@@ -298,6 +298,10 @@
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
     </xsl:template>
+
+    <xsl:template match="tei:ab[@type='figure' and not(contains(@facs, 'facs_1_'))]">
+        <milestone type="separator" rend="horizontal" unit="section" rendition="#f"/>
+    </xsl:template>
     
     <xsl:template name="num">
         <xsl:param name="context"/>
@@ -361,7 +365,7 @@
         <xsl:variable name="x" select="number($points)"/>
         <xsl:copy>
             <xsl:choose>
-                <xsl:when test="$x gt 750">
+                <xsl:when test="$x gt 650">
                     <xsl:attribute name="rendition">
                         <xsl:text>#rc</xsl:text>
                     </xsl:attribute>
@@ -382,11 +386,6 @@
         <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
         <xsl:variable name="x" select="number($points)"/>
         <xsl:copy>
-            <xsl:if test="contains(preceding-sibling::tei:p[1]/tei:line_conf[last()]/tei:word_conf[last()]/text(), '.')">
-                <xsl:attribute name="prev">
-                    <xsl:text>true</xsl:text>
-                </xsl:attribute>
-            </xsl:if>
             <xsl:choose>
                 <xsl:when test="contains(preceding-sibling::tei:*[1]/tei:line_conf[last()]/tei:word_conf[last()]/text(), '.')">
                 </xsl:when>
@@ -397,7 +396,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:choose>
-                <xsl:when test="$x gt 750">
+                <xsl:when test="$x gt 650">
                     <xsl:attribute name="rendition">
                         <xsl:text>#rc</xsl:text>
                     </xsl:attribute>
@@ -431,7 +430,7 @@
         <xsl:variable name="x" select="number($points)"/>
         <list facs="{@facs}">
             <xsl:choose>
-                <xsl:when test="$x gt 750">
+                <xsl:when test="$x gt 650">
                     <xsl:attribute name="rendition">
                         <xsl:text>#rc</xsl:text>
                     </xsl:attribute>
@@ -446,7 +445,7 @@
         </list>
     </xsl:template>
 
-    <xsl:template match="tei:line_conf[parent::tei:ab[@type='list']]">
+    <xsl:template match="tei:line_conf[parent::tei:ab[@type='list' or @type='seperator-single']]">
         <item cert="{@conf}" resp="#m42">
             <xsl:apply-templates/>
         </item>
@@ -461,9 +460,31 @@
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='catch-word']">
-        <fw xml:id="fw{position()}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
+        <fw xml:id="fw{tokenize(@facs, '_')[2]}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
             <xsl:apply-templates/>
         </fw>
+    </xsl:template>
+
+    <xsl:template match="tei:ab[@type='seperator-single']">
+        <xsl:variable name="facs" select="substring-after(@facs, '#')"/>
+        <xsl:variable name="zone" select="//id(data($facs))"/>
+        <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
+        <xsl:variable name="x" select="number($points)"/>
+        <list facs="{@facs}">
+            <xsl:choose>
+                <xsl:when test="$x gt 650">
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#rc</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#lc</xsl:text>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates select="node()|@*"/>
+        </list>
     </xsl:template>
     
 </xsl:stylesheet>
