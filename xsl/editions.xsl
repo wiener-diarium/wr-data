@@ -19,14 +19,6 @@
             </xsl:copy>
         </xsl:result-document>
     </xsl:template> -->
-
-    <xsl:function name="local:makeId" as="xs:string">
-        <xsl:param name="currentNode" as="node()"/>
-        <xsl:variable name="nodeCurrNr">
-            <xsl:value-of select="count($currentNode//preceding-sibling::*) + 1"/>
-        </xsl:variable>
-        <xsl:value-of select="concat('__', $nodeCurrNr)"/>
-    </xsl:function>
     
     <xsl:template match="node()|@*">
         <xsl:copy>
@@ -202,19 +194,18 @@
                 <titlePage>
                     <xsl:copy-of select="$titlePage/tei:pb"/>
                     <docTitle>
-                        <titlePart xml:id="{concat('t', local:makeId(.))}">
+                        <titlePart>
                             <xsl:call-template name="num">
                                 <xsl:with-param name="context" select="$titlePage"/>
                             </xsl:call-template>
                         </titlePart>
-                        <titlePart type="main-title" xml:id="{concat('t', local:makeId(.))}">
+                        <titlePart type="main-title">
                             <xsl:call-template name="main-title"/>
                         </titlePart>
                     </docTitle>
-                    <imprimatur xml:id="{concat('imp', local:makeId(.))}">
+                    <imprimatur xml:id="{concat('imp', position(), '_', generate-id())}">
                         <xsl:call-template name="imprint"/>
                     </imprimatur>
-                    <milestone xml:id="{concat('ms', local:makeId(.))}" type="separator" rend="horizontal" unit="section" rendition="#f"/>
                 </titlePage>
             </front>
             <xsl:apply-templates select="node()|@*"/>
@@ -229,7 +220,7 @@
             <xsl:attribute name="n" select="(position() div 2) - 1"/>
             <xsl:attribute name="xml:id" select="concat('a', (position() div 2) - 1)"/>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('a', (position() div 2) - 1, '_', local:makeId(.))"/>
+                <xsl:value-of select="concat('a', (position() div 2) - 1, '_', generate-id())"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/> 
         </xsl:copy>
@@ -273,7 +264,7 @@
                 </xsl:when>
             </xsl:choose>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('lb', local:makeId(.))"/>
+                <xsl:value-of select="concat('lb', position(),  '_', generate-id())"/>
             </xsl:attribute>
             <xsl:if test="following-sibling::node()[1]/self::tei:line_conf[normalize-space()]">
                 <xsl:apply-templates select="node()|@*"/>
@@ -299,7 +290,7 @@
                 <xsl:text>#f</xsl:text>
             </xsl:attribute>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('ab_i', local:makeId(.))"/>
+                <xsl:value-of select="concat('ab_i', position(),  '_', generate-id())"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
@@ -311,14 +302,14 @@
                 <xsl:text>#f</xsl:text>
             </xsl:attribute>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('ab_cd', local:makeId(.))"/>
+                <xsl:value-of select="concat('ab_cd', position(),  '_', generate-id())"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='figure' and not(contains(@facs, 'facs_1_'))]">
-        <milestone xml:id="concat('ms', local:makeId(.))" type="separator" rend="horizontal" unit="section" rendition="#f"/>
+        <milestone xml:id="concat('ms', position(),  '_', generate-id())" type="separator" rend="horizontal" unit="section" rendition="#f"/>
     </xsl:template>
     
     <xsl:template name="num">
@@ -392,7 +383,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('h', local:makeId(.))"/>
+                <xsl:value-of select="concat('h', position(),  '_', generate-id())"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
@@ -438,7 +429,7 @@
                 </xsl:when>
             </xsl:choose>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('p', local:makeId(.))"/>
+                <xsl:value-of select="concat('p', position(),  '_', generate-id())"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
@@ -449,7 +440,7 @@
         <xsl:variable name="zone" select="//id(data($facs))"/>
         <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
         <xsl:variable name="x" select="number($points)"/>
-        <list xml:id="l{local:makeId(.)}" facs="{@facs}">
+        <list xml:id="l{position()}_{generate-id()}" facs="{@facs}">
             <xsl:choose>
                 <xsl:when test="$x gt 650">
                     <xsl:attribute name="rendition">
@@ -467,7 +458,7 @@
     </xsl:template>
 
     <xsl:template match="tei:line_conf[parent::tei:ab[@type='list' or @type='seperator-single']]">
-        <item cert="i{@conf}" resp="#m42" xml:id="i{local:makeId(.)}">
+        <item cert="i{@conf}" resp="#m42" xml:id="i{position()}_{generate-id()}">
             <xsl:apply-templates/>
         </item>
     </xsl:template>
@@ -477,11 +468,11 @@
     </xsl:template>
 
     <xsl:template match="tei:word_conf">
-        <w xml:id="w{local:makeId(.)}" cert="{@conf}" resp="#m42"><xsl:apply-templates/></w>
+        <w xml:id="w{position()}_{generate-id()}" cert="{@conf}" resp="#m42"><xsl:apply-templates/></w>
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='catch-word']">
-        <fw xml:id="fw{local:makeId(.)}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
+        <fw xml:id="fw{position()}_{generate-id()}" facs="{@facs}" rend="#f" type="catch" rendition="#f">
             <xsl:apply-templates/>
         </fw>
     </xsl:template>
@@ -505,7 +496,7 @@
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:attribute name="xml:id">
-                <xsl:value-of select="concat('l', local:makeId(.))"/>
+                <xsl:value-of select="concat('l', position(), '_', generate-id())"/>
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </list>
