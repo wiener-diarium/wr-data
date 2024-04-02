@@ -24,10 +24,12 @@ jobs:
         ./shellscripts/fetch_data_legacy.sh
     - name: install python dependecies
       run: |
-        pip install -r requirements.txt
+        python --version
+        python -m pip install pipenv
+        pipenv install
     - name: prepare data
       run: |
-        python3 ./python/preprocess.py
+        pipenv run python ./python/preprocess.py
     - name: Build
       run: |
         ant
