@@ -67,13 +67,16 @@ for x in tqdm(files, total=len(files)):
         re_num = re.search("Num\\.?\s+\d+\\.?", ab_str)
         try:
             num = re_num.group()
+            ab_str = f'{num} {ab_str.replace(num, "")}'.strip()
         except AttributeError:
             try:
                 num_dig = re.search("^[0-9]+\\.?", ab_str).group()
                 num_str = re.search("Num\\.?", ab_str).group()
                 num = f"{num_str} {num_dig}"
+                ab_str = f'{num} {ab_str.replace(num_str, "").replace(num_dig, "")}'.strip()
             except AttributeError:
-                continue
+                num = "did not find count-date"
+                ab_str = "did not find count-date"
     title = ET.Element("title")
     title.attrib["level"] = "a"
     title.attrib["type"] = "main"
@@ -82,7 +85,11 @@ for x in tqdm(files, total=len(files)):
     titleStmt.append(title)
     ab = ET.Element("ab")
     ab.attrib["type"] = "count-date-normalized"
-    ab.text = " ".join(ab_str.split())
+    for x in ab_str.split():
+        wconf = ET.Element("word_conf")
+        wconf.attrib["conf"] = "1.00"
+        wconf.text = x
+        ab.append(wconf)
     div1 = doc.any_xpath("//tei:body/tei:div")[0]
     div1.append(ab)
     doc.tree_to_file(f"{out_dir}/{file_name}")

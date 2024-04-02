@@ -192,7 +192,11 @@
             </xsl:attribute>
             <front>
                 <titlePage>
-                    <xsl:copy-of select="$titlePage/tei:pb"/>
+                    <pb facs="{$titlePage/tei:pb/@facs}" n="{$titlePage/tei:pb/@n}" xml:id="{$titlePage/tei:pb/@xml:id}" resp="#m42">
+                        <xsl:attribute name="cert">
+                            <xsl:value-of select="number(sum(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]/@conf)) div number(count(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]))"/>
+                        </xsl:attribute>
+                    </pb>
                     <docTitle>
                         <titlePart>
                             <xsl:call-template name="num">
@@ -341,11 +345,11 @@
                 <xsl:otherwise>
                     <xsl:choose>
                         <xsl:when test="count(child::tei:lb) = 1">
-                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/>Wienerisches DIARIUM
+                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/><w xml:id="w1_{generate-id()}" cert="1.00" resp="#m42">Wienerisches</w> <w xml:id="w2_{generate-id()}" cert="1.00" resp="#m42">DIARIUM</w>
                         </xsl:when>
                         <xsl:otherwise>
-                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/>Wienerisches
-                            <lb facs="{./tei:lb[2]/@facs}" n="{./tei:lb[2]/@n}"/>DIARIUM
+                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/><w xml:id="w1_{generate-id()}" cert="1.00" resp="#m42">Wienerisches</w>
+                            <lb facs="{./tei:lb[2]/@facs}" n="{./tei:lb[2]/@n}"/><w xml:id="w2_{generate-id()}" cert="1.00" resp="#m42">DIARIUM</w>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:otherwise>
@@ -500,6 +504,19 @@
             </xsl:attribute>
             <xsl:apply-templates select="node()|@*"/>
         </list>
+    </xsl:template>
+
+    <xsl:template match="tei:pb">
+        <xsl:variable name="facs" select="@facs"/>
+        <xsl:copy>
+            <xsl:attribute name="cert">
+                <xsl:value-of select="number(sum(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, $facs)]/@conf)) div number(count(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, $facs)]))"/>
+            </xsl:attribute>
+            <xsl:attribute name="resp">
+                <xsl:text>#m42</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates select="node()|@*"/>
+        </xsl:copy>
     </xsl:template>
     
 </xsl:stylesheet>
