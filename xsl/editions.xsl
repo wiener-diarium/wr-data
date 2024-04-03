@@ -472,7 +472,21 @@
     </xsl:template>
 
     <xsl:template match="tei:word_conf">
-        <w xml:id="w{position()}_{generate-id()}" cert="{@conf}" resp="#m42"><xsl:apply-templates/></w>
+        <xsl:choose>
+            <xsl:when test="matches(., '[^A-Za-z0-9ÄäÖöÜü=]')">
+                <w xml:id="w{position()}_{generate-id()}" cert="{@conf}" resp="#m42">
+                    <xsl:value-of select="replace(., '[^A-Za-z0-9ÄäÖöÜü=]', '')"/>
+                </w>
+                <pc xml:id="pc{position()}_{generate-id()}">
+                    <xsl:value-of select="replace(., '[A-Za-z0-9ÄäÖöÜü=]', '')"/>
+                </pc>
+            </xsl:when>
+            <xsl:otherwise>
+                <w xml:id="w{position()}_{generate-id()}" cert="{@conf}" resp="#m42">
+                    <xsl:apply-templates/>
+                </w>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='catch-word']">
