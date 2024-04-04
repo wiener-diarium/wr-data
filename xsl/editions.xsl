@@ -473,12 +473,12 @@
 
     <xsl:template match="tei:word_conf">
         <xsl:choose>
-            <xsl:when test="matches(., '[^A-Za-z0-9ÄäÖöÜü=]')">
+            <xsl:when test='matches(., "[^A-Za-z0-9ÄäÖöÜü=ß""]")'>
                 <w xml:id="w{position()}_{generate-id()}" cert="{@conf}" resp="#m42">
-                    <xsl:value-of select="replace(., '[^A-Za-z0-9ÄäÖöÜü=]', '')"/>
+                    <xsl:value-of select='replace(., "[^A-Za-z0-9ÄäÖöÜü=ß""]", "")'/>
                 </w>
                 <pc xml:id="pc{position()}_{generate-id()}">
-                    <xsl:value-of select="replace(., '[A-Za-z0-9ÄäÖöÜü=]', '')"/>
+                    <xsl:value-of select='replace(., "[A-Za-z0-9ÄäÖöÜü=ß""]", "")'/>
                 </pc>
             </xsl:when>
             <xsl:otherwise>
