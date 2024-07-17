@@ -189,26 +189,29 @@
             <xsl:attribute name="resp">
                 <xsl:text>#m42</xsl:text>
             </xsl:attribute>
+            <xsl:call-template name="front"/>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:div[1][parent::tei:body]">
-        <!-- <xsl:variable name="titlePage" select="./tei:body/tei:div[1]"/> -->
-        <front>
-            <titlePage>
-                <!-- <pb facs="{$titlePage/tei:pb/@facs}" n="{$titlePage/tei:pb/@n}" xml:id="{$titlePage/tei:pb/@xml:id}" resp="#m42">
-                    <xsl:attribute name="cert">
-                        <xsl:value-of select="number(sum(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]/@conf)) div number(count(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]))"/>
-                    </xsl:attribute>
-                </pb> -->
-                <docTitle>
-                    <xsl:apply-templates select="node()|@*"/>
-                    <xsl:call-template name="main-title"/>
-                </docTitle>
-                <xsl:call-template name="imprint"/>
-            </titlePage>
-        </front>
+    <xsl:template match="tei:div[1][parent::tei:body]"/>
+    <xsl:template name="front">
+        <xsl:for-each select="//tei:div[1][parent::tei:body]">
+            <front>
+                <titlePage>
+                    <!-- <pb facs="{$titlePage/tei:pb/@facs}" n="{$titlePage/tei:pb/@n}" xml:id="{$titlePage/tei:pb/@xml:id}" resp="#m42">
+                        <xsl:attribute name="cert">
+                            <xsl:value-of select="number(sum(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]/@conf)) div number(count(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]))"/>
+                        </xsl:attribute>
+                    </pb> -->
+                    <docTitle>
+                        <xsl:apply-templates select="node()|@*"/>
+                        <xsl:call-template name="main-title"/>
+                    </docTitle>
+                    <xsl:call-template name="imprint"/>
+                </titlePage>
+            </front>
+        </xsl:for-each>
     </xsl:template>
      
     <xsl:template match="tei:div[position() gt 1][parent::tei:body]">
@@ -497,7 +500,7 @@
     </xsl:template>
 
     <xsl:template match="tei:line_conf[parent::tei:ab[@type='list' or @type='seperator-single']]">
-        <item cert="i{@conf}" resp="#m42" xml:id="i{position()}_{generate-id()}">
+        <item cert="{@conf}" resp="#m42" xml:id="i{position()}_{generate-id()}">
             <xsl:apply-templates/>
         </item>
     </xsl:template>
