@@ -3723,62 +3723,70 @@
       </surface>
    </facsimile>
    <text cert="0.9882382176520853" resp="#m42">
-      <front>
-         <titlePage>
-            <pb facs="#facs_1"
-                n="1"
-                xml:id="img_0001"
-                resp="#m42"
-                cert="0.9870886075949369"/>
-            <docTitle>
-               <titlePart facs="#facs_1_tr_1705756599" type="num" rendition="#f">
-                  <w xml:id="w1_d30e2623" cert="1.00" resp="#m42">Num</w>
-                  <pc xml:id="pc1_d30e2623">.</pc>
-                  <w xml:id="w2_d30e2625" cert="1.00" resp="#m42">30</w>
-                  <pc xml:id="pc2_d30e2625">.</pc>
-                  <w xml:id="w3_d30e2627" cert="1.00" resp="#m42">Mittwochs=anhang</w>
-                  <w xml:id="w4_d30e2629" cert="1.00" resp="#m42">14</w>
-                  <pc xml:id="pc4_d30e2629">.</pc>
-                  <w xml:id="w5_d30e2631" cert="1.00" resp="#m42">April</w>
-                  <pc xml:id="pc5_d30e2631">.</pc>
-                  <w xml:id="w6_d30e2633" cert="1.00" resp="#m42">1756</w>
-                  <pc xml:id="pc6_d30e2633">.</pc>
-               </titlePart>
-               <titlePart type="main-title" rendition="#f">
-                  <lb facs="#facs_1_tr_1705756600_tl_1" n="N001"/>
-                  <w xml:id="w1_d30e3398" cert="1.00" resp="#m42">Wienerisches</w>
-                  <lb facs="#facs_1_tr_1705756600_tl_2" n="N002"/>
-                  <w xml:id="w2_d30e3398" cert="1.00" resp="#m42">DIARIUM</w>
-               </titlePart>
-            </docTitle>
-            <imprimatur xml:id="imp6_d30e2576" facs="#facs_1_tr_1705756601" rendition="#f">
-               <lb xml:id="lb2_d30e3418" facs="#facs_1_tr_1705756601_tl_1" n="N001"/>
-               <w xml:id="w1_d30e3420" cert="1.00" resp="#m42">Gedruckt</w>
-               <w xml:id="w3_d30e3423" cert="1.00" resp="#m42">in</w>
-               <w xml:id="w5_d30e3426" cert="1.00" resp="#m42">der</w>
-               <w xml:id="w7_d30e3429" cert="1.00" resp="#m42">Kaiserl</w>
-               <pc xml:id="pc7_d30e3429">.</pc>
-               <w xml:id="w9_d30e3432" cert="0.99" resp="#m42">Königl</w>
-               <pc xml:id="pc9_d30e3432">.</pc>
-               <w xml:id="w11_d30e3435" cert="1.00" resp="#m42">privilegirten</w>
-               <w xml:id="w13_d30e3439" cert="0.98" resp="#m42">Zeitungsbuch</w>
-               <lb break="no"
-                   xml:id="lb5_d30e3442"
-                   facs="#facs_1_tr_1705756601_tl_2"
-                   n="N002"/>
-               <w xml:id="w1_d30e3444" cert="0.96" resp="#m42">druckerey</w>
-               <w xml:id="w3_d30e3447" cert="1.00" resp="#m42">im</w>
-               <w xml:id="w5_d30e3450" cert="1.00" resp="#m42">neuen</w>
-               <w xml:id="w7_d30e3453" cert="0.96" resp="#m42">Michaeler=haus</w>
-               <w xml:id="w9_d30e3456" cert="0.92" resp="#m42">mit</w>
-               <w xml:id="w11_d30e3459" cert="1.00" resp="#m42">von</w>
-               <w xml:id="w13_d30e3463" cert="1.00" resp="#m42">Ghelischen</w>
-               <w xml:id="w15_d30e3466" cert="1.00" resp="#m42">Schriften</w>
-               <pc xml:id="pc15_d30e3466">.</pc>
-            </imprimatur>
-         </titlePage>
-      </front>
       <body>
+         <front>
+            <titlePage>
+               <docTitle>
+                  <pb cert="0.9886943907156689"
+                      resp="#m42"
+                      facs="#facs_1"
+                      n="1"
+                      xml:id="img_0001"/>
+                  <titlePart facs="#facs_1_tr_1705756599" type="num" rendition="#f">
+                     <lb xml:id="lb2_d30e2586" facs="#facs_1_tr_1705756599_tl_1" n="N001"/>
+                     <w xml:id="w1_d30e2588" cert="1.00" resp="#m42">Mittwoch</w>
+                     <w xml:id="w3_d30e2591" cert="1.00" resp="#m42">den</w>
+                     <w xml:id="w5_d30e2594" cert="0.99" resp="#m42">14</w>
+                     <pc xml:id="pc5_d30e2594">.</pc>
+                     <w xml:id="w7_d30e2597" cert="1.00" resp="#m42">Aprilis</w>
+                     <pc xml:id="pc7_d30e2597">.</pc>
+                     <lb xml:id="lb5_d30e2600" facs="#facs_1_tr_1705756599_tl_2" n="N002"/>
+                     <w xml:id="w1_d30e2602" cert="1.00" resp="#m42">Num</w>
+                     <pc xml:id="pc1_d30e2602">.</pc>
+                     <w xml:id="w3_d30e2605" cert="1.00" resp="#m42">30</w>
+                     <pc xml:id="pc3_d30e2605">.</pc>
+                     <lb xml:id="lb8_d30e2608" facs="#facs_1_tr_1705756599_tl_3" n="N003"/>
+                     <w xml:id="w1_d30e2610" cert="1.00" resp="#m42">1756</w>
+                     <pc xml:id="pc1_d30e2610">.</pc>
+                  </titlePart>
+                  <figure xml:id="f6_d30e2614" facs="#facs_1_tr_1705756596" rendition="#f">
+                     <lb xml:id="lb2_d30e2616" facs="#facs_1_tr_1705756596_tl_1" n="N001"/>
+                     <w xml:id="w1_d30e2618" cert="0.36" resp="#m42">SS</w>
+                  </figure>
+                  <titlePart type="main-title" facs="#facs_1_tr_1705756600" rendition="#f">
+                     <lb facs="#facs_1_tr_1705756600_tl_1" n="N001"/>
+                     <w xml:id="w1_d30e3398" cert="1.00" resp="#m42">Wienerisches</w>
+                     <lb facs="#facs_1_tr_1705756600_tl_2" n="N002"/>
+                     <w xml:id="w2_d30e3398" cert="1.00" resp="#m42">DIARIUM</w>
+                  </titlePart>
+               </docTitle>
+               <imprimatur xml:id="imp1_d30e3416" facs="#facs_1_tr_1705756601" rendition="#f">
+                  <lb xml:id="lb2_d30e3418" facs="#facs_1_tr_1705756601_tl_1" n="N001"/>
+                  <w xml:id="w1_d30e3420" cert="1.00" resp="#m42">Gedruckt</w>
+                  <w xml:id="w3_d30e3423" cert="1.00" resp="#m42">in</w>
+                  <w xml:id="w5_d30e3426" cert="1.00" resp="#m42">der</w>
+                  <w xml:id="w7_d30e3429" cert="1.00" resp="#m42">Kaiserl</w>
+                  <pc xml:id="pc7_d30e3429">.</pc>
+                  <w xml:id="w9_d30e3432" cert="0.99" resp="#m42">Königl</w>
+                  <pc xml:id="pc9_d30e3432">.</pc>
+                  <w xml:id="w11_d30e3435" cert="1.00" resp="#m42">privilegirten</w>
+                  <w xml:id="w13_d30e3439" cert="0.98" resp="#m42">Zeitungsbuch</w>
+                  <lb break="no"
+                      xml:id="lb5_d30e3442"
+                      facs="#facs_1_tr_1705756601_tl_2"
+                      n="N002"/>
+                  <w xml:id="w1_d30e3444" cert="0.96" resp="#m42">druckerey</w>
+                  <w xml:id="w3_d30e3447" cert="1.00" resp="#m42">im</w>
+                  <w xml:id="w5_d30e3450" cert="1.00" resp="#m42">neuen</w>
+                  <w xml:id="w7_d30e3453" cert="0.96" resp="#m42">Michaeler=haus</w>
+                  <w xml:id="w9_d30e3456" cert="0.92" resp="#m42">mit</w>
+                  <w xml:id="w11_d30e3459" cert="1.00" resp="#m42">von</w>
+                  <w xml:id="w13_d30e3463" cert="1.00" resp="#m42">Ghelischen</w>
+                  <w xml:id="w15_d30e3466" cert="1.00" resp="#m42">Schriften</w>
+                  <pc xml:id="pc15_d30e3466">.</pc>
+               </imprimatur>
+            </titlePage>
+         </front>
          <div type="article" n="1" xml:id="a1_d30e2636">
             <head rendition="#lc" xml:id="h2_d30e2638" facs="#facs_1_tr_1705756592">
                <lb xml:id="lb3_d30e2640" facs="#facs_1_tr_1705756592_tl_1" n="N001"/>
@@ -9372,37 +9380,34 @@
                <pc xml:id="pc11_d30e14036">.</pc>
                <w xml:id="w13_d30e14040" cert="1.00" resp="#m42">Regierung</w>
             </p>
-            <ab facs="#facs_6_tr_1705756803" type="signature">
+            <signed xml:id="s10_d30e14043"
+                    facs="#facs_6_tr_1705756803"
+                    rendition="#lc"
+                    type="signature">
                <lb xml:id="lb4_d30e14045" facs="#facs_6_tr_1705756803_tl_1" n="N001"/>
-               <line_conf conf="0.97">
-                  <w xml:id="w2_d30e14047" cert="0.99" resp="#m42">in</w>
-                  <w xml:id="w4_d30e14050" cert="0.93" resp="#m42">Justitz=sachen</w>
-                  <w xml:id="w6_d30e14053" cert="1.00" resp="#m42">Mittls</w>
-                  <w xml:id="w8_d30e14056" cert="1.00" resp="#m42">secretarius</w>
-                  <pc xml:id="pc8_d30e14056">,</pc>
-               </line_conf>
+               <w xml:id="w1_d30e14047" cert="0.99" resp="#m42">in</w>
+               <w xml:id="w3_d30e14050" cert="0.93" resp="#m42">Justitz=sachen</w>
+               <w xml:id="w5_d30e14053" cert="1.00" resp="#m42">Mittls</w>
+               <w xml:id="w7_d30e14056" cert="1.00" resp="#m42">secretarius</w>
+               <pc xml:id="pc7_d30e14056">,</pc>
                <lb xml:id="lb7_d30e14059" facs="#facs_6_tr_1705756803_tl_2" n="N002"/>
-               <line_conf conf="0.99">
-                  <w xml:id="w2_d30e14061" cert="1.00" resp="#m42">als</w>
-                  <w xml:id="w4_d30e14064" cert="1.00" resp="#m42">verordneter</w>
-                  <w xml:id="w6_d30e14067" cert="0.97" resp="#m42">Commissarius</w>
-               </line_conf>
+               <w xml:id="w1_d30e14061" cert="1.00" resp="#m42">als</w>
+               <w xml:id="w3_d30e14064" cert="1.00" resp="#m42">verordneter</w>
+               <w xml:id="w5_d30e14067" cert="0.97" resp="#m42">Commissarius</w>
                <lb xml:id="lb10_d30e14070" facs="#facs_6_tr_1705756803_tl_3" n="N003"/>
-               <line_conf conf="0.97">
-                  <w xml:id="w2_d30e14072" cert="0.90" resp="#m42">L</w>
-                  <pc xml:id="pc2_d30e14072">(.</pc>
-                  <w xml:id="w4_d30e14075" cert="0.86" resp="#m42">S</w>
-                  <pc xml:id="pc4_d30e14075">.)</pc>
-                  <w xml:id="w6_d30e14078" cert="1.00" resp="#m42">Franz</w>
-                  <w xml:id="w8_d30e14081" cert="1.00" resp="#m42">Heinrich</w>
-                  <w xml:id="w10_d30e14084" cert="1.00" resp="#m42">dUrbain</w>
-                  <pc xml:id="pc10_d30e14084">'</pc>
-                  <w xml:id="w12_d30e14087" cert="1.00" resp="#m42">Ni</w>
-                  <pc xml:id="pc12_d30e14087">.</pc>
-                  <w xml:id="w14_d30e14091" cert="1.00" resp="#m42">Oe</w>
-                  <pc xml:id="pc14_d30e14091">.</pc>
-               </line_conf>
-            </ab>
+               <w xml:id="w1_d30e14072" cert="0.90" resp="#m42">L</w>
+               <pc xml:id="pc1_d30e14072">(.</pc>
+               <w xml:id="w3_d30e14075" cert="0.86" resp="#m42">S</w>
+               <pc xml:id="pc3_d30e14075">.)</pc>
+               <w xml:id="w5_d30e14078" cert="1.00" resp="#m42">Franz</w>
+               <w xml:id="w7_d30e14081" cert="1.00" resp="#m42">Heinrich</w>
+               <w xml:id="w9_d30e14084" cert="1.00" resp="#m42">dUrbain</w>
+               <pc xml:id="pc9_d30e14084">'</pc>
+               <w xml:id="w11_d30e14087" cert="1.00" resp="#m42">Ni</w>
+               <pc xml:id="pc11_d30e14087">.</pc>
+               <w xml:id="w13_d30e14091" cert="1.00" resp="#m42">Oe</w>
+               <pc xml:id="pc13_d30e14091">.</pc>
+            </signed>
             <p rendition="#rc" xml:id="p12_d30e14096" facs="#facs_6_tr_1705756795">
                <lb xml:id="lb3_d30e14098" facs="#facs_6_tr_1705756795_tl_1" n="N001"/>
                <w xml:id="w1_d30e14100" cert="1.00" resp="#m42">Regierung</w>

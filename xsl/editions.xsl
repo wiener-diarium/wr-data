@@ -182,7 +182,6 @@
     </xsl:template>
 
     <xsl:template match="tei:text">
-        <xsl:variable name="titlePage" select="./tei:body/tei:div[1]"/>
         <xsl:copy>
             <xsl:attribute name="cert">
                 <xsl:value-of select="number(sum(//tei:word_conf/@conf)) div number(count(//tei:word_conf[@conf]))"/>
@@ -190,33 +189,27 @@
             <xsl:attribute name="resp">
                 <xsl:text>#m42</xsl:text>
             </xsl:attribute>
-            <front>
-                <titlePage>
-                    <pb facs="{$titlePage/tei:pb/@facs}" n="{$titlePage/tei:pb/@n}" xml:id="{$titlePage/tei:pb/@xml:id}" resp="#m42">
-                        <xsl:attribute name="cert">
-                            <xsl:value-of select="number(sum(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]/@conf)) div number(count(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]))"/>
-                        </xsl:attribute>
-                    </pb>
-                    <docTitle>
-                        <titlePart>
-                            <xsl:call-template name="num">
-                                <xsl:with-param name="context" select="$titlePage"/>
-                            </xsl:call-template>
-                        </titlePart>
-                        <titlePart type="main-title">
-                            <xsl:call-template name="main-title"/>
-                        </titlePart>
-                    </docTitle>
-                    <imprimatur xml:id="imp{position()}_{generate-id()}">
-                        <xsl:call-template name="imprint"/>
-                    </imprimatur>
-                </titlePage>
-            </front>
             <xsl:apply-templates select="node()|@*"/>
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:div[1][parent::tei:body]"/>
+    <xsl:template match="tei:div[1][parent::tei:body]">
+        <!-- <xsl:variable name="titlePage" select="./tei:body/tei:div[1]"/> -->
+        <front>
+            <titlePage>
+                <!-- <pb facs="{$titlePage/tei:pb/@facs}" n="{$titlePage/tei:pb/@n}" xml:id="{$titlePage/tei:pb/@xml:id}" resp="#m42">
+                    <xsl:attribute name="cert">
+                        <xsl:value-of select="number(sum(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]/@conf)) div number(count(//tei:word_conf[@conf and starts-with(ancestor::tei:*/@facs, '#facs_1_')]))"/>
+                    </xsl:attribute>
+                </pb> -->
+                <docTitle>
+                    <xsl:apply-templates select="node()|@*"/>
+                    <xsl:call-template name="main-title"/>
+                </docTitle>
+                <xsl:call-template name="imprint"/>
+            </titlePage>
+        </front>
+    </xsl:template>
      
     <xsl:template match="tei:div[position() gt 1][parent::tei:body]">
         <xsl:copy>
@@ -231,10 +224,81 @@
     </xsl:template>
     
     <xsl:template match="tei:principal"/>
-    <xsl:template match="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]"/>
-    <xsl:template match="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]"/>
-    <xsl:template match="//tei:ab[@type='count-date' and contains(@facs, 'facs_1_')]"/>
-    <xsl:template match="//tei:ab[@type='figure' and contains(@facs, 'facs_1_')]"/>
+    <xsl:template match="tei:ab[@type='count-date-normalized']"/>
+
+    <xsl:template match="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]"/><!-- do not render handled in template name=main-title -->
+    <xsl:template match="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]"/><!-- do not render handled in template name=imprint -->
+
+    <xsl:template name="main-title">
+        <xsl:for-each select="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]">
+            <xsl:variable name="text" select="string-join(.//text(), ' ')"/>
+            <titlePart type="main-title">
+                <xsl:attribute name="facs">
+                    <xsl:value-of select="@facs"/>
+                </xsl:attribute>
+                <xsl:attribute name="rendition">
+                    <xsl:text>#f</xsl:text>
+                </xsl:attribute>
+                <xsl:choose>
+                    <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
+                        <xsl:apply-templates select="node()|@*"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:choose>
+                            <xsl:when test="count(child::tei:lb) = 1">
+                                <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/><w xml:id="w1_{generate-id()}" cert="1.00" resp="#m42">Wienerisches</w> <w xml:id="w2_{generate-id()}" cert="1.00" resp="#m42">DIARIUM</w>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/><w xml:id="w1_{generate-id()}" cert="1.00" resp="#m42">Wienerisches</w>
+                                <lb facs="{./tei:lb[2]/@facs}" n="{./tei:lb[2]/@n}"/><w xml:id="w2_{generate-id()}" cert="1.00" resp="#m42">DIARIUM</w>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:otherwise>
+                </xsl:choose>
+        </titlePart>
+        </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template name="imprint">
+        <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
+            <imprimatur xml:id="imp{position()}_{generate-id()}">
+                <xsl:attribute name="facs">
+                    <xsl:value-of select="@facs"/>
+                </xsl:attribute>
+                <xsl:attribute name="rendition">
+                    <xsl:text>#f</xsl:text>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </imprimatur>
+        </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template match="//tei:ab[@type='count-date' and contains(@facs, 'facs_1_')]" name="num">
+        <titlePart>
+            <xsl:attribute name="facs">
+                <xsl:value-of select="@facs"/>
+            </xsl:attribute>
+            <xsl:attribute name="type">
+                <xsl:text>num</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="rendition">
+                <xsl:text>#f</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </titlePart>
+    </xsl:template>
+
+    <xsl:template match="//tei:ab[@type='figure' and contains(@facs, 'facs_1_')]">
+        <figure xml:id="f{position()}_{generate-id()}">
+            <xsl:attribute name="facs">
+                <xsl:value-of select="@facs"/>
+            </xsl:attribute>
+            <xsl:attribute name="rendition">
+                <xsl:text>#f</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </figure>
+    </xsl:template>
     
     <!-- <xsl:template match="tei:graphic">
         <xsl:variable name="base" select="replace(tokenize(base-uri(/), '/')[last()], '.xml', '_image_name.xml')"/>
@@ -275,18 +339,6 @@
             </xsl:if>
         </xsl:copy>
     </xsl:template>
-    
-    <xsl:template name="imprint">
-        <xsl:for-each select="//tei:ab[@type='imprint' and contains(@facs, 'facs_1_')]">
-            <xsl:attribute name="facs">
-                <xsl:value-of select="@facs"/>
-            </xsl:attribute>
-            <xsl:attribute name="rendition">
-                <xsl:text>#f</xsl:text>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:for-each>
-    </xsl:template>
 
     <xsl:template match="tei:ab[@type='imprint' and not(contains(@facs, 'facs_1_'))]">
         <xsl:copy>
@@ -313,48 +365,9 @@
     </xsl:template>
 
     <xsl:template match="tei:ab[@type='figure' and not(contains(@facs, 'facs_1_'))]">
-        <milestone xml:id="ms{position()}_{generate-id()}" type="separator" rend="horizontal" unit="section" rendition="#f"/>
-    </xsl:template>
-    
-    <xsl:template name="num">
-        <xsl:param name="context"/>
-        <xsl:for-each select="$context/tei:ab[@type='count-date-normalized']">
-            <xsl:attribute name="facs">
-                <xsl:value-of select="$context/tei:ab[@type='count-date'][1]/@facs"/>
-            </xsl:attribute>
-            <xsl:attribute name="type">
-                <xsl:text>num</xsl:text>
-            </xsl:attribute>
-            <xsl:attribute name="rendition">
-                <xsl:text>#f</xsl:text>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:for-each>
-    </xsl:template>
-
-    <xsl:template name="main-title">
-        <xsl:for-each select="//tei:ab[@type='main-title' and contains(@facs, 'facs_1_')]">
-            <xsl:variable name="text" select="string-join(.//text(), ' ')"/>
-            <xsl:attribute name="rendition">
-                <xsl:text>#f</xsl:text>
-            </xsl:attribute>
-            <xsl:choose>
-                <xsl:when test="contains($text, 'Wienerisches') and contains($text, 'DIARIUM')">
-                    <xsl:apply-templates select="node()|@*"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:choose>
-                        <xsl:when test="count(child::tei:lb) = 1">
-                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/><w xml:id="w1_{generate-id()}" cert="1.00" resp="#m42">Wienerisches</w> <w xml:id="w2_{generate-id()}" cert="1.00" resp="#m42">DIARIUM</w>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <lb facs="{./tei:lb[1]/@facs}" n="{./tei:lb[1]/@n}"/><w xml:id="w1_{generate-id()}" cert="1.00" resp="#m42">Wienerisches</w>
-                            <lb facs="{./tei:lb[2]/@facs}" n="{./tei:lb[2]/@n}"/><w xml:id="w2_{generate-id()}" cert="1.00" resp="#m42">DIARIUM</w>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:for-each>
+        <figure xml:id="f{position()}_{generate-id()}" type="figure" rendition="#f">
+            <xsl:apply-templates select="node()|@*"/>
+        </figure>
     </xsl:template>
 
     <xsl:template match="text()[parent::tei:word_conf[ancestor::tei:body]]">
@@ -461,13 +474,35 @@
         </list>
     </xsl:template>
 
+    <xsl:template match="tei:ab[@type='signature']">
+        <xsl:variable name="facs" select="substring-after(@facs, '#')"/>
+        <xsl:variable name="zone" select="//id(data($facs))"/>
+        <xsl:variable name="points" select="tokenize(tokenize($zone/@points, ' ')[1], ',')[1]"/>
+        <xsl:variable name="x" select="number($points)"/>
+        <signed xml:id="s{position()}_{generate-id()}" facs="{@facs}">
+            <xsl:choose>
+                <xsl:when test="$x gt 650">
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#rc</xsl:text>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:attribute name="rendition">
+                        <xsl:text>#lc</xsl:text>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:apply-templates select="node()|@*"/>
+        </signed>
+    </xsl:template>
+
     <xsl:template match="tei:line_conf[parent::tei:ab[@type='list' or @type='seperator-single']]">
         <item cert="i{@conf}" resp="#m42" xml:id="i{position()}_{generate-id()}">
             <xsl:apply-templates/>
         </item>
     </xsl:template>
 
-    <xsl:template match="tei:line_conf[parent::tei:p or parent::tei:head or parent::tei:ab[@type='catch-word' or @type='count-date' or @type='imprint' or @type='count-date' or @type='figure' or @type='main-title']]">
+    <xsl:template match="tei:line_conf[parent::tei:p or parent::tei:head or parent::tei:ab[@type='catch-word' or @type='count-date' or @type='imprint' or @type='count-date' or @type='figure' or @type='main-title' or @type='signature']]">
         <xsl:apply-templates/>
     </xsl:template>
 

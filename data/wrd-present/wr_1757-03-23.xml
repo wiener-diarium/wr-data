@@ -5071,61 +5071,84 @@
       </surface>
    </facsimile>
    <text cert="0.9837028272511943" resp="#m42">
-      <front>
-         <titlePage>
-            <pb facs="#facs_1"
-                n="1"
-                xml:id="img_0001"
-                resp="#m42"
-                cert="0.9728712871287124"/>
-            <docTitle>
-               <titlePart facs="#facs_1_tr_1706766769" type="num" rendition="#f">
-                  <w xml:id="w1_d128e3636" cert="1.00" resp="#m42">Num</w>
-                  <w xml:id="w2_d128e3638" cert="1.00" resp="#m42">24</w>
-                  <pc xml:id="pc2_d128e3638">.</pc>
-                  <w xml:id="w3_d128e3640" cert="1.00" resp="#m42">Mitwochs=anhang</w>
-                  <w xml:id="w4_d128e3642" cert="1.00" resp="#m42">23</w>
-                  <pc xml:id="pc4_d128e3642">.</pc>
-                  <w xml:id="w5_d128e3644" cert="1.00" resp="#m42">Martii</w>
-                  <w xml:id="w6_d128e3646" cert="1.00" resp="#m42">1757</w>
-                  <pc xml:id="pc6_d128e3646">.</pc>
-               </titlePart>
-               <titlePart type="main-title" rendition="#f">
-                  <lb facs="#facs_1_tr_1706766773_tl_1" n="N001"/>
-                  <w xml:id="w1_d128e3563" cert="1.00" resp="#m42">Wienerisches</w>
-                  <w xml:id="w2_d128e3563" cert="1.00" resp="#m42">DIARIUM</w>
-               </titlePart>
-            </docTitle>
-            <imprimatur xml:id="imp6_d128e3494" facs="#facs_1_tr_1706766770" rendition="#f">
-               <lb xml:id="lb2_d128e3576" facs="#facs_1_tr_1706766770_tl_1" n="N001"/>
-               <w xml:id="w1_d128e3578" cert="0.96" resp="#m42">Gedruckt</w>
-               <w xml:id="w3_d128e3581" cert="1.00" resp="#m42">in</w>
-               <w xml:id="w5_d128e3584" cert="1.00" resp="#m42">dem</w>
-               <w xml:id="w7_d128e3587" cert="1.00" resp="#m42">Kaiserl</w>
-               <pc xml:id="pc7_d128e3587">.</pc>
-               <w xml:id="w9_d128e3590" cert="1.00" resp="#m42">Kön</w>
-               <pc xml:id="pc9_d128e3590">.</pc>
-               <w xml:id="w11_d128e3593" cert="0.97" resp="#m42">privilegirten</w>
-               <w xml:id="w13_d128e3597" cert="0.99" resp="#m42">Zeitungs=verlag</w>
-               <w xml:id="w15_d128e3600" cert="1.00" resp="#m42">und</w>
-               <w xml:id="w17_d128e3603" cert="1.00" resp="#m42">Buch</w>
-               <lb break="no"
-                   xml:id="lb5_d128e3606"
-                   facs="#facs_1_tr_1706766770_tl_2"
-                   n="N002"/>
-               <w xml:id="w1_d128e3608" cert="1.00" resp="#m42">druckerey</w>
-               <w xml:id="w3_d128e3611" cert="1.00" resp="#m42">im</w>
-               <w xml:id="w5_d128e3614" cert="1.00" resp="#m42">neuen</w>
-               <w xml:id="w7_d128e3617" cert="0.98" resp="#m42">Michaeler=haus</w>
-               <w xml:id="w9_d128e3620" cert="0.99" resp="#m42">mit</w>
-               <w xml:id="w11_d128e3623" cert="1.00" resp="#m42">von</w>
-               <w xml:id="w13_d128e3627" cert="0.97" resp="#m42">Ghelischen</w>
-               <w xml:id="w15_d128e3630" cert="0.98" resp="#m42">Schriften</w>
-               <pc xml:id="pc15_d128e3630">.</pc>
-            </imprimatur>
-         </titlePage>
-      </front>
       <body>
+         <front>
+            <titlePage>
+               <docTitle>
+                  <pb cert="0.9830054479418828"
+                      resp="#m42"
+                      facs="#facs_1"
+                      n="1"
+                      xml:id="img_0001"/>
+                  <titlePart facs="#facs_1_tr_1706766769" type="num" rendition="#f">
+                     <lb xml:id="lb2_d128e3504" facs="#facs_1_tr_1706766769_tl_1" n="N001"/>
+                     <w xml:id="w1_d128e3506" cert="1.00" resp="#m42">Num</w>
+                     <pc xml:id="pc1_d128e3506">.</pc>
+                     <w xml:id="w3_d128e3509" cert="1.00" resp="#m42">24</w>
+                     <pc xml:id="pc3_d128e3509">.</pc>
+                     <w xml:id="w5_d128e3512" cert="0.99" resp="#m42">Mittwoch</w>
+                     <w xml:id="w7_d128e3515" cert="1.00" resp="#m42">den</w>
+                     <w xml:id="w9_d128e3518" cert="0.98" resp="#m42">23</w>
+                     <pc xml:id="pc9_d128e3518">.</pc>
+                     <w xml:id="w11_d128e3521" cert="1.00" resp="#m42">Martii</w>
+                     <pc xml:id="pc11_d128e3521">.</pc>
+                     <w xml:id="w13_d128e3525" cert="1.00" resp="#m42">1757</w>
+                     <pc xml:id="pc13_d128e3525">.</pc>
+                  </titlePart>
+                  <figure xml:id="f6_d128e3529" facs="#facs_1_tr_1706766768" rendition="#f">
+                     <lb xml:id="lb2_d128e3531" facs="#facs_1_tr_1706766768_tl_1" n="N001"/>
+                     <w xml:id="w1_d128e3533" cert="0.24" resp="#m42">S</w>
+                     <pc xml:id="pc1_d128e3533">.</pc>
+                     <w xml:id="w3_d128e3536" cert="0.33" resp="#m42"/>
+                     <pc xml:id="pc3_d128e3536">.</pc>
+                     <lb xml:id="lb5_d128e3539" facs="#facs_1_tr_1706766768_tl_2" n="N002"/>
+                     <w xml:id="w1_d128e3541" cert="0.80" resp="#m42"/>
+                     <pc xml:id="pc1_d128e3541">)(</pc>
+                     <lb xml:id="lb8_d128e3544" facs="#facs_1_tr_1706766768_tl_3" n="N003"/>
+                     <w xml:id="w1_d128e3546" cert="0.72" resp="#m42"/>
+                     <pc xml:id="pc1_d128e3546">)(</pc>
+                     <lb xml:id="lb11_d128e3549"/>
+                     <lb xml:id="lb13_d128e3552" facs="#facs_1_tr_1706766768_tl_5" n="N005"/>
+                     <w xml:id="w1_d128e3554" cert="0.16" resp="#m42">12</w>
+                     <lb xml:id="lb16_d128e3557" facs="#facs_1_tr_1706766768_tl_6" n="N006"/>
+                     <w xml:id="w1_d128e3559" cert="0.68" resp="#m42">17</w>
+                     <pc xml:id="pc1_d128e3559">.</pc>
+                  </figure>
+                  <titlePart type="main-title" facs="#facs_1_tr_1706766773" rendition="#f">
+                     <lb facs="#facs_1_tr_1706766773_tl_1" n="N001"/>
+                     <w xml:id="w1_d128e3563" cert="1.00" resp="#m42">Wienerisches</w>
+                     <w xml:id="w2_d128e3563" cert="1.00" resp="#m42">DIARIUM</w>
+                  </titlePart>
+               </docTitle>
+               <imprimatur xml:id="imp1_d128e3574" facs="#facs_1_tr_1706766770" rendition="#f">
+                  <lb xml:id="lb2_d128e3576" facs="#facs_1_tr_1706766770_tl_1" n="N001"/>
+                  <w xml:id="w1_d128e3578" cert="0.96" resp="#m42">Gedruckt</w>
+                  <w xml:id="w3_d128e3581" cert="1.00" resp="#m42">in</w>
+                  <w xml:id="w5_d128e3584" cert="1.00" resp="#m42">dem</w>
+                  <w xml:id="w7_d128e3587" cert="1.00" resp="#m42">Kaiserl</w>
+                  <pc xml:id="pc7_d128e3587">.</pc>
+                  <w xml:id="w9_d128e3590" cert="1.00" resp="#m42">Kön</w>
+                  <pc xml:id="pc9_d128e3590">.</pc>
+                  <w xml:id="w11_d128e3593" cert="0.97" resp="#m42">privilegirten</w>
+                  <w xml:id="w13_d128e3597" cert="0.99" resp="#m42">Zeitungs=verlag</w>
+                  <w xml:id="w15_d128e3600" cert="1.00" resp="#m42">und</w>
+                  <w xml:id="w17_d128e3603" cert="1.00" resp="#m42">Buch</w>
+                  <lb break="no"
+                      xml:id="lb5_d128e3606"
+                      facs="#facs_1_tr_1706766770_tl_2"
+                      n="N002"/>
+                  <w xml:id="w1_d128e3608" cert="1.00" resp="#m42">druckerey</w>
+                  <w xml:id="w3_d128e3611" cert="1.00" resp="#m42">im</w>
+                  <w xml:id="w5_d128e3614" cert="1.00" resp="#m42">neuen</w>
+                  <w xml:id="w7_d128e3617" cert="0.98" resp="#m42">Michaeler=haus</w>
+                  <w xml:id="w9_d128e3620" cert="0.99" resp="#m42">mit</w>
+                  <w xml:id="w11_d128e3623" cert="1.00" resp="#m42">von</w>
+                  <w xml:id="w13_d128e3627" cert="0.97" resp="#m42">Ghelischen</w>
+                  <w xml:id="w15_d128e3630" cert="0.98" resp="#m42">Schriften</w>
+                  <pc xml:id="pc15_d128e3630">.</pc>
+               </imprimatur>
+            </titlePage>
+         </front>
          <div type="article" n="1" xml:id="a1_d128e3649">
             <head rendition="#lc" xml:id="h2_d128e3651" facs="#facs_1_tr_1706766766">
                <lb xml:id="lb3_d128e3653" facs="#facs_1_tr_1706766766_tl_1" n="N001"/>
@@ -12903,11 +12926,15 @@
                <w xml:id="w5_d128e19136" cert="0.98" resp="#m42">ist</w>
                <pc xml:id="pc5_d128e19136">.</pc>
             </p>
-            <milestone xml:id="ms12_d128e19140"
-                       type="separator"
-                       rend="horizontal"
-                       unit="section"
-                       rendition="#f"/>
+            <figure xml:id="f12_d128e19140"
+                    type="figure"
+                    rendition="#f"
+                    facs="#facs_8_tr_1706758952">
+               <lb xml:id="lb4_d128e19142" facs="#facs_8_tr_1706758952_tl_1" n="N001"/>
+               <w xml:id="w1_d128e19144" cert="0.94" resp="#m42">0</w>
+               <lb xml:id="lb7_d128e19147" facs="#facs_8_tr_1706758952_tl_2" n="N002"/>
+               <w xml:id="w1_d128e19149" cert="0.98" resp="#m42">Anhang</w>
+            </figure>
             <pb cert="0.9845626072041174"
                 resp="#m42"
                 facs="#facs_9"
@@ -16997,11 +17024,12 @@
                <w xml:id="w9_d128e27260" cert="1.00" resp="#m42">werden</w>
                <pc xml:id="pc9_d128e27260">.</pc>
             </p>
-            <milestone xml:id="ms16_d128e27263"
-                       type="separator"
-                       rend="horizontal"
-                       unit="section"
-                       rendition="#f"/>
+            <figure xml:id="f16_d128e27263"
+                    type="figure"
+                    rendition="#f"
+                    facs="#facs_12_tr_1706766739">
+               <lb xml:id="lb4_d128e27265"/>
+            </figure>
             <pb cert="0.9852364864864864"
                 resp="#m42"
                 facs="#facs_13"
@@ -18943,11 +18971,26 @@
                <w xml:id="w7_d128e31508" cert="0.98" resp="#m42">rc</w>
                <pc xml:id="pc7_d128e31508">.</pc>
             </head>
-            <milestone xml:id="ms4_d128e31511"
-                       type="separator"
-                       rend="horizontal"
-                       unit="section"
-                       rendition="#f"/>
+            <figure xml:id="f4_d128e31511"
+                    type="figure"
+                    rendition="#f"
+                    facs="#facs_16_tr_1706783385">
+               <lb xml:id="lb4_d128e31513" facs="#facs_16_tr_1706783385_tl_1" n="N001"/>
+               <w xml:id="w1_d128e31515" cert="0.23" resp="#m42">g</w>
+               <pc xml:id="pc1_d128e31515">.</pc>
+               <lb xml:id="lb7_d128e31518"/>
+               <lb xml:id="lb9_d128e31520" facs="#facs_16_tr_1706783385_tl_3" n="N003"/>
+               <w xml:id="w1_d128e31522" cert="0.44" resp="#m42"/>
+               <pc xml:id="pc1_d128e31522">(</pc>
+               <lb xml:id="lb12_d128e31525"
+                   facs="#facs_16_tr_1706783385_tl_4"
+                   n="N004"/>
+               <w xml:id="w1_d128e31527" cert="0.27" resp="#m42">7</w>
+               <lb xml:id="lb15_d128e31531"
+                   facs="#facs_16_tr_1706783385_tl_5"
+                   n="N005"/>
+               <w xml:id="w1_d128e31533" cert="0.79" resp="#m42">6</w>
+            </figure>
          </div>
       </body>
    </text>
